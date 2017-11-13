@@ -5,7 +5,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class BaseQuery<T>{
+public class BaseQuery {
 
 /*    private OnHttpFailureListener<T> onHttpFailureListener;
     private OnHttpSuccessListener<T> onHttpSuccessListener;
@@ -27,26 +27,27 @@ public class BaseQuery<T>{
         return this;
     }*/
 
-    public T excute(Call<T> call){
-        if(call == null) return null;
+    public <T> T excute(Call<T> call) {
+        if (call == null) return null;
         try {
             Response<T> response = call.execute();
-            if(response!=null) {
+            if (response != null) {
                 return response.body();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-    public  <T> void enqueue(Call<T> call,final OnHttpSuccessListener<T> successListener,final OnHttpFailureListener<T> failureListener){
-        if(call == null) return;
+
+    public <T> void enqueue(Call<T> call, final OnHttpSuccessListener<T> successListener, final OnHttpFailureListener<T> failureListener) {
+        if (call == null) return;
         try {
             call.enqueue(new Callback<T>() {
                 @Override
                 public void onResponse(Call<T> call, Response<T> response) {
-                    if(!call.isCanceled()){
-                        if(successListener!=null) {
+                    if (!call.isCanceled()) {
+                        if (successListener != null) {
                             successListener.onSuccess(response.body());
                         }
                     }
@@ -55,17 +56,15 @@ public class BaseQuery<T>{
                 @Override
                 public void onFailure(Call<T> call, Throwable t) {
                     t.printStackTrace();
-                    if(failureListener!=null) {
-                        failureListener.onFail(null);
+                    if (failureListener != null) {
+                        failureListener.onFail(call, t);
                     }
                 }
             });
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
 
 
     public interface OnHttpSuccessListener<T> {
@@ -73,6 +72,6 @@ public class BaseQuery<T>{
     }
 
     public interface OnHttpFailureListener<T> {
-        public void onFail(T response);
+        public void onFail(Call<T> call, Throwable t);
     }
 }
