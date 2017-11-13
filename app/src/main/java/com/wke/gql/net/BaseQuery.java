@@ -5,9 +5,29 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public abstract class BaseQuery{
+public class BaseQuery<T>{
 
-    public static <T> T excute(Call<T> call){
+/*    private OnHttpFailureListener<T> onHttpFailureListener;
+    private OnHttpSuccessListener<T> onHttpSuccessListener;
+
+
+    public BaseQuery<T> setOnHttpFailureListener(OnHttpFailureListener<T> onHttpFailureListener) {
+        this.onHttpFailureListener = onHttpFailureListener;
+        return this;
+    }
+
+    public BaseQuery<T> setOnHttpSuccessListener(OnHttpSuccessListener<T> onHttpSuccessListener) {
+        this.onHttpSuccessListener = onHttpSuccessListener;
+        return this;
+    }
+
+    public BaseQuery<T> setHttpListener(OnHttpSuccessListener<T> onHttpSuccessListener,OnHttpFailureListener<T> onHttpFailureListener) {
+        this.onHttpSuccessListener = onHttpSuccessListener;
+        this.onHttpFailureListener = onHttpFailureListener;
+        return this;
+    }*/
+
+    public T excute(Call<T> call){
         if(call == null) return null;
         try {
             Response<T> response = call.execute();
@@ -19,21 +39,25 @@ public abstract class BaseQuery{
         }
         return null;
     }
-    public static <T> void enqueue(Call<T> call,final OnHttpSuccessListener onHttpSuccessListener,final OnHttpFailureListener onHttpFailureListener){
+    public  <T> void enqueue(Call<T> call,final OnHttpSuccessListener<T> successListener,final OnHttpFailureListener<T> failureListener){
         if(call == null) return;
         try {
             call.enqueue(new Callback<T>() {
                 @Override
                 public void onResponse(Call<T> call, Response<T> response) {
                     if(!call.isCanceled()){
-                        onHttpSuccessListener.onSuccess(response.body());
+                        if(successListener!=null) {
+                            successListener.onSuccess(response.body());
+                        }
                     }
                 }
 
                 @Override
                 public void onFailure(Call<T> call, Throwable t) {
                     t.printStackTrace();
-                    onHttpFailureListener.onFail(null);
+                    if(failureListener!=null) {
+                        failureListener.onFail(null);
+                    }
                 }
             });
         }catch (Exception e){
@@ -41,11 +65,14 @@ public abstract class BaseQuery{
         }
     }
 
-    public interface OnHttpSuccessListener {
-        public void onSuccess(Object reponse);
+
+
+
+    public interface OnHttpSuccessListener<T> {
+        public void onSuccess(T response);
     }
 
-    public interface OnHttpFailureListener {
-        public void onFail(Object reponse);
+    public interface OnHttpFailureListener<T> {
+        public void onFail(T response);
     }
 }
