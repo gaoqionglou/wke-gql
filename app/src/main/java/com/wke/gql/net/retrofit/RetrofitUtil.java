@@ -10,14 +10,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Administrator on 2017/11/12.
  */
 
-public abstract class RetrofitUtil {
-    public static Retrofit retrofit;
-
+public class RetrofitUtil {
+    private static Retrofit retrofit;
     public static <T> T initRetrofitService(Class<T> service){
         return getRetrofitInstance().create(service);
     }
 
-    public static Retrofit getRetrofitInstance(){
+    private static Retrofit getRetrofitInstance() {
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(Contants.HTTP_QUERY_URL)
