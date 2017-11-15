@@ -1,18 +1,35 @@
 package com.wke.gql.net;
 
+import com.wke.gql.dragger2.component.DaggerRetrofitComponent;
+import com.wke.gql.dragger2.module.RetrofitMoudle;
+
 import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
+/**
+ * Created by gql on 17-11-15.
+ */
 
-public class BaseQuery {
-
+public class BaseQueryWithDagger {
+    @Inject
+    Retrofit retrofit;
 
     @Inject
-    public BaseQuery() {
+    public BaseQueryWithDagger() {
+        this.retrofit = DaggerRetrofitComponent.builder()
+                .retrofitMoudle(new RetrofitMoudle())
+                .build()
+                .retrofitInstance();
     }
+
+    public <T> T initRetrofitService(Class<T> service) {
+        return retrofit.create(service);
+    }
+
 
     public <T> T excute(Call<T> call) {
         if (call == null) return null;
@@ -27,7 +44,7 @@ public class BaseQuery {
         return null;
     }
 
-    public <T> void enqueue(Call<T> call, final OnHttpSuccessListener<T> successListener, final OnHttpFailureListener<T> failureListener) {
+    public <T> void enqueue(Call<T> call, final BaseQuery.OnHttpSuccessListener<T> successListener, final BaseQuery.OnHttpFailureListener<T> failureListener) {
         if (call == null) return;
         try {
             call.enqueue(new Callback<T>() {
