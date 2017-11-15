@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.wke.gql.dragger2.component.DaggerBaseQueryComponent;
-import com.wke.gql.dragger2.component.DaggerBaseQueryWithDaggerComponent;
+import com.wke.gql.dragger2.component.DaggerNetComponent;
 import com.wke.gql.net.BaseQuery;
 import com.wke.gql.net.BaseQueryWithDagger;
 import com.wke.gql.net.retrofit.City;
@@ -22,6 +21,19 @@ import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    /**
+     * 构造方法注入Inject
+     * BaseQuery baseQuery; 成员变量不需要@Inject注解
+     * baseQuery = DaggerBaseQueryComponent.builder().build().baseQueryInstance();
+     */
+    /**
+     * 成员变量注入Inject
+     * BaseQuery baseQuery; 成员变量需要@Inject注解
+     * baseQuery = DaggerBaseQueryComponent.builder().build().inject(注入对象实例);
+     * dagger2会扫描注入对象实例 所有打上@Inject注解的非私有成员变量 为其注入
+     */
+//   方法一  BaseQuery baseQuery;
+//   方法一  BaseQueryWithDagger baseQueryWithDagger;
     @Inject
     BaseQuery baseQuery;
     @Inject
@@ -30,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        baseQuery = DaggerBaseQueryComponent.builder().build().baseQueryInstance();
+        DaggerNetComponent.builder().build().inject(this);
+
+//      方法一  baseQuery = DaggerBaseQueryComponent.builder().build().baseQueryInstance();
         Log.i(TAG, "--------------baseQuery START-----------------");
         Log.i(TAG, "baseQuery" + baseQuery.toString());
         baseQuery.enqueue(RetrofitUtil.initRetrofitService(CityService.class).getAllCity("china"),this::querySuccess,this::queryFaild);
@@ -42,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "--------------baseQuery END-----------------");
 
         Log.i(TAG, "--------------baseQueryWithDagger start-----------------");
-        baseQueryWithDagger = DaggerBaseQueryWithDaggerComponent.builder().build().baseQueryWithDaggerInstance();
+//      方法一  baseQueryWithDagger = DaggerBaseQueryWithDaggerComponent.builder().build().baseQueryWithDaggerInstance();
         Log.i(TAG, "baseQueryWithDagger" + baseQueryWithDagger.toString());
         baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
         baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity2("china"), this::querySuccess, this::queryFaild);
