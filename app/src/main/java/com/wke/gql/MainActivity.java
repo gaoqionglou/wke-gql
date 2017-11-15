@@ -1,8 +1,11 @@
 package com.wke.gql;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.wke.gql.dragger2.component.DaggerNetComponent;
 import com.wke.gql.net.BaseQuery;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     BaseQuery baseQuery;
     @Inject
     BaseQueryWithDagger baseQueryWithDagger;
+    Hint hint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         baseQuery.enqueue(RetrofitUtil.initRetrofitService(CityService.class).getAllCity("china"),this::querySuccess,this::queryFaild);
         baseQuery.enqueue(RetrofitUtil.initRetrofitService(CityService.class).getAllCity2("china"),this::querySuccess,this::queryFaild);
         new Thread(()->{
-            Hint hint =  baseQuery.excute(RetrofitUtil.initRetrofitService(HintService.class).getHint());
+            hint = baseQuery.excute(RetrofitUtil.initRetrofitService(HintService.class).getHint());
             Log.i(TAG,hint.toString());
         }).start();
         Log.i(TAG, "--------------baseQuery END-----------------");
@@ -61,12 +65,26 @@ public class MainActivity extends AppCompatActivity {
         baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
         baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity2("china"), this::querySuccess, this::queryFaild);
         new Thread(() -> {
-            Hint hint = baseQueryWithDagger.excute(baseQueryWithDagger.initRetrofitService(HintService.class).getHint());
+            hint = baseQueryWithDagger.excute(baseQueryWithDagger.initRetrofitService(HintService.class).getHint());
             Log.i(TAG, hint.toString());
         }).start();
         Log.i(TAG, "--------------baseQueryWithDagger end-----------------");
 
+    }
 
+    public void goLogin(View v) {
+        Intent i = new Intent(this, LoginActivity.class);
+        i.putExtra("hint", hint);
+        startActivityForResult(i, 100);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == 100) {
+            String hint = data.getStringExtra("hint");
+            TextView textView = (TextView) findViewById(R.id.hint_text);
+            textView.setText(hint);
+        }
     }
 
     void querySuccess(List<City> cities){
