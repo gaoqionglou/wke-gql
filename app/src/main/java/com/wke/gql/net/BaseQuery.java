@@ -1,7 +1,5 @@
 package com.wke.gql.net;
 
-import javax.inject.Inject;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -10,7 +8,6 @@ import retrofit2.Response;
 public class BaseQuery {
 
 
-    @Inject
     public BaseQuery() {
     }
 
