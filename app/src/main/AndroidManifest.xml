@@ -26,7 +26,10 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".AActivity" />
+        <activity android:name=".BActivity" />
+        <activity android:name=".CActivity"></activity>
     </application>
 
 </manifest>

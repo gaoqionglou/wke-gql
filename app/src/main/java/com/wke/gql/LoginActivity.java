@@ -28,6 +28,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wke.gql.base.BaseApplication;
+import com.wke.gql.dagger2.User;
 import com.wke.gql.net.retrofit.Hint;
 
 import java.util.ArrayList;
@@ -90,7 +92,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+//                attemptLogin();
+                BaseApplication.getApplication().createUserComponent(new User(mEmailView.getText().toString(), mPasswordView.getText().toString()));
+                startActivity(new Intent(LoginActivity.this, AActivity.class));
             }
         });
 
