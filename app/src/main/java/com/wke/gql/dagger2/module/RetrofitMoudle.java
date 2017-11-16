@@ -1,7 +1,7 @@
-package com.wke.gql.dragger2.module;
+package com.wke.gql.dagger2.module;
 
 import com.google.gson.Gson;
-import com.wke.gql.dragger2.component.DaggerGsonComponent;
+import com.wke.gql.dagger2.component.DaggerGsonComponent;
 import com.wke.gql.utils.Contants;
 
 import javax.inject.Inject;

@@ -1,7 +1,7 @@
-package com.wke.gql.dragger2.component;
+package com.wke.gql.dagger2.component;
 
 
-import com.wke.gql.dragger2.module.BaseQueryModule;
+import com.wke.gql.dagger2.module.BaseQueryModule;
 import com.wke.gql.net.BaseQuery;
 
 import dagger.Component;

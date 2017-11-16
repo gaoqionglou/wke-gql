@@ -1,6 +1,6 @@
-package com.wke.gql.dragger2.component;
+package com.wke.gql.dagger2.component;
 
-import com.wke.gql.dragger2.module.RetrofitMoudle;
+import com.wke.gql.dagger2.module.RetrofitMoudle;
 
 import dagger.Component;
 import retrofit2.Retrofit;

@@ -1,4 +1,4 @@
-package com.wke.gql.dragger2.module;
+package com.wke.gql.dagger2.module;
 
 import com.wke.gql.net.BaseQuery;
 

@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.wke.gql.dragger2.component.DaggerNetComponent;
+import com.wke.gql.dagger2.component.DaggerNetComponent;
 import com.wke.gql.net.BaseQuery;
 import com.wke.gql.net.BaseQueryWithDagger;
 import com.wke.gql.net.retrofit.City;

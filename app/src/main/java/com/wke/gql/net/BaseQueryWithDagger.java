@@ -1,7 +1,7 @@
 package com.wke.gql.net;
 
-import com.wke.gql.dragger2.component.DaggerRetrofitComponent;
-import com.wke.gql.dragger2.module.RetrofitMoudle;
+import com.wke.gql.dagger2.component.DaggerRetrofitComponent;
+import com.wke.gql.dagger2.module.RetrofitMoudle;
 
 import javax.inject.Inject;
 
