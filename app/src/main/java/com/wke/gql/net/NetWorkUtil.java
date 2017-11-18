@@ -2,11 +2,15 @@ package com.wke.gql.net;
 
 import android.util.Log;
 
-import com.wke.gql.dagger2.component.DaggerRetrofitComponent;
-import com.wke.gql.dagger2.module.RetrofitMoudle;
+import com.google.gson.Gson;
+import com.wke.gql.dagger2.component.DaggerGsonComponent2;
+import com.wke.gql.dagger2.component.DaggerNetWorkComponent;
+import com.wke.gql.dagger2.module.NetWorkModule;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -14,18 +18,22 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
- * Created by gql on 17-11-15.
+ * Created by Administrator on 2017/11/18.
  */
 
-public class BaseQueryWithDagger {
-    private static final String TAG = "BaseQueryWithDagger";
+public class NetWorkUtil {
+    private static final String TAG = "NetWorkUtil";
     public List<Call> callList = new ArrayList<>();
+    @Inject
     Retrofit retrofit;
-    public BaseQueryWithDagger() {
-        this.retrofit = DaggerRetrofitComponent.builder()
-                .retrofitMoudle(new RetrofitMoudle())
-                .build()
-                .retrofitInstance();
+    @Inject
+    Gson gson;
+
+    @Inject
+    public NetWorkUtil() {
+
+        gson = DaggerGsonComponent2.builder().build().gson();
+        retrofit = DaggerNetWorkComponent.builder().netWorkModule(new NetWorkModule(gson)).build().retrofit();
     }
 
     public <T> T initRetrofitService(Class<T> service) {
@@ -94,4 +102,6 @@ public class BaseQueryWithDagger {
     public interface OnHttpFailureListener<T> {
         public void onFail(Call<T> call, Throwable t);
     }
+
+
 }

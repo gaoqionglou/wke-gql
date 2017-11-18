@@ -1,5 +1,7 @@
 package com.wke.gql.dagger2.module;
 
+import android.util.Log;
+
 import com.wke.gql.dagger2.User;
 import com.wke.gql.dagger2.UserScope;
 
@@ -11,6 +13,7 @@ import dagger.Provides;
  */
 @Module
 public class UserModule {
+    private static final String TAG = "UserModule";
     private User user;
 
     public UserModule(User user) {
@@ -20,6 +23,7 @@ public class UserModule {
     @Provides
     @UserScope
     public User providesUser() {
+        Log.i(TAG, "providesUser: ");
         return user;
     }
 }

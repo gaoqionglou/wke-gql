@@ -6,14 +6,17 @@ import com.wke.gql.dagger2.User;
 import com.wke.gql.dagger2.component.AppComponent;
 import com.wke.gql.dagger2.component.DaggerAppComponent;
 import com.wke.gql.dagger2.component.UserComponent;
+import com.wke.gql.dagger2.component.UtilComponent;
 import com.wke.gql.dagger2.module.AppModule;
 import com.wke.gql.dagger2.module.UserModule;
+import com.wke.gql.dagger2.module.UtilModule;
 
 
 public class BaseApplication extends MultiDexApplication {
     private static BaseApplication application;
     private AppComponent appComponent;
     private UserComponent userComponent;
+    private UtilComponent utilComponent;
     public BaseApplication() {
         application = this;
     }
@@ -36,7 +39,15 @@ public class BaseApplication extends MultiDexApplication {
         return userComponent = appComponent.plus(new UserModule(user));
     }
 
+    public UtilComponent createUtilComponent() {
+        return utilComponent = appComponent.init(new UtilModule());
+    }
+
     public void releaseUserComponent() {
         userComponent = null;
+    }
+
+    public void releaseUtilComponent() {
+        utilComponent = null;
     }
 }
