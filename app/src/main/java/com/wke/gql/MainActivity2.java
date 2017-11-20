@@ -7,23 +7,28 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wke.gql.base.BaseApplication;
-import com.wke.gql.net.NetWorkUtil;
+import com.wke.gql.net.RxNetWorkUtil;
 import com.wke.gql.net.retrofit.City;
-import com.wke.gql.net.retrofit.CityService;
 import com.wke.gql.net.retrofit.Hint;
-import com.wke.gql.net.retrofit.HintService;
+import com.wke.gql.net.retrofit.RxCityService;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 
 public class MainActivity2 extends BaseActivity {
     private static final String TAG = "MainActivity2";
 
     @Inject
-    NetWorkUtil netWorkUtil;
+    RxNetWorkUtil rxNetWorkUtil;
 
     Hint hint;
 
@@ -32,13 +37,23 @@ public class MainActivity2 extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BaseApplication.getApplication().createUtilComponent().inject(this);
-        Log.i(TAG, "onCreate: " + netWorkUtil.toString());
-        netWorkUtil.enqueue(netWorkUtil.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
-        netWorkUtil.enqueue(netWorkUtil.initRetrofitService(CityService.class).getAllCity2("china"), this::querySuccess, this::queryFaild);
-        new Thread(() -> {
-            hint = netWorkUtil.excute(netWorkUtil.initRetrofitService(HintService.class).getHint());
-            Log.i(TAG, hint.toString());
-        }).start();
+        Log.i(TAG, "onCreate: " + rxNetWorkUtil.toString());
+        RxCityService rxCityService = rxNetWorkUtil.initRetrofitService(RxCityService.class);
+        Observable<List<City>> observable = rxCityService.getAllCity("china");
+        observable.subscribeOn(Schedulers.io())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(@NonNull Disposable disposable) throws Exception {
+                        Log.i(TAG, "可以做一些操作，比如检查网络环境等等");
+                    }
+                })
+                .doOnNext(new Consumer<List<City>>() {
+                    @Override
+                    public void accept(@NonNull List<City> cities) throws Exception {
+                        Log.i(TAG, "rx citys -- " + cities.toString());
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread());
 
     }
 

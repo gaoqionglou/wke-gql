@@ -2,6 +2,7 @@ package com.wke.gql.dagger2.module;
 
 import com.wke.gql.dagger2.di.ActivityScoped;
 import com.wke.gql.net.NetWorkUtil;
+import com.wke.gql.net.RxNetWorkUtil;
 
 import dagger.Module;
 import dagger.Provides;
@@ -15,5 +16,11 @@ public class UtilModule {
     @Provides
     public NetWorkUtil providesNetWorkUtil() {
         return new NetWorkUtil();
+    }
+
+    @ActivityScoped
+    @Provides
+    public RxNetWorkUtil providesRxNetWorkUtil() {
+        return new RxNetWorkUtil();
     }
 }
