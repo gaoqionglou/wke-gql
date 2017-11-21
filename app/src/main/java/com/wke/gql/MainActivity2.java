@@ -37,6 +37,7 @@ public class MainActivity2 extends BaseActivity {
         Log.i(TAG, "onCreate: " + rxNetWorkUtil.toString());
         RxCityService rxCityService = rxNetWorkUtil.initRetrofitService(RxCityService.class);
         Observable<List<City>> observable = rxCityService.getAllCity("china");
+//        OnNext和doOnNext都是请求成功后调用。当请求成功后会先调用doOnNext中保存用户信息的方法，然后才去执行OnNext中的方法。若请求失败，则不会调用doOnNext和OnNext中的方法
         observable.subscribeOn(Schedulers.io())
                 .doOnNext(cities -> {
                     Log.i(TAG, "rx java doOnNext - " + Thread.currentThread().getName() + "- " + cities.toString());
