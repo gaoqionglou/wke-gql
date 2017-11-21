@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.wke.gql.MVPdagger2.testWeather.WeatherActivity;
 import com.wke.gql.base.BaseApplication;
 import com.wke.gql.net.RxNetWorkUtil;
 import com.wke.gql.net.retrofit.City;
@@ -50,7 +51,7 @@ public class MainActivity2 extends BaseActivity {
     }
 
     public void goLogin(View v) {
-        Intent i = new Intent(this, LoginActivity.class);
+        Intent i = new Intent(this, WeatherActivity.class);
         i.putExtra("hint", hint);
         startActivityForResult(i, 100);
     }

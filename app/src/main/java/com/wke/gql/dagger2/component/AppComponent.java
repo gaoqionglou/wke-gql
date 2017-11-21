@@ -15,4 +15,6 @@ public interface AppComponent {
     UserComponent plus(UserModule userModule);
 
     UtilComponent init(UtilModule utilModule);
+
+    UtilComponent2 initUtilComponent2(UtilModule utilModule);
 }

@@ -17,6 +17,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherContrac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         DaggerWeatherPresenterComponent.builder().build().inject(this);
+        weatherPresenter.takeView(this);
         weatherPresenter.loadWeather();
         weatherPresenter.loadWeather();
     }
