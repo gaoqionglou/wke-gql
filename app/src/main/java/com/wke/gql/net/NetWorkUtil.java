@@ -1,5 +1,6 @@
 package com.wke.gql.net;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -62,7 +63,7 @@ public class NetWorkUtil {
         try {
             call.enqueue(new Callback<T>() {
                 @Override
-                public void onResponse(Call<T> call, Response<T> response) {
+                public void onResponse(@NonNull Call<T> call, @NonNull Response<T> response) {
                     if (!call.isCanceled()) {
                         if (successListener != null) {
                             successListener.onSuccess(response.body());
@@ -71,7 +72,7 @@ public class NetWorkUtil {
                 }
 
                 @Override
-                public void onFailure(Call<T> call, Throwable t) {
+                public void onFailure(@NonNull Call<T> call, @NonNull Throwable t) {
                     t.printStackTrace();
                     if (failureListener != null) {
                         failureListener.onFail(call, t);
