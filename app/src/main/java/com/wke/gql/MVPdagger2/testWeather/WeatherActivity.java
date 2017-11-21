@@ -39,4 +39,13 @@ public class WeatherActivity extends AppCompatActivity implements WeatherContrac
     }
 
 
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void dismissLoading() {
+
+    }
 }

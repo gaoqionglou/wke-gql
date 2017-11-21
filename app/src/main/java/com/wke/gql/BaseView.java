@@ -5,4 +5,7 @@ package com.wke.gql;
  */
 
 public interface BaseView<T> {
+    void showLoading();
+
+    void dismissLoading();
 }
