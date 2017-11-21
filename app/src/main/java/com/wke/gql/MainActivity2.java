@@ -18,9 +18,6 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 
@@ -41,19 +38,13 @@ public class MainActivity2 extends BaseActivity {
         RxCityService rxCityService = rxNetWorkUtil.initRetrofitService(RxCityService.class);
         Observable<List<City>> observable = rxCityService.getAllCity("china");
         observable.subscribeOn(Schedulers.io())
-                .doOnSubscribe(new Consumer<Disposable>() {
-                    @Override
-                    public void accept(@NonNull Disposable disposable) throws Exception {
-                        Log.i(TAG, "可以做一些操作，比如检查网络环境等等");
-                    }
+                .doOnNext(cities -> {
+                    Log.i(TAG, "rx java doOnNext - " + Thread.currentThread().getName() + "- " + cities.toString());
                 })
-                .doOnNext(new Consumer<List<City>>() {
-                    @Override
-                    public void accept(@NonNull List<City> cities) throws Exception {
-                        Log.i(TAG, "rx citys -- " + cities.toString());
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread());
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(cities -> {
+                    Log.i(TAG, "rx java subscribe- " + Thread.currentThread().getName() + "- " + cities.toString());
+                });
 
     }
 
