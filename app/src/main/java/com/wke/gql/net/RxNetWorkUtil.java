@@ -1,5 +1,6 @@
 package com.wke.gql.net;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -7,6 +8,8 @@ import com.wke.gql.BaseView;
 import com.wke.gql.dagger2.component.DaggerGsonComponent2;
 import com.wke.gql.dagger2.component.DaggerRxNetWorkComponent;
 import com.wke.gql.dagger2.module.RxNetWorkModule;
+
+import java.lang.ref.WeakReference;
 
 import javax.inject.Inject;
 
@@ -30,16 +33,18 @@ public class RxNetWorkUtil {
     private BaseView baseView;
     private CompositeDisposable mCompositeDisposable;
     private RxCallBack rxCallBack;
+    //是否使用默认网络请求加载框
+    private boolean useDefaultloading = true;
+    //是否显示加载框
+    private boolean isLoadingvisiable = true;
+    private WeakReference<Context> context;
     @Inject
-    public RxNetWorkUtil() {
+    public RxNetWorkUtil(Context context) {
+        this.context = new WeakReference<>(context);
         gson = DaggerGsonComponent2.builder().build().gson();
         retrofit = DaggerRxNetWorkComponent.builder().rxNetWorkModule(new RxNetWorkModule(gson)).build().retrofit();
     }
 
-    public RxNetWorkUtil detchToView(BaseView baseView) {
-        this.baseView = baseView;
-        return this;
-    }
 
     public RxNetWorkUtil callBack(RxCallBack callBack) {
         this.rxCallBack = callBack;
