@@ -2,10 +2,10 @@ package com.wke.gql.MVPdagger2.testWeather;
 
 import android.util.Log;
 
-import com.wke.gql.base.BaseApplication;
 import com.wke.gql.net.RxNetWorkUtil;
 import com.wke.gql.net.retrofit.City;
-import com.wke.gql.net.retrofit.RxCityService;
+import com.wke.gql.net.retrofit.Hint;
+import com.wke.gql.net.retrofit.RxHintService;
 
 import java.util.List;
 
@@ -16,26 +16,25 @@ import retrofit2.Call;
 
 public class WeatherPresenter implements WeatherContract.Presenter {
     private static final String TAG = "WeatherPresenter";
-    RxNetWorkUtil rxNetWorkUtil;
 
     private WeatherContract.View mWeatherView;
 
     @Inject
     public WeatherPresenter() {
-        rxNetWorkUtil = BaseApplication.getApplication().createUtilComponent2().rxNetWorkUtil();
     }
 
     @Override
-    public void loadWeather() {
+    public void loadWeather(RxNetWorkUtil rxNetWorkUtil) {
+        Log.i(TAG, rxNetWorkUtil.toString() + "--retrofit2--" + rxNetWorkUtil.retrofit.toString() + "--gson--" + rxNetWorkUtil.gson.toString());
         if (mWeatherView != null) mWeatherView.refreshUi();
-        rxNetWorkUtil.detchToView(mWeatherView).callBack(new RxNetWorkUtil.RxCallBack<List<City>>() {
+        rxNetWorkUtil.detchToView(mWeatherView).callBack(new RxNetWorkUtil.RxCallBack<Hint>() {
             @Override
             public void onPrepare() {
                 Log.i(TAG, "onPrepare  -- ");
             }
 
             @Override
-            public void onSuccess(List<City> t) {
+            public void onSuccess(Hint t) {
                 Log.i(TAG, "onSuccess  -- " + t.toString());
             }
 
@@ -43,7 +42,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
             public void onFail(Throwable t) {
                 Log.i(TAG, "onFail  -- " + t.getMessage());
             }
-        }).doWork(rxNetWorkUtil.initRetrofitService(RxCityService.class).getAllCity("china"));
+        }).doWork(rxNetWorkUtil.initRetrofitService(RxHintService.class).getHint());
 //        Log.i(TAG, baseQueryWithDagger.callList.size() + "  || " + baseQueryWithDagger.callList.toString());
 //        baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
     }

@@ -17,4 +17,14 @@ public class DialogUtil {
         dialogFragment.show(activity.getSupportFragmentManager(), "LoadingDialog");
         return dialogFragment;
     }
+
+    public static LoadingDialog showLoadingDialog(Context context, boolean cancelable, Runnable rCancelLoading) {
+        if (!(context instanceof FragmentActivity)) return null;
+        FragmentActivity activity = (FragmentActivity) context;
+        LoadingDialog dialogFragment = new LoadingDialog();
+        dialogFragment.setCancelable(cancelable);
+        dialogFragment.rCancel = rCancelLoading;
+        dialogFragment.show(activity.getSupportFragmentManager(), "LoadingDialog");
+        return dialogFragment;
+    }
 }

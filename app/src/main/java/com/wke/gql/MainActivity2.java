@@ -6,12 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.wke.gql.MVPdagger2.testWeather.WeatherActivity;
 import com.wke.gql.base.BaseApplication;
 import com.wke.gql.net.NetWorkUtil;
 import com.wke.gql.net.retrofit.City;
 import com.wke.gql.net.retrofit.CityService;
 import com.wke.gql.net.retrofit.Hint;
-import com.wke.gql.net.retrofit.HintService;
 
 import java.util.List;
 
@@ -35,15 +35,11 @@ public class MainActivity2 extends BaseActivity {
         Log.i(TAG, "onCreate: " + netWorkUtil.toString());
         netWorkUtil.enqueue(netWorkUtil.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
         netWorkUtil.enqueue(netWorkUtil.initRetrofitService(CityService.class).getAllCity2("china"), this::querySuccess, this::queryFaild);
-        new Thread(() -> {
-            hint = netWorkUtil.excute(netWorkUtil.initRetrofitService(HintService.class).getHint());
-            Log.i(TAG, hint.toString());
-        }).start();
 
     }
 
     public void goLogin(View v) {
-        Intent i = new Intent(this, LoginActivity.class);
+        Intent i = new Intent(this, WeatherActivity.class);
         i.putExtra("hint", hint);
         startActivityForResult(i, 100);
     }

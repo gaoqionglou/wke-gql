@@ -1,6 +1,5 @@
 package com.wke.gql.net;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -8,8 +7,7 @@ import com.wke.gql.BaseView;
 import com.wke.gql.dagger2.component.DaggerGsonComponent2;
 import com.wke.gql.dagger2.component.DaggerRxNetWorkComponent;
 import com.wke.gql.dagger2.module.RxNetWorkModule;
-
-import java.lang.ref.WeakReference;
+import com.wke.gql.view.LoadingDialog;
 
 import javax.inject.Inject;
 
@@ -26,25 +24,32 @@ import retrofit2.Retrofit;
 public class RxNetWorkUtil {
     private static final String TAG = "RxNetWorkUtil";
     @Inject
-    Retrofit retrofit;
+    public Retrofit retrofit;
     @Inject
-    Gson gson;
+    public Gson gson;
 
     private BaseView baseView;
     private CompositeDisposable mCompositeDisposable;
     private RxCallBack rxCallBack;
-    //是否使用默认网络请求加载框
-    private boolean useDefaultloading = true;
     //是否显示加载框
     private boolean isLoadingvisiable = true;
-    private WeakReference<Context> context;
+    //加载框
+    private LoadingDialog loadingDialog;
     @Inject
-    public RxNetWorkUtil(Context context) {
-        this.context = new WeakReference<>(context);
+    public RxNetWorkUtil() {
         gson = DaggerGsonComponent2.builder().build().gson();
         retrofit = DaggerRxNetWorkComponent.builder().rxNetWorkModule(new RxNetWorkModule(gson)).build().retrofit();
     }
 
+    public RxNetWorkUtil detchToView(BaseView baseView) {
+        this.baseView = baseView;
+        return this;
+    }
+
+    public RxNetWorkUtil loadingVisiable(boolean isLoadingvisiable) {
+        this.isLoadingvisiable = isLoadingvisiable;
+        return this;
+    }
 
     public RxNetWorkUtil callBack(RxCallBack callBack) {
         this.rxCallBack = callBack;
@@ -69,7 +74,7 @@ public class RxNetWorkUtil {
      * @param disposable
      */
     private void doOnSubscribe(Disposable disposable) {
-        baseView.showLoading();
+        showLoadingDialog();
         addDisposable(disposable);
         if (rxCallBack != null) {
             rxCallBack.onPrepare();
@@ -83,7 +88,8 @@ public class RxNetWorkUtil {
      * @param <T>
      */
     private <T> void onNext(T t) {
-        baseView.dismissLoading();
+        unDisposable();
+        dismissLoadingDialog();
         if (rxCallBack != null) {
             rxCallBack.onSuccess(t);
         }
@@ -95,7 +101,8 @@ public class RxNetWorkUtil {
      * @param t
      */
     private void onError(Throwable t) {
-        baseView.dismissLoading();
+        unDisposable();
+        dismissLoadingDialog();
         if (rxCallBack != null) {
             rxCallBack.onFail(t);
         }
@@ -118,6 +125,18 @@ public class RxNetWorkUtil {
     public void unDisposable() {
         if (mCompositeDisposable != null) {
             mCompositeDisposable.dispose();
+        }
+    }
+
+    private void showLoadingDialog() {
+        if (isLoadingvisiable && baseView != null) {
+            baseView.showLoading();
+        }
+    }
+
+    private void dismissLoadingDialog() {
+        if (baseView != null) {
+            baseView.dismissLoading();
         }
     }
 
