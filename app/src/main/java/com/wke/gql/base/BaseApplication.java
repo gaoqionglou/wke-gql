@@ -2,23 +2,26 @@ package com.wke.gql.base;
 
 import android.support.multidex.MultiDexApplication;
 
-import com.wke.gql.dagger2.User;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.wke.gql.dagger2.component.AppComponent;
 import com.wke.gql.dagger2.component.DaggerAppComponent;
-import com.wke.gql.dagger2.component.UserComponent;
-import com.wke.gql.dagger2.component.UtilComponent;
-import com.wke.gql.dagger2.component.UtilComponent2;
-import com.wke.gql.dagger2.module.AppModule;
-import com.wke.gql.dagger2.module.UserModule;
-import com.wke.gql.dagger2.module.UtilModule;
+import com.wke.gql.dagger2.component.RxNetWorkUtilComponent;
+import com.wke.gql.dagger2.module.AppMoudle;
+import com.wke.gql.dagger2.module.RxNetWorkUtilModule;
+import com.wke.gql.utils.Contants;
+
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class BaseApplication extends MultiDexApplication {
     private static BaseApplication application;
     private AppComponent appComponent;
-    private UserComponent userComponent;
-    private UtilComponent utilComponent;
-    private UtilComponent2 utilComponent2;
+    private RxNetWorkUtilComponent rxNetWorkUtilComponent;
+    private Retrofit retrofit;
+    private Gson gson;
     public BaseApplication() {
         application = this;
     }
@@ -29,31 +32,33 @@ public class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+        initGson();
+        initRetrofit();
+        appComponent = DaggerAppComponent.builder().appMoudle(new AppMoudle(this, retrofit, gson)).build();
     }
 
-    public UserComponent getUserComponent() {
-        return userComponent;
+    public AppComponent getAppComponent() {
+        return appComponent;
     }
 
-    //注入UserComponent ,userscope生效
-    public UserComponent createUserComponent(User user) {
-        return userComponent = appComponent.plus(new UserModule(user));
+    //注入 RxNetWorkUtilComponent ,ActivityScope生效
+    public RxNetWorkUtilComponent injectRxNetWorkUtilComponent() {
+        return rxNetWorkUtilComponent = appComponent.addSub(new RxNetWorkUtilModule(retrofit));
     }
 
-    public UtilComponent createUtilComponent() {
-        return utilComponent = appComponent.init(new UtilModule());
+    private void initRetrofit() {
+        if (gson == null) {
+            throw new NullPointerException("gson need to be inited");
+        }
+        retrofit = new Retrofit.Builder()
+                .baseUrl(Contants.HTTP_QUERY_URL)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+        ;
     }
 
-    public UtilComponent2 createUtilComponent2() {
-        return utilComponent2 = appComponent.initUtilComponent2(new UtilModule());
-    }
-
-    public void releaseUserComponent() {
-        userComponent = null;
-    }
-
-    public void releaseUtilComponent() {
-        utilComponent = null;
+    private void initGson() {
+        gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
     }
 }

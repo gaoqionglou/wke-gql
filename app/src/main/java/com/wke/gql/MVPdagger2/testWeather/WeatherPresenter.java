@@ -25,7 +25,6 @@ public class WeatherPresenter implements WeatherContract.Presenter {
 
     @Override
     public void loadWeather(RxNetWorkUtil rxNetWorkUtil) {
-        Log.i(TAG, rxNetWorkUtil.toString() + "--retrofit2--" + rxNetWorkUtil.retrofit.toString() + "--gson--" + rxNetWorkUtil.gson.toString());
         if (mWeatherView != null) mWeatherView.refreshUi();
         rxNetWorkUtil.detchToView(mWeatherView).callBack(new RxNetWorkUtil.RxCallBack<Hint>() {
             @Override

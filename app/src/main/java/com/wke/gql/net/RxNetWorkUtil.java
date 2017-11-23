@@ -1,13 +1,15 @@
 package com.wke.gql.net;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.wke.gql.BaseView;
-import com.wke.gql.dagger2.component.DaggerGsonComponent2;
-import com.wke.gql.dagger2.component.DaggerRxNetWorkComponent;
-import com.wke.gql.dagger2.module.RxNetWorkModule;
+import com.wke.gql.utils.DialogUtil;
 import com.wke.gql.view.LoadingDialog;
+
+import java.lang.ref.WeakReference;
 
 import javax.inject.Inject;
 
@@ -23,26 +25,47 @@ import retrofit2.Retrofit;
  */
 public class RxNetWorkUtil {
     private static final String TAG = "RxNetWorkUtil";
-    @Inject
     public Retrofit retrofit;
-    @Inject
-    public Gson gson;
 
     private BaseView baseView;
     private CompositeDisposable mCompositeDisposable;
     private RxCallBack rxCallBack;
+    //是否可取消
+    private boolean cancelable = true;
+    //是否使用默认加载框
+    private boolean useDefaultLoading = true;
     //是否显示加载框
     private boolean isLoadingvisiable = true;
     //加载框
     private LoadingDialog loadingDialog;
+    private WeakReference<Context> context;
     @Inject
-    public RxNetWorkUtil() {
-        gson = DaggerGsonComponent2.builder().build().gson();
-        retrofit = DaggerRxNetWorkComponent.builder().rxNetWorkModule(new RxNetWorkModule(gson)).build().retrofit();
+    public RxNetWorkUtil(Retrofit retrofit) {
+        this.retrofit = retrofit;
     }
 
     public RxNetWorkUtil detchToView(BaseView baseView) {
+        Context ctx = null;
         this.baseView = baseView;
+        if (baseView instanceof Activity) {
+            ctx = (Activity) baseView;
+        } else if (baseView instanceof Fragment) {
+            ctx = ((Fragment) baseView).getActivity();
+
+        } else if (baseView instanceof android.support.v4.app.Fragment) {
+            ctx = ((android.support.v4.app.Fragment) baseView).getActivity();
+        }
+        if (ctx != null) context = new WeakReference<Context>(ctx);
+        return this;
+    }
+
+    public RxNetWorkUtil cancelable(boolean cancelable) {
+        this.cancelable = cancelable;
+        return this;
+    }
+
+    public RxNetWorkUtil useDefaultLoading(boolean useDefaultLoading) {
+        this.useDefaultLoading = useDefaultLoading;
         return this;
     }
 
@@ -114,7 +137,7 @@ public class RxNetWorkUtil {
      *
      * @param subscription
      */
-    public void addDisposable(Disposable subscription) {
+    private void addDisposable(Disposable subscription) {
         //csb 如果解绑了的话添加 sb 需要新的实例否则绑定时无效的
         if (mCompositeDisposable == null || mCompositeDisposable.isDisposed()) {
             mCompositeDisposable = new CompositeDisposable();
@@ -122,20 +145,24 @@ public class RxNetWorkUtil {
         mCompositeDisposable.add(subscription);
     }
 
-    public void unDisposable() {
+    private void unDisposable() {
         if (mCompositeDisposable != null) {
             mCompositeDisposable.dispose();
         }
     }
 
     private void showLoadingDialog() {
-        if (isLoadingvisiable && baseView != null) {
+        if (isLoadingvisiable && useDefaultLoading) {
+            loadingDialog = DialogUtil.showLoadingDialog(context.get(), cancelable, this::unDisposable);
+        } else if (isLoadingvisiable && baseView != null) {
             baseView.showLoading();
         }
     }
 
     private void dismissLoadingDialog() {
-        if (baseView != null) {
+        if (useDefaultLoading) {
+            if (loadingDialog != null) loadingDialog.dismissAllowingStateLoss();
+        } else if (baseView != null) {
             baseView.dismissLoading();
         }
     }

@@ -2,7 +2,6 @@ package com.wke.gql.MVPdagger2.testWeather.component;
 
 import com.wke.gql.MVPdagger2.testWeather.WeatherActivity;
 import com.wke.gql.MVPdagger2.testWeather.module.WeatherPresenterMoudle;
-import com.wke.gql.dagger2.component.UtilComponent2;
 import com.wke.gql.dagger2.di.PresenterScoped;
 
 import dagger.Component;
@@ -11,7 +10,7 @@ import dagger.Component;
  * Created by Administrator on 2017/11/18.
  */
 @PresenterScoped
-@Component(modules = WeatherPresenterMoudle.class, dependencies = UtilComponent2.class)
+@Component(modules = WeatherPresenterMoudle.class)
 public interface WeatherPresenterComponent {
     void inject(WeatherActivity weatherActivity);
 }

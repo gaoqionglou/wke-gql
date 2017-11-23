@@ -1,20 +1,24 @@
 package com.wke.gql.dagger2.component;
 
-import com.wke.gql.dagger2.module.AppModule;
-import com.wke.gql.dagger2.module.UserModule;
-import com.wke.gql.dagger2.module.UtilModule;
+import com.google.gson.Gson;
+import com.wke.gql.base.BaseApplication;
+import com.wke.gql.dagger2.module.AppMoudle;
+import com.wke.gql.dagger2.module.RxNetWorkUtilModule;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
+import retrofit2.Retrofit;
 
 
 @Singleton
-@Component(modules = AppModule.class)
+@Component(modules = AppMoudle.class)
 public interface AppComponent {
-    UserComponent plus(UserModule userModule);
+    BaseApplication baseApplication();
 
-    UtilComponent init(UtilModule utilModule);
+    Retrofit retrofit();
 
-    UtilComponent2 initUtilComponent2(UtilModule utilModule);
+    Gson gson();
+
+    RxNetWorkUtilComponent addSub(RxNetWorkUtilModule rxNetWorkUtilModule);
 }
