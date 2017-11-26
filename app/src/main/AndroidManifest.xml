@@ -27,6 +27,7 @@
         <activity android:name=".AActivity" />
         <activity android:name=".BActivity" />
         <activity android:name=".CActivity" />
+        <activity android:name=".DemoActivity" />
         <activity android:name=".MVPdagger2.testWeather.WeatherActivity" />
     </application>
 

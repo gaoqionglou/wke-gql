@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.wke.gql.base.BaseApplication;
 import com.wke.gql.net.RxNetWorkUtil;
 
 import javax.inject.Inject;
@@ -22,7 +21,7 @@ public class BActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b);
-        ((BaseApplication) getApplication()).injectRxNetWorkUtilComponent().inject(this);
+//        rxNetWorkUtil = ((BaseApplication) getApplication()).injectRxNetWorkUtilComponent().rxNetWorkUtil();
         Log.i(TAG, rxNetWorkUtil.toString() + "||" + rxNetWorkUtil.retrofit.toString());
 
     }
