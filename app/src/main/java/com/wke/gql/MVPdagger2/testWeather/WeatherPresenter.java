@@ -2,10 +2,10 @@ package com.wke.gql.MVPdagger2.testWeather;
 
 import android.util.Log;
 
-import com.wke.gql.net.RxNetWorkUtil;
+import com.wke.gql.net.NetWorkUtil;
 import com.wke.gql.net.retrofit.City;
 import com.wke.gql.net.retrofit.Hint;
-import com.wke.gql.net.retrofit.RxHintService;
+import com.wke.gql.net.retrofit.HintService;
 
 import java.util.List;
 
@@ -24,26 +24,20 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     }
 
     @Override
-    public void loadWeather(RxNetWorkUtil rxNetWorkUtil) {
+    public void loadWeather(NetWorkUtil netWorkUtil) {
         if (mWeatherView != null) mWeatherView.refreshUi();
-        rxNetWorkUtil.detchToView(mWeatherView).callBack(new RxNetWorkUtil.RxCallBack<Hint>() {
+        netWorkUtil.detchToView(mWeatherView).callBack(netWorkUtil.new CommonCallBack<Hint>() {
             @Override
-            public void onPrepare() {
-                Log.i(TAG, "onPrepare  -- ");
+            protected void dealWithSuccess(Hint o) {
+                Log.i(TAG, o.toString());
             }
 
             @Override
-            public void onSuccess(Hint t) {
-                Log.i(TAG, "onSuccess  -- " + t.toString());
+            protected void dealWithFail(Call call, Throwable t) {
+                Log.e(TAG, t.toString());
             }
 
-            @Override
-            public void onFail(Throwable t) {
-                Log.i(TAG, "onFail  -- " + t.getMessage());
-            }
-        }).doWork(rxNetWorkUtil.initRetrofitService(RxHintService.class).getHint());
-//        Log.i(TAG, baseQueryWithDagger.callList.size() + "  || " + baseQueryWithDagger.callList.toString());
-//        baseQueryWithDagger.enqueue(baseQueryWithDagger.initRetrofitService(CityService.class).getAllCity("china"), this::querySuccess, this::queryFaild);
+        }).enqueue(netWorkUtil.initRetrofitService(HintService.class).getHint());
     }
 
     @Override

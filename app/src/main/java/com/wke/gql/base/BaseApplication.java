@@ -6,8 +6,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wke.gql.dagger2.component.AppComponent;
 import com.wke.gql.dagger2.component.DaggerAppComponent;
+import com.wke.gql.dagger2.component.NetWorkUtilComponent;
 import com.wke.gql.dagger2.component.RxNetWorkUtilComponent;
 import com.wke.gql.dagger2.module.AppMoudle;
+import com.wke.gql.dagger2.module.NetWorkUtilModule;
 import com.wke.gql.dagger2.module.RxNetWorkUtilModule;
 import com.wke.gql.utils.Contants;
 
@@ -20,6 +22,7 @@ public class BaseApplication extends MultiDexApplication {
     private static BaseApplication application;
     private AppComponent appComponent;
     private RxNetWorkUtilComponent rxNetWorkUtilComponent;
+    private NetWorkUtilComponent netWorkUtilComponent;
     private Retrofit retrofit;
     private Gson gson;
     public BaseApplication() {
@@ -44,6 +47,10 @@ public class BaseApplication extends MultiDexApplication {
     //注入 RxNetWorkUtilComponent ,ActivityScope生效
     public RxNetWorkUtilComponent injectRxNetWorkUtilComponent() {
         return rxNetWorkUtilComponent = appComponent.addSub(new RxNetWorkUtilModule(retrofit));
+    }
+
+    public NetWorkUtilComponent injectNetWorkUtilComponent() {
+        return netWorkUtilComponent = appComponent.addSub(new NetWorkUtilModule(retrofit));
     }
 
     private void initRetrofit() {

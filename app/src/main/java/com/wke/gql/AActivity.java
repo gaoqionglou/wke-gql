@@ -7,20 +7,17 @@ import android.util.Log;
 import android.view.View;
 
 import com.wke.gql.base.BaseApplication;
-import com.wke.gql.net.RxNetWorkUtil;
-
-import javax.inject.Inject;
+import com.wke.gql.net.NetWorkUtil;
 
 public class AActivity extends AppCompatActivity {
     private static final String TAG = "AActivity";
-    @Inject
-    RxNetWorkUtil rxNetWorkUtil;
+    NetWorkUtil netWorkUtil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
-        ((BaseApplication) getApplication()).injectRxNetWorkUtilComponent().inject(this);
-        Log.i(TAG, rxNetWorkUtil.toString() + "||" + rxNetWorkUtil.retrofit.toString());
+        netWorkUtil = ((BaseApplication) getApplication()).injectNetWorkUtilComponent().netWorkUtil();
+        Log.i(TAG, netWorkUtil.toString() + "||" + netWorkUtil.retrofit.toString());
     }
 
     public void goB(View v) {
