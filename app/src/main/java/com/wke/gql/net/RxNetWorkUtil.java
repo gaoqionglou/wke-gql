@@ -145,7 +145,7 @@ public class RxNetWorkUtil {
         mCompositeDisposable.add(subscription);
     }
 
-    private void unDisposable() {
+    public void unDisposable() {
         if (mCompositeDisposable != null) {
             mCompositeDisposable.dispose();
         }

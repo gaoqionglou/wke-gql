@@ -123,7 +123,7 @@ public class NetWorkUtil {
     /**
      * 取消当前栈内所有请求，并清空
      */
-    private void cancel() {
+    public void cancel() {
         for (Call call : callStack) {
             call.cancel();
         }
