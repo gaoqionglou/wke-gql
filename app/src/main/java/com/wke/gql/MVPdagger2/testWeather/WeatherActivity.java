@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wke.gql.BaseActivity;
 import com.wke.gql.MVPdagger2.testWeather.component.DaggerWeatherPresenterComponent;
 import com.wke.gql.R;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+@Route(path = "/wkegql/weather")
 public class WeatherActivity extends BaseActivity implements WeatherContract.View {
     private static final String TAG = "WeatherActivity";
     @Inject

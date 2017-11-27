@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wke.gql.net.retrofit.City;
 import com.wke.gql.net.retrofit.CityService;
 import com.wke.gql.utils.DialogUtil;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import retrofit2.Call;
 
+@Route(path = "/wkegql/demo")
 public class DemoActivity extends BaseActivity implements BaseView {
     private static final String TAG = "DemoActivity";
     private LoadingDialog loadingDialog;

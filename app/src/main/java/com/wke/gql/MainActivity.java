@@ -1,12 +1,11 @@
 package com.wke.gql;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
-import com.wke.gql.MVPdagger2.testWeather.WeatherActivity;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,13 +20,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toDemo1(View v) {
-        Intent i = new Intent(this, DemoActivity.class);
-        startActivityForResult(i, 100);
+        ARouter.getInstance().build("/wkegql/demo").navigation();
     }
 
     public void toDemo2(View v) {
-        Intent i = new Intent(this, WeatherActivity.class);
-        startActivityForResult(i, 100);
+        ARouter.getInstance().build("/wkegql/weather").navigation();
     }
 
 }

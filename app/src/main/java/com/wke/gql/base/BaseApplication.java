@@ -1,7 +1,10 @@
 package com.wke.gql.base;
 
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
+import com.alibaba.android.arouter.BuildConfig;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wke.gql.dagger2.component.AppComponent;
@@ -19,6 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class BaseApplication extends MultiDexApplication {
+    private static final String TAG = "BaseApplication";
     private static BaseApplication application;
     private AppComponent appComponent;
     private RxNetWorkUtilComponent rxNetWorkUtilComponent;
@@ -37,6 +41,7 @@ public class BaseApplication extends MultiDexApplication {
         super.onCreate();
         initGson();
         initRetrofit();
+        initARouter();
         appComponent = DaggerAppComponent.builder().appMoudle(new AppMoudle(this, retrofit, gson)).build();
     }
 
@@ -67,5 +72,15 @@ public class BaseApplication extends MultiDexApplication {
 
     private void initGson() {
         gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+    }
+
+    //初始化ARouter
+    private void initARouter() {
+        if (BuildConfig.DEBUG) {
+            Log.i(TAG, "initARouter:openLog openDebug");
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
     }
 }
