@@ -17,9 +17,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.squareup.picasso.Picasso;
 import com.wke.gql.R;
 import com.wke.gql.layoutdemo.activity.net.Meizi;
 import com.wke.gql.layoutdemo.activity.net.MyOkhttp;
@@ -187,7 +187,7 @@ public class BottomSheetActivity extends AppCompatActivity implements GridAdapte
 
         SnackbarUtil.ShortSnackbar(coordinatorLayout, "点击第" + position + "个", SnackbarUtil.Info).show();
 
-        Picasso.with(BottomSheetActivity.this).load(meizis.get(position).getUrl()).into(bottom_sheet_iv);
+        Glide.with(BottomSheetActivity.this).load(meizis.get(position).getUrl()).into(bottom_sheet_iv);
     }
 
     @Override
@@ -231,7 +231,7 @@ public class BottomSheetActivity extends AppCompatActivity implements GridAdapte
                     pages.setPage(page);
                     meizis.add(pages);
 
-                    Picasso.with(BottomSheetActivity.this).load(meizis.get(0).getUrl()).into(bottom_sheet_iv);
+                    Glide.with(BottomSheetActivity.this).load(meizis.get(0).getUrl()).into(bottom_sheet_iv);
                 } else {
                     List<Meizi> more = gson.fromJson(jsonData, new TypeToken<List<Meizi>>() {
                     }.getType());

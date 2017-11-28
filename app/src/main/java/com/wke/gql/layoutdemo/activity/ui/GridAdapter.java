@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.wke.gql.R;
 import com.wke.gql.layoutdemo.activity.net.Meizi;
 
@@ -48,7 +48,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(GridAdapter.MyViewHolder holder, int position) {
-        Picasso.with(mContext).load(datas.get(position).getUrl()).into(holder.iv);
+        Glide.with(mContext).load(datas.get(position).getUrl()).into(holder.iv);
 
     }
 
