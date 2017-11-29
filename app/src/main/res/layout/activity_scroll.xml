@@ -70,10 +70,22 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_marginTop="@dimen/fab_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            android:text="    洛杉矶快船队的霉运仍在继续。他们今天正式宣布，球队当家球星格里芬因为左膝内侧副韧带受伤，可能将因此缺阵两个月的时间。至此，快船队在开季之初的首发阵容之中，包括贝弗利、特奥多西奇、加里纳利以及格里芬四员大将全部伤停，仅有中锋小乔丹一人保持健康。"
+            android:textSize="15sp"
+
+            />
+
+    </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
