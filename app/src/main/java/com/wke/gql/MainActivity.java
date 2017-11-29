@@ -10,13 +10,14 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    AppCompatButton demo1, demo2;
+    AppCompatButton demo1, demo2, layoutDemo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         demo1 = (AppCompatButton) findViewById(R.id.demo1);
         demo2 = (AppCompatButton) findViewById(R.id.demo2);
+        layoutDemo = (AppCompatButton) findViewById(R.id.layoutdemo);
     }
 
     public void toDemo1(View v) {
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void toDemo2(View v) {
         ARouter.getInstance().build("/wkegql/weather").navigation();
+    }
+
+    public void toLayoutDemo(View v) {
+        ARouter.getInstance().build("/wkegql/layoutdemo").navigation();
     }
 
 }

@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".layoutdemo.activity.LayoutActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +30,7 @@
         <activity android:name=".DemoActivity" />
         <activity android:name=".layoutdemo.activity.BottomSheetActivity" />
         <activity android:name=".layoutdemo.activity.MyBehaviorActivity" />
+        <activity android:name=".layoutdemo.activity.LayoutSrcollActivity" />
         <activity android:name=".MVPdagger2.testWeather.WeatherActivity" />
     </application>
 
