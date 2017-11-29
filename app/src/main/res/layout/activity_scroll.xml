@@ -73,10 +73,18 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/fab_margin"
+        android:paddingTop="@dimen/fab_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.AppCompatTextView
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="16dp">
+
+            <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/fab_margin"
@@ -84,7 +92,7 @@
             android:textSize="15sp"
 
             />
-
+        </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
@@ -92,6 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#FA7199"
         android:src="@drawable/ic_action_name"
         app:layout_anchor="@+id/activity_scroll_appBarLayout"
         app:layout_anchorGravity="start|bottom" />
