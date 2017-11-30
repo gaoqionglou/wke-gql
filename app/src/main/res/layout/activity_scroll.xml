@@ -65,7 +65,6 @@
                 </android.support.v7.widget.ButtonBarLayout>
 
             </android.support.v7.widget.Toolbar>
-
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
@@ -73,26 +72,31 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/fab_margin"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/fab_margin"
-            android:layout_marginStart="@dimen/fab_margin"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="16dp">
+            android:layout_height="match_parent">
 
-            <android.support.v7.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/fab_margin"
-            android:text="    洛杉矶快船队的霉运仍在继续。他们今天正式宣布，球队当家球星格里芬因为左膝内侧副韧带受伤，可能将因此缺阵两个月的时间。至此，快船队在开季之初的首发阵容之中，包括贝弗利、特奥多西奇、加里纳利以及格里芬四员大将全部伤停，仅有中锋小乔丹一人保持健康。"
-            android:textSize="15sp"
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            />
-        </android.support.v7.widget.CardView>
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp" />
+            </LinearLayout>
+        </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
@@ -100,9 +104,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:backgroundTint="#FA7199"
+        android:backgroundTint="@color/colorAccent"
         android:src="@drawable/ic_action_name"
         app:layout_anchor="@+id/activity_scroll_appBarLayout"
-        app:layout_anchorGravity="start|bottom" />
+        app:layout_anchorGravity="end|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>
