@@ -12,9 +12,8 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wke.gql.BaseActivity;
-import com.wke.gql.BaseView;
 import com.wke.gql.R;
-import com.wke.gql.fragment.TabOneFragment;
+import com.wke.gql.fragment.LazyLoadTabOneFragment;
 import com.wke.gql.fragment.TabThreeFragment;
 import com.wke.gql.fragment.TabTwoFragment;
 
@@ -25,7 +24,7 @@ import java.util.List;
  * Created by gql on 17-11-29.
  */
 @Route(path = "/wkegql/layoutdemo")
-public class LayoutSrcollActivity extends BaseActivity implements BaseView {
+public class LayoutSrcollActivity extends BaseActivity {
     private CollapsingToolbarLayoutState state;
     private Toolbar toolbar;
     private AppBarLayout app_bar;
@@ -79,7 +78,7 @@ public class LayoutSrcollActivity extends BaseActivity implements BaseView {
         tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
         tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        fragmentList.add(new TabOneFragment());
+        fragmentList.add(new LazyLoadTabOneFragment());
         fragmentList.add(new TabTwoFragment());
         fragmentList.add(new TabThreeFragment());
         MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), fragmentList);
@@ -105,15 +104,6 @@ public class LayoutSrcollActivity extends BaseActivity implements BaseView {
 //        });
     }
 
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void dismissLoading() {
-
-    }
 
 
     private enum CollapsingToolbarLayoutState {
