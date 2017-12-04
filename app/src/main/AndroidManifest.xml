@@ -32,6 +32,7 @@
         <activity android:name=".layoutdemo.activity.MyBehaviorActivity" />
         <activity android:name=".layoutdemo.activity.LayoutSrcollActivity" />
         <activity android:name=".MVPdagger2.testWeather.WeatherActivity" />
+        <activity android:name=".layoutdemo.activity.LayoutBehaviorDemoActivity"></activity>
     </application>
 
 </manifest>
