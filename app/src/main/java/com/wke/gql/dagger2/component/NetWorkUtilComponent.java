@@ -11,7 +11,7 @@ import dagger.Subcomponent;
 @Subcomponent(modules = NetWorkUtilModule.class)
 public interface NetWorkUtilComponent {
     NetWorkUtil netWorkUtil();
-//    void inject(MainActivity activity);
+//    void inject(CollapsingtoolbarActivity activity);
 //    void inject(WeatherActivity activity);
 //    void inject(AActivity activity);
 //

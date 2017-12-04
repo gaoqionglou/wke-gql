@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/activity_layout_behaviordemo_appBar"
         android:layout_width="match_parent"
-        android:layout_height="256dp"
+        android:layout_height="250dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -69,20 +69,22 @@
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/fragmentlayout_background"
-        app:layout_anchorGravity="bottom|end"
+        android:id="@+id/doge_rl"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         app:layout_behavior="com.wke.gql.layoutdemo.activity.behavior.CustomBehavior">
-
         <com.wke.gql.view.CircleImageView
             android:id="@+id/doge_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
             android:layout_margin="@dimen/fab_margin"
             android:src="@drawable/doge_256"
             app:civ_border_color="#FFF"
             app:civ_border_width="2dp"
-            app:civ_circle_background_color="@color/colorAccent" />
+            app:civ_circle_background_color="@color/colorAccent"
+            app:layout_behavior="com.wke.gql.layoutdemo.activity.behavior.CustomBehavior" />
     </RelativeLayout>
+
 </android.support.design.widget.CoordinatorLayout>

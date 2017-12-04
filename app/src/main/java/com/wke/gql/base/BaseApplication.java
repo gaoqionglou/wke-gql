@@ -3,7 +3,6 @@ package com.wke.gql.base;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
-import com.alibaba.android.arouter.BuildConfig;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -76,11 +75,11 @@ public class BaseApplication extends MultiDexApplication {
 
     //初始化ARouter
     private void initARouter() {
-        if (BuildConfig.DEBUG) {
+//        if (BuildConfig.DEBUG) {
             Log.i(TAG, "initARouter:openLog openDebug");
             ARouter.openLog();
             ARouter.openDebug();
-        }
+//        }
         ARouter.init(this);
     }
 }

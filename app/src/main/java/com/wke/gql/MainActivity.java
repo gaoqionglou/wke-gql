@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         ARouter.getInstance().build("/wkegql/layoutdemo").navigation();
     }
 
+    public void toCollapsingDemo(View v) {
+        ARouter.getInstance().build("/wkegql/boot").navigation();
+    }
+
     public void toCustomBehaviorLayoutDemo(View v) {
         ARouter.getInstance().build("/wkegql/layoutBehavior").navigation();
     }

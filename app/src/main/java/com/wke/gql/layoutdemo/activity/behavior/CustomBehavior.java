@@ -21,6 +21,7 @@ import com.wke.gql.view.CircleImageView;
 //自定义Behavior,观察者是CircleImageView，被观察者是AppBarLayout
 public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
     private static final String TAG = "CustomBehavior";
+    RelativeLayout doge_rl;
     private Context context;
     private View view;
     private CircleImageView civ;
@@ -33,7 +34,9 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
     private float anchorStartBottom;
     //appBarLayout的最新Bottom
     private float anchorLastBottom;
-    //child的起始x,y
+    //dogeIcon的起始x,y
+    private float childStartWidth, childStartHeight;
+    //dogeIcon的起始x,y
     private float childStartX, childStartY;
 
     public CustomBehavior(Context context, AttributeSet attrs) {
@@ -53,7 +56,6 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, RelativeLayout child, View dependency) {
-        Log.i(TAG, "onDependentViewChanged:appBarLayout.getBottom()" + appBarLayout.getBottom());
         if (anchorStartBottom == 0) {
             anchorStartBottom = appBarLayout.getBottom();
         }
@@ -62,18 +64,18 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
         float diffMax = anchorStartBottom - end;
         float range = (anchorLastBottom - end) / diffMax;
         Log.i(TAG, "onDependentViewChanged: range -- " + range);
-//        if(childStartX ==0 ) childStartX = child.getX();
-//        if(childStartY ==0 ) childStartY = child.getY();
-//        child.setX(childStartX - childStartX * range);
-//        child.setY(childStartY - childStartY* range);
+        if (childStartX == 0) childStartX = dogeIcon.getX();
+        if (childStartY == 0) childStartY = dogeIcon.getY();
+        dogeIcon.setX(getChangeValue(range, childStartX, 50));
+        dogeIcon.setY(getChangeValue(range, childStartY, 50));
         int statusBarHeight = getStatusBarHeight();
-        int childHeight = child.getHeight();
-        int childWidth = child.getWidth();
-        Log.i(TAG, "statusBarHeight,childWidth,childHeight --" + statusBarHeight + "," + childWidth + "," + childHeight);
-//        RelativeLayout.LayoutParams layoutParams =  (RelativeLayout.LayoutParams)(child.findViewById(R.id.doge_icon)).getLayoutParams();
-//        layoutParams.width = (int)getChangeValue(range,childWidth,getActionBarHeight());
-//        layoutParams.height = (int)getChangeValue(range,childHeight,getActionBarHeight());
-//        (child.findViewById(R.id.doge_icon)).setLayoutParams(layoutParams);
+        if (childStartHeight == 0) childStartHeight = dogeIcon.getHeight();
+        if (childStartWidth == 0) childStartWidth = dogeIcon.getWidth();
+        RelativeLayout.LayoutParams layoutParams =
+                (RelativeLayout.LayoutParams) dogeIcon.getLayoutParams();
+        layoutParams.height = (int) getChangeValue(range, childStartHeight, getActionBarHeight());
+        layoutParams.width = (int) getChangeValue(range, childStartWidth, getActionBarHeight());
+        dogeIcon.setLayoutParams(layoutParams);
         return true;
     }
 
@@ -85,7 +87,8 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
     private void initView(CoordinatorLayout parent) {
         arrowBackImageView = (ImageView) appBarLayout.findViewById(R.id.activity_layout_behaviordemo_arrow_back);
         titleTextView = (AppCompatTextView) appBarLayout.findViewById(R.id.activity_layout_behaviordemo_title);
-        dogeIcon = (CircleImageView) parent.findViewById(R.id.doge_icon);
+        doge_rl = (RelativeLayout) parent.findViewById(R.id.doge_rl);
+        dogeIcon = (CircleImageView) doge_rl.findViewById(R.id.doge_icon);
         collapsingToolbarLayout = (CollapsingToolbarLayout) parent.findViewById(R.id.activity_layout_behaviordemo_toolbarLayout);
     }
 

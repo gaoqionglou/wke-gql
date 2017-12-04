@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_bar_height"
+    android:background="@color/colorAccent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/profile_big_size"
+        android:layout_height="@dimen/profile_big_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/profile_image_margin_max"
+        android:layout_marginLeft="@dimen/profile_image_margin_max"
+        android:layout_marginRight="@dimen/profile_image_margin_max"
+        android:background="@drawable/rounded_box"
+        android:contentDescription="@string/test_profile_image_desc"
+        android:src="@drawable/doge_256" />
+
+    <RelativeLayout
+        android:id="@+id/profileTextContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/app_bar_height"
+        android:layout_gravity="bottom"
+        android:background="@color/cardview_dark_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="profileName"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profileSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileName"
+            android:text="profileSubtitle"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/profileMisc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:drawablePadding="2sp"
+            android:paddingBottom="@dimen/profile_misc_padding"
+            android:text="123123123"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

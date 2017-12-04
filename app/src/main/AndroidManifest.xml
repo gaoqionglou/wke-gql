@@ -28,10 +28,15 @@
         <activity android:name=".BActivity" />
         <activity android:name=".CActivity" />
         <activity android:name=".DemoActivity" />
+        <activity android:name=".testCollapsing.activity.CollapsingtoolbarActivity" />
+        <activity android:name=".testCollapsing.activity.BootActivity" />
         <activity android:name=".layoutdemo.activity.BottomSheetActivity" />
         <activity android:name=".layoutdemo.activity.MyBehaviorActivity" />
         <activity android:name=".layoutdemo.activity.LayoutSrcollActivity" />
+        <activity android:name=".layoutdemo.activity.LayoutActivity" />
         <activity android:name=".MVPdagger2.testWeather.WeatherActivity" />
+        <activity android:name=".testCollapsing.activity.BehaviorOneActivity" />
+        <activity android:name=".testCollapsing.activity.CustomBehaviorActivity"></activity>
         <activity android:name=".layoutdemo.activity.LayoutBehaviorDemoActivity"></activity>
     </application>
 
