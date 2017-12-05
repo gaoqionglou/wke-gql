@@ -86,9 +86,8 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
 //            dogeIconInToolBar.setAlpha(1f);
             titleTextView.setAlpha(0f);
         }
-        //当titleTextView消失的时候,dogeIconInToolBar发散显示出来.
+        //当titleTextView消失的时候,dogeIconInToolBar发散显示出来.当titleTextView在显示的过程中则隐藏
         if (titleTextView.getAlpha() == 0) {
-            Log.i(TAG, "titleTextView已经消失: " + range);
             dogeIconInToolBar.setVisibility(View.VISIBLE);
             dogeIconInToolBar.setAlpha(show(range));
             dogeIconInToolBar.setScaleX(1 - range);
