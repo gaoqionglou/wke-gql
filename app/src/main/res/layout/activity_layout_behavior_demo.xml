@@ -94,8 +94,7 @@
             android:src="@drawable/doge_256"
             app:civ_border_color="#FFF"
             app:civ_border_width="2dp"
-            app:civ_circle_background_color="@color/colorAccent"
-            app:layout_behavior="com.wke.gql.layoutdemo.activity.behavior.CustomBehavior" />
+            app:civ_circle_background_color="@color/colorAccent" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
