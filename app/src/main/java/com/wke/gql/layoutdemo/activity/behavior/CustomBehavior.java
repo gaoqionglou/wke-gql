@@ -1,12 +1,12 @@
 package com.wke.gql.layoutdemo.activity.behavior;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -67,6 +67,7 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
         float end = getStatusBarHeight() + getActionBarHeight();
         float diffMax = anchorStartBottom - end;
         float range = (anchorLastBottom - end) / diffMax;
+        Log.i(TAG, "onDependentViewChanged: " + range);
         CoordinatorLayout.LayoutParams rlParams = (CoordinatorLayout.LayoutParams) doge_rl.getLayoutParams();
         rlParams.height = (int) getChangeHeightValue(range, dogeRlStartHeight, getActionBarHeight());
         doge_rl.setLayoutParams(rlParams);
@@ -78,15 +79,22 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
         layoutParams.topMargin = (int) getMargin(range, 0, (int) context.getResources().getDimension(R.dimen.minMargin));
         dogeIcon.setX(getChangeXValue(range, childStartX, toolBarSubLayout.getLeft()));
         dogeIcon.setLayoutParams(layoutParams);
-        dogeIcon.setAlpha(hide(range, 0.5f));
-        titleTextView.setAlpha(hide(range, 0.5f));
-        if (range < 0.5f) {
+        dogeIcon.setAlpha(hide(range));
+        titleTextView.setAlpha(hide(range));
+        if (range < 0.6f) {
             dogeIcon.setAlpha(0f);
-            dogeIconInToolBar.setAlpha(1f);
+//            dogeIconInToolBar.setAlpha(1f);
+            titleTextView.setAlpha(0f);
         }
-        if (range > 0.5) {
+        //当titleTextView消失的时候,dogeIconInToolBar发散显示出来.
+        if (titleTextView.getAlpha() == 0) {
+            Log.i(TAG, "titleTextView已经消失: " + range);
             dogeIconInToolBar.setVisibility(View.VISIBLE);
-            dogeIconInToolBar.setAlpha(show(range, 0.2f));
+            dogeIconInToolBar.setAlpha(show(range));
+            dogeIconInToolBar.setScaleX(1 - range);
+            dogeIconInToolBar.setScaleY(1 - range);
+        } else {
+            dogeIconInToolBar.setVisibility(View.GONE);
         }
         return true;
     }
@@ -153,55 +161,16 @@ public class CustomBehavior extends CoordinatorLayout.Behavior<RelativeLayout> {
     }
 
 
-    private float hide(float range, float speedSeed) {
-        r = range;
-        ValueAnimator value = ValueAnimator.ofFloat(0f, speedSeed);
-        value.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                r = r - value;
-            }
-        });
-        value.setDuration(100).start();
-        if (r > 1f) {
-            return 1f;
-        } else if (r < 0f) {
-            return 0f;
-        }
-        return r;
+    private float hide(float range) {
+        return range;
     }
 
-    private float show(float range, float speedSeed) {
-        r = 1 - range;
-        ValueAnimator value = ValueAnimator.ofFloat(0f, speedSeed);
-        value.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                r = r + value;
-            }
-        });
-        value.setDuration(500).start();
-        if (r > 1f) {
-            return 1f;
-        } else if (r < 0f) {
-            return 0f;
-        }
-        return r;
+    private float show(float range) {
+        return 1 - range;
     }
 
     private float getMargin(float range, float start, float end) {
         return end + (start - end) * range;
     }
 
-    void speed(float speedSeed) {
-        ValueAnimator value = ValueAnimator.ofFloat(0f, speedSeed);
-        value.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                animation.getAnimatedValue();
-            }
-        });
-    }
 }

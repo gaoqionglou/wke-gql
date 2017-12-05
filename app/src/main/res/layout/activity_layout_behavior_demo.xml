@@ -55,23 +55,24 @@
                     <com.wke.gql.view.CircleImageView
                         android:id="@+id/toolbar_doge_icon"
                         android:layout_width="?attr/actionBarSize"
-                    android:layout_height="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                    android:src="@drawable/doge_256"
+                        android:src="@drawable/doge_256"
                         android:visibility="gone"
-                    app:civ_border_color="#FFF"
-                    app:civ_border_width="2dp"
+                        app:civ_border_color="#FFF"
+                        app:civ_border_width="2dp"
                         app:civ_circle_background_color="@color/colorAccent" />
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/activity_layout_behaviordemo_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="我"
-                    android:textColor="#FFF"
-                    android:textSize="20sp"
-                    android:visibility="visible" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/activity_layout_behaviordemo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="我"
+                        android:textColor="#FFF"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
                 </RelativeLayout>
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -82,6 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:layout_behavior="com.wke.gql.layoutdemo.activity.behavior.CustomBehavior">
+
         <com.wke.gql.view.CircleImageView
             android:id="@+id/doge_icon"
             android:layout_width="100dp"
