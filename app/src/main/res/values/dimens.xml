@@ -9,7 +9,7 @@
     <dimen name="profile_small_size">32dp</dimen>
     <dimen name="profile_big_size">64dp</dimen>
     <dimen name="profile_misc_padding">12dp</dimen>
-
+    <dimen name="minMargin">10dp</dimen>
     <!-- Elevation Levels-->
     <dimen name="level_flat">0dp</dimen>
     <dimen name="level_2">2dp</dimen>

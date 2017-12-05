@@ -34,36 +34,45 @@
                 android:id="@+id/activity_layout_behaviordemo_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:visibility="visible"
                 app:layout_collapseMode="pin"
                 app:layout_collapseParallaxMultiplier="0.1">
 
                 <ImageView
                     android:id="@+id/activity_layout_behaviordemo_arrow_back"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@color/transparent"
                     android:src="@drawable/ic_arrow_back"
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="0.7" />
-                <!--<com.wke.gql.view.CircleImageView
-                    android:id="@+id/doge_icon_sample"
-                    android:layout_width="50dp"
+
+                <RelativeLayout
+                    android:id="@+id/sub_layout_toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <com.wke.gql.view.CircleImageView
+                        android:id="@+id/toolbar_doge_icon"
+                        android:layout_width="?attr/actionBarSize"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/fab_margin"
+                        android:layout_margin="5dp"
                     android:src="@drawable/doge_256"
+                        android:visibility="gone"
                     app:civ_border_color="#FFF"
                     app:civ_border_width="2dp"
-                    app:civ_circle_background_color="@color/colorAccent" />-->
+                        app:civ_circle_background_color="@color/colorAccent" />
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/activity_layout_behaviordemo_title"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:paddingEnd="@dimen/fab_margin"
-                    android:paddingStart="@dimen/fab_margin"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
                     android:text="我"
                     android:textColor="#FFF"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+                </RelativeLayout>
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -79,7 +88,7 @@
             android:layout_height="100dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
             android:src="@drawable/doge_256"
             app:civ_border_color="#FFF"
             app:civ_border_width="2dp"
