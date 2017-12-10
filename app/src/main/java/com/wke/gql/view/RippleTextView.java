@@ -20,7 +20,7 @@ public class RippleTextView extends AppCompatTextView {
     private int mMaxRadius;
     private float mRippleRange;//[0f,1f]
     private int px, py;
-
+    private boolean isClicked = false;
     public RippleTextView(Context context) {
         super(context);
         initComponent();
@@ -60,11 +60,12 @@ public class RippleTextView extends AppCompatTextView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        isClicked = true;
         startRipple();
         return super.onTouchEvent(event);
     }
 
-    private void startRipple() {
+    public void startRipple() {
         ValueAnimator rippleAnimator = ValueAnimator.ofFloat(0f, 1f);
         rippleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

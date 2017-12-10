@@ -3,17 +3,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
     tools:context="com.wke.gql.layoutdemo.activity.CustomTabActivity">
 
-    <com.wke.gql.view.RippleTextView
-        android:id="@+id/rippleTv"
-        android:layout_width="100dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:background="@color/cardview_dark_background"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="@string/action_settings"
-        android:textColor="#FFF" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
+
+    <com.wke.gql.view.RippleTextViewLinearLayout
+        android:id="@+id/ll_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <com.wke.gql.view.RippleTextView
+            android:id="@+id/rippleTv1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="#969696" />
+
+        <com.wke.gql.view.RippleTextView
+            android:id="@+id/rippleTv2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="收藏"
+            android:textColor="#969696" />
+
+        <com.wke.gql.view.RippleTextView
+            android:id="@+id/rippleTv3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="分类"
+            android:textColor="#969696" />
+
+        <com.wke.gql.view.RippleTextView
+            android:id="@+id/rippleTv4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="社区"
+            android:textColor="#969696" />
+
+        <com.wke.gql.view.RippleTextView
+            android:id="@+id/rippleTv5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="部屋"
+            android:textColor="#969696" />
+    </com.wke.gql.view.RippleTextViewLinearLayout>
+
+    <com.wke.gql.view.Slider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/ll_ripple" />
 </RelativeLayout>
