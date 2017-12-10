@@ -25,8 +25,6 @@ public class Slider extends View {
     private RippleTextViewLinearLayout linearLayout;
     private int subWidth;
     private boolean isOrigin = true;
-    private int mStart;
-    private int mEnd;
 
     private int right;
     private int left;
@@ -56,19 +54,9 @@ public class Slider extends View {
 
         linearLayout.setOnTabChangedListener(new RippleTextViewLinearLayout.OnTabChangedListener() {
             @Override
-            public void onTabChanged(int startTab, int endTab) {
-                mStart = startTab;
-                mEnd = endTab;
+            public void onTabChanged(int start, int end) {
                 isOrigin = false;
-                if (startTab < endTab) {
-                    int startRightPosition = (mStart + 1) * subWidth;
-                    int endRightPosition = (mEnd + 1) * subWidth;
-                    int startLeftPosition = mStart * subWidth;
-                    int endLeftPosition = mEnd * subWidth;
-                    Log.i(TAG, "onTabChanged: LeftPosition" + startLeftPosition + "-" + endLeftPosition);
-                    Log.i(TAG, "onTabChanged: RightPosition" + startRightPosition + "-" + endRightPosition);
-                    change(startRightPosition, endRightPosition, startLeftPosition, endLeftPosition);
-                }
+                change(start, end);
                 invalidate();
             }
         });
@@ -92,7 +80,7 @@ public class Slider extends View {
         subWidth = mWidth / childCount;
         if (isOrigin) {
             canvas.drawRect(current * subWidth, 0, (current + 1) * subWidth, mHeight, paint);
-        } else if (mStart < mEnd) {
+        } else {
             canvas.drawRect(left, 0, right, mHeight, paint);
         }
 
@@ -109,8 +97,13 @@ public class Slider extends View {
         //do nothing while start =end
     }
 
-    public void change(int startRightPosition, int endRightPosition, int startLeftPosition, int endLeftPosition) {
-
+    public void change(int start, int end) {
+        int startRightPosition = (start + 1) * subWidth;
+        int endRightPosition = (end + 1) * subWidth;
+        int startLeftPosition = start * subWidth;
+        int endLeftPosition = end * subWidth;
+        Log.i(TAG, "onTabChanged: LeftPosition" + startLeftPosition + "-" + endLeftPosition);
+        Log.i(TAG, "onTabChanged: RightPosition" + startRightPosition + "-" + endRightPosition);
         ValueAnimator rightValue = ValueAnimator.ofInt(startRightPosition, endRightPosition);
         rightValue.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -133,7 +126,11 @@ public class Slider extends View {
         leftValue.setInterpolator(new LinearInterpolator());
         AnimatorSet animatorSet = new AnimatorSet();
         //按顺序执行
-        animatorSet.playSequentially(rightValue, leftValue);
+        if (start < end) {
+            animatorSet.playSequentially(rightValue, leftValue);
+        } else {
+            animatorSet.playSequentially(leftValue, rightValue);
+        }
         animatorSet.setDuration(500);
         animatorSet.start();
     }
