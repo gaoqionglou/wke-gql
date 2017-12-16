@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".layoutdemo.activity.CustomTabActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +38,8 @@
         <activity android:name=".testCollapsing.activity.BehaviorOneActivity" />
         <activity android:name=".testCollapsing.activity.CustomBehaviorActivity" />
         <activity android:name=".layoutdemo.activity.LayoutBehaviorDemoActivity" />
-        <!--<activity android:name=".layoutdemo.activity.CustomTabActivity"></activity>-->
+        <!-- <activity android:name=".layoutdemo.activity.CustomTabActivity"></activity> -->
+        <activity android:name=".layoutdemo.activity.FlowLayoutActivity"></activity>
     </application>
 
 </manifest>

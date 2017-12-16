@@ -39,4 +39,8 @@ public class MainActivity extends AppCompatActivity {
     public void toCustomBehaviorLayoutDemo(View v) {
         ARouter.getInstance().build("/wkegql/layoutBehavior").navigation();
     }
+
+    public void toFlowlayoutDemo(View v) {
+        ARouter.getInstance().build("/wkegql/flowlayout").navigation();
+    }
 }
