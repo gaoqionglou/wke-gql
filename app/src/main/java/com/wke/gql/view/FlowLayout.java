@@ -111,9 +111,8 @@ public class FlowLayout extends ViewGroup {
         for (Map.Entry<Integer, Row> entry : rowMap.entrySet()) {
             Row row = entry.getValue();
             for (View v : row.views) {
-                left = left + horizontal_space;
                 v.layout(left, top, left + v.getMeasuredWidth(), top + v.getMeasuredHeight());
-                Log.i(TAG, "onLayout: " + " left--" + (left + horizontal_space) + "top--" + (top) + "--right:" + (left + v.getMeasuredWidth() + horizontal_space) + "--bottom:" + (top + v.getMeasuredHeight()));
+                Log.i(TAG, "onLayout: " + " left--" + (left) + "top--" + (top) + "--right:" + (left + v.getMeasuredWidth() + horizontal_space) + "--bottom:" + (top + v.getMeasuredHeight()));
                 left = left + v.getMeasuredWidth() + /*这是孩子左右之间的间距*/horizontal_space;
             }
             top = top + getRowMaxHeight(row) + /*这是孩子上下之间的间距*/vertical_space;
