@@ -30,4 +30,10 @@
     <declare-styleable name="RippleTextView">
         <attr name="rippleColor" format="color" />
     </declare-styleable>
+    <declare-styleable name="BottomItem">
+        <attr name="item_icon" format="reference" />
+        <attr name="item_text" format="string" />
+        <attr name="item_text_normal_color" format="color" />
+        <attr name="item_text_clicked_color" format="color" />
+    </declare-styleable>
 </resources>

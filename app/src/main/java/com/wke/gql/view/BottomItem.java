@@ -25,5 +25,6 @@ public class BottomItem extends LinearLayout {
 
     public BottomItem(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+
     }
 }
