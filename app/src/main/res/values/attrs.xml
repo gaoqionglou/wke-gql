@@ -24,4 +24,10 @@
         <!-- 垂直间距 -->
         <attr name="flow_vertical_space" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="Slider">
+        <attr name="backgroundColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RippleTextView">
+        <attr name="rippleColor" format="color" />
+    </declare-styleable>
 </resources>

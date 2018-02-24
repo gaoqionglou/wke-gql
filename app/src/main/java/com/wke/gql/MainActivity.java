@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
     public void toFlowlayoutDemo(View v) {
         ARouter.getInstance().build("/wkegql/flowlayout").navigation();
     }
+
+    public void toCustomTabDemo(View v) {
+        ARouter.getInstance().build("/wkegql/customtab").navigation();
+    }
 }

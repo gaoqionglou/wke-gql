@@ -4,13 +4,17 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
+import com.wke.gql.R;
 
 /**
  * Created by gql on 2017/12/10.
@@ -25,7 +29,7 @@ public class Slider extends View {
     private RippleTextViewLinearLayout linearLayout;
     private int subWidth;
     private boolean isOrigin = true;
-
+    private int backgroundColor;
     private int right;
     private int left;
 
@@ -34,18 +38,19 @@ public class Slider extends View {
     }
 
     public Slider(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public Slider(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
+        this(context, attrs, defStyleAttr, 0);
     }
 
     @TargetApi(21)
     public Slider(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Slider, defStyleAttr, 0);
+        backgroundColor = a.getColor(R.styleable.Slider_backgroundColor, Color.BLACK);
+        a.recycle();
         init();
     }
 
@@ -64,6 +69,7 @@ public class Slider extends View {
 
     private void init() {
         paint = new Paint();
+        paint.setColor(backgroundColor);
     }
 
     @Override
@@ -84,17 +90,6 @@ public class Slider extends View {
             canvas.drawRect(left, 0, right, mHeight, paint);
         }
 
-    }
-
-    private void start(int start, int end) {
-        if (start < end) {
-            //点击右方
-
-            canvas.drawRect(current * subWidth, 0, right, mHeight, paint);
-        } else if (start > end) {
-            //点击左方
-        }
-        //do nothing while start =end
     }
 
     public void change(int start, int end) {
@@ -131,7 +126,7 @@ public class Slider extends View {
         } else {
             animatorSet.playSequentially(leftValue, rightValue);
         }
-        animatorSet.setDuration(500);
+        animatorSet.setDuration(250);
         animatorSet.start();
     }
 }

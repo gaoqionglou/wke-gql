@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,13 +8,15 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
+        android:layout_above="@+id/ll_ripple"
         android:background="#000" />
 
     <com.wke.gql.view.RippleTextViewLinearLayout
         android:id="@+id/ll_ripple"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_above="@+id/slider"
         android:orientation="horizontal">
 
         <com.wke.gql.view.RippleTextView
@@ -24,7 +27,8 @@
             android:clickable="true"
             android:gravity="center"
             android:text="首页"
-            android:textColor="#969696" />
+            android:textColor="#969696"
+            app:rippleColor="@color/colorAccent" />
 
         <com.wke.gql.view.RippleTextView
             android:id="@+id/rippleTv2"
@@ -34,7 +38,8 @@
             android:clickable="true"
             android:gravity="center"
             android:text="收藏"
-            android:textColor="#969696" />
+            android:textColor="#969696"
+            app:rippleColor="@color/colorAccent" />
 
         <com.wke.gql.view.RippleTextView
             android:id="@+id/rippleTv3"
@@ -44,7 +49,8 @@
             android:clickable="true"
             android:gravity="center"
             android:text="分类"
-            android:textColor="#969696" />
+            android:textColor="#969696"
+            app:rippleColor="@color/colorAccent" />
 
         <com.wke.gql.view.RippleTextView
             android:id="@+id/rippleTv4"
@@ -54,7 +60,8 @@
             android:clickable="true"
             android:gravity="center"
             android:text="社区"
-            android:textColor="#969696" />
+            android:textColor="#969696"
+            app:rippleColor="@color/colorAccent" />
 
         <com.wke.gql.view.RippleTextView
             android:id="@+id/rippleTv5"
@@ -64,12 +71,14 @@
             android:clickable="true"
             android:gravity="center"
             android:text="部屋"
-            android:textColor="#969696" />
+            android:textColor="#969696"
+            app:rippleColor="@color/colorAccent" />
     </com.wke.gql.view.RippleTextViewLinearLayout>
 
     <com.wke.gql.view.Slider
         android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:layout_below="@+id/ll_ripple" />
+        android:layout_alignParentBottom="true"
+        app:backgroundColor="@color/colorAccent" />
 </RelativeLayout>

@@ -3,10 +3,12 @@ package com.wke.gql.layoutdemo.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wke.gql.R;
 import com.wke.gql.view.RippleTextViewLinearLayout;
 import com.wke.gql.view.Slider;
 
+@Route(path = "/wkegql/customtab")
 public class CustomTabActivity extends AppCompatActivity {
     private Slider slider;
     private RippleTextViewLinearLayout linearLayout;

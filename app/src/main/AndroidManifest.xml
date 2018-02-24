@@ -38,8 +38,8 @@
         <activity android:name=".testCollapsing.activity.BehaviorOneActivity" />
         <activity android:name=".testCollapsing.activity.CustomBehaviorActivity" />
         <activity android:name=".layoutdemo.activity.LayoutBehaviorDemoActivity" />
-        <!-- <activity android:name=".layoutdemo.activity.CustomTabActivity"></activity> -->
-        <activity android:name=".layoutdemo.activity.FlowLayoutActivity"></activity>
+        <activity android:name=".layoutdemo.activity.CustomTabActivity" />
+        <activity android:name=".layoutdemo.activity.FlowLayoutActivity" />
     </application>
 
 </manifest>
