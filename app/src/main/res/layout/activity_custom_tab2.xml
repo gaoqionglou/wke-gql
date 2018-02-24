@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wke.gql.customtab.CustomTabActivity">
+
+    <com.wke.gql.view.BottomBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.wke.gql.view.BottomItem
+            android:id="@+id/bottom_item_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:item_icon="@drawable/home"
+            app:item_text="首页"
+            app:item_text_size="8sp" />
+
+        <com.wke.gql.view.BottomItem
+            android:id="@+id/bottom_item_trip"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:item_icon="@drawable/trip"
+            app:item_text="行程"
+            app:item_text_size="8sp" />
+
+        <com.wke.gql.view.BottomItem
+            android:id="@+id/bottom_item_service"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:item_icon="@drawable/service"
+            app:item_text="服务"
+            app:item_text_size="8sp" />
+
+        <com.wke.gql.view.BottomItem
+            android:id="@+id/bottom_item_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:item_icon="@drawable/mine"
+            app:item_text="我的"
+            app:item_text_size="8sp" />
+    </com.wke.gql.view.BottomBarLayout>
+
+</RelativeLayout>

@@ -31,9 +31,15 @@
         <attr name="rippleColor" format="color" />
     </declare-styleable>
     <declare-styleable name="BottomItem">
+        <!-- 图标资源 -->
         <attr name="item_icon" format="reference" />
+        <!-- 文字 -->
         <attr name="item_text" format="string" />
+        <!-- 文字大小 -->
+        <attr name="item_text_size" format="dimension" />
+        <!-- 文字颜色 -->
         <attr name="item_text_normal_color" format="color" />
+        <!-- 文字点击后颜色 -->
         <attr name="item_text_clicked_color" format="color" />
     </declare-styleable>
 </resources>
