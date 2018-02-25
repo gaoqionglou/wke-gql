@@ -83,6 +83,11 @@ public class BottomBarLayout extends LinearLayout {
         item.showNotification();
     }
 
+    public void hideNotify(int index) {
+        BottomItem item = (BottomItem) getChildAt(index);
+        item.hideNotification();
+    }
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         int action = ev.getAction();

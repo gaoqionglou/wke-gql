@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -104,6 +105,12 @@ public class BottomItem extends LinearLayout {
     }
 
     public void showNotificationNum(int number) {
+        if (number < 0) {
+            return;
+        } else if (number == 0) {
+            redPoint.setVisibility(VISIBLE);
+            return;
+        }
         redPoint.setVisibility(GONE);
         if (num.getVisibility() == View.INVISIBLE || num.getVisibility() == View.GONE) {
             num.setVisibility(VISIBLE);
@@ -112,12 +119,19 @@ public class BottomItem extends LinearLayout {
     }
 
     public void showNotificationMsg(String msg) {
+        if (TextUtils.isEmpty(msg)) return;
         redPoint.setVisibility(GONE);
         if (num.getVisibility() == View.INVISIBLE || num.getVisibility() == View.GONE) {
             num.setVisibility(VISIBLE);
             num.setText(String.valueOf(msg));
         }
     }
+
+    public void hideNotification() {
+        num.setVisibility(GONE);
+        redPoint.setVisibility(GONE);
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
