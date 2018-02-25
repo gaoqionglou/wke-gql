@@ -2,6 +2,7 @@ package com.wke.gql.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -18,6 +19,8 @@ public class BottomBarLayout extends LinearLayout {
     private OnTabSelectedCallBack onTabSelectedCallBack;
     private int currentTab = 0;
     private int selectedItemIndex = -1;
+    private ViewPager viewPager;
+    private boolean smoothScroll = false;
 
     public BottomBarLayout(Context context) {
         super(context);
@@ -37,6 +40,47 @@ public class BottomBarLayout extends LinearLayout {
 
     public void setOnTabSelectedCallBack(OnTabSelectedCallBack onTabSelectedCallBack) {
         this.onTabSelectedCallBack = onTabSelectedCallBack;
+    }
+
+    public ViewPager getViewPager() {
+        return viewPager;
+    }
+
+    public void setViewPager(ViewPager viewPager) {
+        this.viewPager = viewPager;
+    }
+
+    public boolean isSmoothScroll() {
+        return smoothScroll;
+    }
+
+    public void setSmoothScroll(boolean smoothScroll) {
+        this.smoothScroll = smoothScroll;
+    }
+
+    public int getCurrentTab() {
+        return currentTab;
+    }
+
+    public void setCurrentTab(int currentTab) {
+        this.currentTab = currentTab;
+        ((BottomItem) getChildAt(this.currentTab)).setSelected(true);
+        if (viewPager != null) viewPager.setCurrentItem(currentTab);
+    }
+
+    public void notifyMsg(int index, String msg) {
+        BottomItem item = (BottomItem) getChildAt(index);
+        item.showNotificationMsg(msg);
+    }
+
+    public void notifyNumber(int index, int number) {
+        BottomItem item = (BottomItem) getChildAt(index);
+        item.showNotificationNum(number);
+    }
+
+    public void notify(int index) {
+        BottomItem item = (BottomItem) getChildAt(index);
+        item.showNotification();
     }
 
     @Override
@@ -71,6 +115,7 @@ public class BottomBarLayout extends LinearLayout {
             default:
                 break;
         }
+        if (viewPager != null) viewPager.setCurrentItem(currentTab, smoothScroll);
         return super.dispatchTouchEvent(ev);
     }
 

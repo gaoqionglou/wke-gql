@@ -72,6 +72,7 @@ public class BottomItem extends LinearLayout {
         this.callBack = callBack;
     }
 
+
     private void initView() {
         icon = (AppCompatImageView) findViewById(R.id.bottom_item_icon);
         icon.setImageResource(iconDrawable);
@@ -93,6 +94,29 @@ public class BottomItem extends LinearLayout {
         states[0] = new int[]{android.R.attr.state_selected};
         states[1] = new int[]{-android.R.attr.state_selected};
         return new ColorStateList(states, colors);
+    }
+
+    public void showNotification() {
+        num.setVisibility(GONE);
+        if (redPoint.getVisibility() == View.INVISIBLE || redPoint.getVisibility() == View.GONE) {
+            redPoint.setVisibility(VISIBLE);
+        }
+    }
+
+    public void showNotificationNum(int number) {
+        redPoint.setVisibility(GONE);
+        if (num.getVisibility() == View.INVISIBLE || num.getVisibility() == View.GONE) {
+            num.setVisibility(VISIBLE);
+            num.setText(number > 99 ? "99+" : String.valueOf(number));
+        }
+    }
+
+    public void showNotificationMsg(String msg) {
+        redPoint.setVisibility(GONE);
+        if (num.getVisibility() == View.INVISIBLE || num.getVisibility() == View.GONE) {
+            num.setVisibility(VISIBLE);
+            num.setText(String.valueOf(msg));
+        }
     }
 
     @Override
