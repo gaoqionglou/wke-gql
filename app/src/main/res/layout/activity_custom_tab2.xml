@@ -19,7 +19,9 @@
             android:layout_weight="1"
             app:item_icon="@drawable/home"
             app:item_text="首页"
-            app:item_text_size="8sp" />
+            app:item_text_normal_color="#969696"
+            app:item_text_selected_color="@color/colorPrimary"
+            app:item_text_size="14sp" />
 
         <com.wke.gql.view.BottomItem
             android:id="@+id/bottom_item_trip"
@@ -28,7 +30,9 @@
             android:layout_weight="1"
             app:item_icon="@drawable/trip"
             app:item_text="行程"
-            app:item_text_size="8sp" />
+            app:item_text_normal_color="#969696"
+            app:item_text_selected_color="@color/colorPrimary"
+            app:item_text_size="14sp" />
 
         <com.wke.gql.view.BottomItem
             android:id="@+id/bottom_item_service"
@@ -37,7 +41,9 @@
             android:layout_weight="1"
             app:item_icon="@drawable/service"
             app:item_text="服务"
-            app:item_text_size="8sp" />
+            app:item_text_normal_color="#969696"
+            app:item_text_selected_color="@color/colorPrimary"
+            app:item_text_size="14sp" />
 
         <com.wke.gql.view.BottomItem
             android:id="@+id/bottom_item_mine"
@@ -46,7 +52,9 @@
             android:layout_weight="1"
             app:item_icon="@drawable/mine"
             app:item_text="我的"
-            app:item_text_size="8sp" />
+            app:item_text_normal_color="#969696"
+            app:item_text_selected_color="@color/colorPrimary"
+            app:item_text_size="14sp" />
     </com.wke.gql.view.BottomBarLayout>
 
 </RelativeLayout>

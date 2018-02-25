@@ -8,7 +8,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.wke.gql.R;
@@ -25,7 +28,8 @@ public class BottomItem extends LinearLayout {
     private String textStr;
     private int textSize;
     private int textNormalColor;
-    private int textClickedColor;
+    private int textSelectedColor;
+    private BottomItemSelectedCallBack callBack;
 
     public BottomItem(Context context) {
         super(context);
@@ -37,7 +41,6 @@ public class BottomItem extends LinearLayout {
 
     public BottomItem(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
-
     }
 
     public BottomItem(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -47,38 +50,72 @@ public class BottomItem extends LinearLayout {
         iconDrawable = a.getResourceId(R.styleable.BottomItem_item_icon, 0);
 
         textStr = a.getString(R.styleable.BottomItem_item_text);
-
+        textSize = a.getDimensionPixelSize(R.styleable.BottomItem_item_text_size, (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP, 15, getResources().getDisplayMetrics()));//px
         textNormalColor = a.getColor(R.styleable.BottomItem_item_text_normal_color, Color.GRAY);
 
-        textClickedColor = a.getColor(R.styleable.BottomItem_item_text_clicked_color, Color.GRAY);
+        textSelectedColor = a.getColor(R.styleable.BottomItem_item_text_selected_color, Color.GRAY);
         a.recycle();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_bottom_item, this, true);
         initView();
     }
 
+    @Override
+    public void setSelected(boolean selected) {
+        super.setSelected(selected);
+        icon.setSelected(selected);
+        text.setSelected(selected);
+    }
+
+    public void setBottomItemSelectedCallBack(BottomItemSelectedCallBack callBack) {
+        this.callBack = callBack;
+    }
+
     private void initView() {
         icon = (AppCompatImageView) findViewById(R.id.bottom_item_icon);
         icon.setImageResource(iconDrawable);
-        icon.setClickable(true);
+        icon.setOnClickListener(new BottomItemClickListener(callBack));
         text = (AppCompatTextView) findViewById(R.id.bottom_item_text);
-        text.setTextSize(8);
-        text.setTextColor(createColorStateList(textNormalColor, textClickedColor));
+        text.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);//不能以sp为单位，要以px为单位设值
+        text.setTextColor(createColorStateList(textSelectedColor, textNormalColor));
         text.setText(textStr);
-        text.setClickable(true);
+        text.setOnClickListener(new BottomItemClickListener(callBack));
         redPoint = (AppCompatImageView) findViewById(R.id.bottom_red_point);
         redPoint.setBackgroundResource(R.drawable.shape_msg_unread_count_bg);
-
         num = (AppCompatTextView) findViewById(R.id.bottom_item_num);
         num.setBackgroundResource(R.drawable.shape_msg_unread_count_bg);
     }
 
-    private ColorStateList createColorStateList(int normal, int pressed) {
-        int[] colors = new int[]{pressed, normal};
+    private ColorStateList createColorStateList(int selectedColor, int unSelectedColor) {
+        int[] colors = new int[]{selectedColor, unSelectedColor};
         int[][] states = new int[2][];
-        states[0] = new int[]{android.R.attr.state_pressed};
-        states[1] = new int[]{android.R.attr.state_enabled};
-        ColorStateList colorList = new ColorStateList(states, colors);
-        return colorList;
+        states[0] = new int[]{android.R.attr.state_selected};
+        states[1] = new int[]{-android.R.attr.state_selected};
+        return new ColorStateList(states, colors);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public interface BottomItemSelectedCallBack {
+        public void onItemSelected();
+    }
+
+    private class BottomItemClickListener implements OnClickListener {
+        private BottomItemSelectedCallBack callBack;
+
+        public BottomItemClickListener(BottomItemSelectedCallBack callBack) {
+            this.callBack = callBack;
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (callBack != null) {
+                callBack.onItemSelected();
+            }
+        }
     }
 }

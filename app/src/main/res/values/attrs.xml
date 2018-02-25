@@ -40,6 +40,6 @@
         <!-- 文字颜色 -->
         <attr name="item_text_normal_color" format="color" />
         <!-- 文字点击后颜色 -->
-        <attr name="item_text_clicked_color" format="color" />
+        <attr name="item_text_selected_color" format="color" />
     </declare-styleable>
 </resources>
