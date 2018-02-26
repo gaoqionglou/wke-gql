@@ -40,7 +40,7 @@ public class CustomTabActivity extends BaseActivity {
         bottomBarLayout.setCurrentTab(0);
 
         bottomBarLayout.notify(0);
-        bottomBarLayout.notifyMsg(1, "NEW");
+        bottomBarLayout.notifyMsg(1, "NEWWWW");
         bottomBarLayout.notifyNumber(2, 9);
         bottomBarLayout.notifyNumber(3, 123);
     }

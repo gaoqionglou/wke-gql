@@ -10,13 +10,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        app:circleBorderWidth="2dp"
         app:gapBetweenCircle="50dp"
         app:hintText="加入购物车"
         app:hintTextColor="#FFF"
         app:hintTextSize="15sp"
+        app:leftCircleBorderColor="#979797"
         app:leftCircleColor="@color/colorPrimary"
         app:radius="20dp"
         app:rectColor="@color/colorPrimary"
         app:rectCornerRadius="20dp"
+        app:rightCircleBorderColor="#969696"
         app:rightCircleColor="@color/colorAccent" />
 </RelativeLayout>

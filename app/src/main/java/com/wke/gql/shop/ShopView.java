@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -43,8 +44,12 @@ public class ShopView extends View {
     //左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)
     private float gapBetweenCircle;
     private Paint rectPaint, hintPaint;
-    private Paint leftCirclePaint, rightCirclePaint;
+    private Paint leftCirclePaint, leftCircleBorderPaint, rightCirclePaint, rightCircleBorderPaint;
+    private Path leftPath, rightPath;
     private Rect rect;
+
+
+    private boolean hintMode = false;
 
     public ShopView(Context context) {
         super(context);
@@ -75,7 +80,7 @@ public class ShopView extends View {
         radius = a.getDimension(R.styleable.ShopView_radius, 0);
         circleBorderWidth = a.getDimension(R.styleable.ShopView_circleBorderWidth, 0);
         leftCircleColor = a.getColor(R.styleable.ShopView_leftCircleColor, Color.BLUE);
-        leftCircleBorderColor = a.getColor(R.styleable.ShopView_leftCircleColor, Color.BLUE);
+        leftCircleBorderColor = a.getColor(R.styleable.ShopView_leftCircleBorderColor, Color.BLUE);
         rightCircleColor = a.getColor(R.styleable.ShopView_rightCircleColor, Color.BLUE);
         rightCircleBorderColor = a.getColor(R.styleable.ShopView_rightCircleBorderColor, Color.BLUE);
 
@@ -100,10 +105,20 @@ public class ShopView extends View {
         leftCirclePaint = new Paint();
         leftCirclePaint.setColor(leftCircleColor);
         leftCirclePaint.setStyle(Paint.Style.FILL);
+        leftCircleBorderPaint = new Paint();
+        leftCircleBorderPaint.setColor(leftCircleBorderColor);
+        leftCircleBorderPaint.setStyle(Paint.Style.STROKE);
+        leftCircleBorderPaint.setStrokeWidth(circleBorderWidth);
+
         rightCirclePaint = new Paint();
         rightCirclePaint.setStyle(Paint.Style.FILL);
         rightCirclePaint.setColor(rightCircleColor);
-
+        rightCircleBorderPaint = new Paint();
+        rightCircleBorderPaint.setColor(rightCircleBorderColor);
+        rightCircleBorderPaint.setStyle(Paint.Style.STROKE);
+        rightCircleBorderPaint.setStrokeWidth(circleBorderWidth);
+        leftPath = new Path();
+        rightPath = new Path();
 
     }
 
@@ -176,8 +191,19 @@ public class ShopView extends View {
 //        //计算baseline绘制的起点Y坐标
 //        float baseY = mHeight / 2 - (hintPaint.descent() + hintPaint.ascent()) / 2f;
 //        canvas.drawText(hintText, baseX, baseY, hintPaint);
-//        canvas.drawLines(new float[]{});
-//        canvas.drawCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, leftCirclePaint);
-//        canvas.drawCircle(getPaddingLeft() + radius*2 + gapBetweenCircle +radius, getPaddingTop() + radius, radius, rightCirclePaint);
+
+        leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+        canvas.drawPath(leftPath, leftCirclePaint);
+        leftPath.reset();
+        leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+        canvas.drawPath(leftPath, leftCircleBorderPaint);
+
+
+        rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+        canvas.drawPath(rightPath, rightCirclePaint);
+        rightPath.reset();
+        rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+        canvas.drawPath(rightPath, rightCircleBorderPaint);
+
     }
 }
