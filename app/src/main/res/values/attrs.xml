@@ -42,4 +42,30 @@
         <!-- 文字点击后颜色 -->
         <attr name="item_text_selected_color" format="color" />
     </declare-styleable>
+    <declare-styleable name="ShopView">
+        <!--矩形按钮的长宽 无效-->
+        <attr name="rectWidth" format="dimension" />
+        <attr name="rectHeight" format="dimension" />
+        <!--矩形圆角-->
+        <attr name="rectCornerRadius" format="dimension" />
+        <!--矩形圆角-->
+        <attr name="rectColor" format="color" />
+        <!--矩形按钮文字-->
+        <attr name="hintText" format="string" />
+        <!--文字颜色-->
+        <attr name="hintTextColor" format="color" />
+        <!--文字大小-->
+        <attr name="hintTextSize" format="dimension" />
+        <!--左右2个圆的半径-->
+        <attr name="radius" format="dimension" />
+        <!-- 左右2个圆的边框宽度 -->
+        <attr name="circleBorderWidth" format="dimension" />
+        <!--左右圆及其边框的颜色-->
+        <attr name="leftCircleColor" format="color" />
+        <attr name="leftCircleBorderColor" format="color" />
+        <attr name="rightCircleColor" format="color" />
+        <attr name="rightCircleBorderColor" format="color" />
+        <!--左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)-->
+        <attr name="gapBetweenCircle" format="dimension" />
+    </declare-styleable>
 </resources>

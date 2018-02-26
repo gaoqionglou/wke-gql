@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wke.gql.shop.ShopActivity">
+
+    <com.wke.gql.shop.ShopView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:gapBetweenCircle="50dp"
+        app:hintText="加入购物车"
+        app:hintTextColor="#FFF"
+        app:hintTextSize="15sp"
+        app:leftCircleColor="@color/colorPrimary"
+        app:radius="20dp"
+        app:rectColor="@color/colorPrimary"
+        app:rectCornerRadius="20dp"
+        app:rightCircleColor="@color/colorAccent" />
+</RelativeLayout>

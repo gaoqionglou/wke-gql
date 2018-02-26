@@ -40,7 +40,8 @@
         <activity android:name=".layoutdemo.activity.LayoutBehaviorDemoActivity" />
         <activity android:name=".layoutdemo.activity.CustomTabActivity" />
         <activity android:name=".layoutdemo.activity.FlowLayoutActivity" />
-        <activity android:name=".customtab.CustomTabActivity"></activity>
+        <activity android:name=".customtab.CustomTabActivity" />
+        <activity android:name=".shop.ShopActivity"></activity>
     </application>
 
 </manifest>
