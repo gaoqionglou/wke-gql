@@ -10,16 +10,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        app:circleBorderWidth="2dp"
-        app:gapBetweenCircle="50dp"
+        app:circleBorderWidth="1dp"
+        app:gapBetweenCircle="80dp"
         app:hintText="加入购物车"
-        app:hintTextColor="#FFF"
+        app:hintTextColor="#e5004a"
         app:hintTextSize="15sp"
-        app:leftCircleBorderColor="#979797"
-        app:leftCircleColor="@color/colorPrimary"
-        app:radius="20dp"
+        app:leftCircleBorderColor="#969696"
+        app:leftCircleColor="#eaeaea"
+        app:num="2"
+        app:radius="15dp"
         app:rectColor="@color/colorPrimary"
         app:rectCornerRadius="20dp"
         app:rightCircleBorderColor="#969696"
-        app:rightCircleColor="@color/colorAccent" />
+        app:rightCircleColor="#eaeaea" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+
+    </LinearLayout>
 </RelativeLayout>

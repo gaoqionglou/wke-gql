@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toCustomTabDemo(View v) {
-        ARouter.getInstance().build("/wkegql/customtab2").navigation();
+        ARouter.getInstance().build("/wkegql/customtab").navigation();
     }
 
     public void toShopViewdemo(View v) {

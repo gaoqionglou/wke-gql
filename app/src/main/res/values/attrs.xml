@@ -67,5 +67,6 @@
         <attr name="rightCircleBorderColor" format="color" />
         <!--左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)-->
         <attr name="gapBetweenCircle" format="dimension" />
+        <attr name="num" format="integer" />
     </declare-styleable>
 </resources>
