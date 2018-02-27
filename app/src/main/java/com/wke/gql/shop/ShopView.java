@@ -1,5 +1,6 @@
 package com.wke.gql.shop;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -7,11 +8,14 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.Region;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 import com.wke.gql.R;
 
@@ -48,8 +52,13 @@ public class ShopView extends View {
     private Path leftPath, rightPath;
     private Rect rect;
 
-
+    private Region delRegion, addRegion, region;
     private boolean hintMode = false;
+    private int num = 0;
+    private float rectSeed = 0;//[0,1]
+    private float degreeSeed = 0;//[0,1]
+    private float gapSeed = 0;//[0,1]
+    private float alphaSeed = 1;//[1,0]
 
     public ShopView(Context context) {
         super(context);
@@ -83,10 +92,19 @@ public class ShopView extends View {
         leftCircleBorderColor = a.getColor(R.styleable.ShopView_leftCircleBorderColor, Color.BLUE);
         rightCircleColor = a.getColor(R.styleable.ShopView_rightCircleColor, Color.BLUE);
         rightCircleBorderColor = a.getColor(R.styleable.ShopView_rightCircleBorderColor, Color.BLUE);
-
         gapBetweenCircle = a.getDimension(R.styleable.ShopView_gapBetweenCircle, 40);
+        num = a.getInteger(R.styleable.ShopView_num, 0);
         a.recycle();
         init();
+        setClickable(true);
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     private void init() {
@@ -120,6 +138,9 @@ public class ShopView extends View {
         leftPath = new Path();
         rightPath = new Path();
 
+        region = new Region();
+        delRegion = new Region();
+        addRegion = new Region();
     }
 
     @Override
@@ -185,25 +206,127 @@ public class ShopView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 //        super.onDraw(canvas);
-//        canvas.drawRoundRect(getPaddingLeft(), getPaddingTop(), mWidth - getPaddingRight(), mHeight - getPaddingBottom(), rectCornerRadius, rectCornerRadius, rectPaint);
-//        //计算baseline绘制的起点X坐标
-//        float baseX = (mWidth / 2 - hintPaint.measureText(hintText) / 2);
-//        //计算baseline绘制的起点Y坐标
-//        float baseY = mHeight / 2 - (hintPaint.descent() + hintPaint.ascent()) / 2f;
-//        canvas.drawText(hintText, baseX, baseY, hintPaint);
+        if (hintMode) {
 
-        leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
-        canvas.drawPath(leftPath, leftCirclePaint);
-        leftPath.reset();
-        leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
-        canvas.drawPath(leftPath, leftCircleBorderPaint);
+            canvas.drawRoundRect(getPaddingLeft(), getPaddingTop(), mWidth - getPaddingRight(), mHeight - getPaddingBottom(), rectCornerRadius, rectCornerRadius, rectPaint);
+            //计算baseline绘制的起点X坐标
+            float baseX = (mWidth / 2 - hintPaint.measureText(hintText) / 2);
+            //计算baseline绘制的起点Y坐标
+            float baseY = mHeight / 2 - (hintPaint.descent() + hintPaint.ascent()) / 2f;
+            canvas.drawText(hintText, baseX, baseY, hintPaint);
+        } else {
+            //确定左圆的点击范围 region
+            leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+            region.set(getPaddingLeft(), getPaddingTop(), (int) (getPaddingLeft() + radius * 2), (int) (getPaddingTop() + radius * 2));
+            delRegion.setPath(leftPath, region);
+//            //绘制左圆边框
+//            leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+//            canvas.drawPath(leftPath, leftCircleBorderPaint);
 
 
-        rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
-        canvas.drawPath(rightPath, rightCirclePaint);
-        rightPath.reset();
-        rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
-        canvas.drawPath(rightPath, rightCircleBorderPaint);
+            canvas.save();
+            //平移至圆心坐标，坐标轴原点在圆心
+            float translateX = (gapBetweenCircle + radius * 2f) * gapSeed;
+            canvas.translate(getPaddingLeft() + radius + translateX, getPaddingTop() + radius);
+            leftPath.reset();
+            leftPath.addCircle(0, 0, radius, Path.Direction.CW);
+            canvas.drawPath(leftPath, leftCirclePaint);
+            leftPath.addCircle(0, 0, radius, Path.Direction.CW);
+            canvas.drawPath(leftPath, leftCircleBorderPaint);
+            Log.i(TAG, "onDraw: translateX " + translateX);
+            canvas.rotate(360 * degreeSeed);
+            canvas.drawLine(-radius + 10, 0, radius - 10, 0, leftCircleBorderPaint);
+            canvas.restore();
 
+
+            canvas.save();
+            //绘制中间的数字 0开始
+            //计算baseline绘制的起点Y坐标
+            canvas.translate(mWidth / 2, mHeight / 2);
+            float translateTextX = (mWidth / 2 - radius) * gapSeed;
+            canvas.rotate(360 * degreeSeed, mWidth / 2, mHeight / 2);
+            Log.i(TAG, "onDraw: " + num);
+            float baseX = -hintPaint.measureText(String.valueOf(num)) / 2f + translateTextX;
+            float baseY = Math.abs(hintPaint.ascent()) - hintPaint.descent();
+            canvas.drawText(String.valueOf(num), baseX, baseY, hintPaint);
+            canvas.restore();
+
+            //绘制右圆
+            rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+            region.set((int) (getPaddingLeft() + radius * 2 + gapBetweenCircle), getPaddingTop(), (int) (getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2), (int) (getPaddingTop() + radius * 2));
+            addRegion.setPath(rightPath, region);
+            canvas.drawPath(rightPath, rightCirclePaint);
+            rightPath.reset();
+            //绘制左圆边框
+            rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+            canvas.drawPath(rightPath, rightCircleBorderPaint);
+            //绘制右圆 '+'
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + 10, getPaddingTop() + radius, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2 - 10, getPaddingTop() + radius, rightCircleBorderPaint);
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + 10, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius * 2 - 10, rightCircleBorderPaint);
+
+        }
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                float x = event.getX();
+                float y = event.getY();
+                if (addRegion.contains((int) x, (int) y)) {
+                    Log.i(TAG, "onTouchEvent: " + "addRegion");
+                    num = num + 1;
+                    if (num <= 0) startRightCircleAnimator2();
+                }
+                if (delRegion.contains((int) x, (int) y)) {
+                    Log.i(TAG, "onTouchEvent: " + "delRegion " + num);
+
+                    if (num - 1 >= 0) {
+                        num = num - 1;
+                        invalidate();
+                    }
+                    if (num == 0) {
+                        //执行右圆的平移的动画
+                        startRightCircleAnimator();
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
+
+
+    private void startRightCircleAnimator() {
+        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
+        animator.setInterpolator(new DecelerateInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                gapSeed = (float) animation.getAnimatedValue();
+                degreeSeed = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        animator.setDuration(500);
+        animator.start();
+    }
+
+    private void startRightCircleAnimator2() {
+        ValueAnimator animator = ValueAnimator.ofFloat(1f, 0f);
+        animator.setInterpolator(new DecelerateInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                gapSeed = (float) animation.getAnimatedValue();
+                degreeSeed = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        animator.setDuration(500);
+        animator.start();
     }
 }
