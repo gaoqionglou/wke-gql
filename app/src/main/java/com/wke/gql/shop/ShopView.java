@@ -1,5 +1,7 @@
 package com.wke.gql.shop;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -25,10 +27,13 @@ import com.wke.gql.R;
  */
 
 public class ShopView extends View {
+    public static final int STATUS_START = 0;
+    public static final int STATUS_END = 1;
     private static final String TAG = "ShopView";
     float x = 0, y = 0;
     private int mWidth, mHeight;
     //矩形按钮的长宽
+    @Deprecated
     private float rectWidth, rectHeight;
     //矩形圆角
     private float rectCornerRadius;
@@ -56,10 +61,15 @@ public class ShopView extends View {
     private boolean hintMode = false;
     private int num = 0;
     private int maxNum = 0;
+
     private float rectSeed = 0;//[0,1]
     private float degreeSeed = 0;//[0,1]
     private float gapSeed = 0;//[0,1]
     private float alphaSeed = 0;//[0,1]
+    private float signPadding = 10;
+    private int animationStatus = STATUS_END;
+
+    private OnButtonClickCallBack onButtonClickCallBack;
 
     public ShopView(Context context) {
         super(context);
@@ -77,18 +87,18 @@ public class ShopView extends View {
         super(context, attrs, defStyleAttr, defStyleRes);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ShopView, defStyleAttr, defStyleRes);
 
-        rectWidth = a.getDimension(R.styleable.ShopView_rectWidth, 100);
-        rectHeight = a.getDimension(R.styleable.ShopView_rectHeight, 30);
+        rectWidth = a.getDimensionPixelSize(R.styleable.ShopView_rectWidth, 100);
+        rectHeight = a.getDimensionPixelSize(R.styleable.ShopView_rectHeight, 30);
         rectColor = a.getColor(R.styleable.ShopView_rectColor, Color.YELLOW);
-        rectCornerRadius = a.getDimension(R.styleable.ShopView_rectCornerRadius, 0);
+        rectCornerRadius = a.getDimensionPixelSize(R.styleable.ShopView_rectCornerRadius, 0);
 
         hintText = a.getString(R.styleable.ShopView_hintText);
         hintTextColor = a.getColor(R.styleable.ShopView_hintTextColor, Color.BLACK);
         hintTextSize = a.getDimensionPixelSize(R.styleable.ShopView_hintTextSize, (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_SP, 15, getResources().getDisplayMetrics()));
 
-        radius = a.getDimension(R.styleable.ShopView_radius, 0);
-        circleBorderWidth = a.getDimension(R.styleable.ShopView_circleBorderWidth, 0);
+        radius = a.getDimensionPixelSize(R.styleable.ShopView_radius, 0);
+        circleBorderWidth = a.getDimensionPixelSize(R.styleable.ShopView_circleBorderWidth, 0);
         leftCircleColor = a.getColor(R.styleable.ShopView_leftCircleColor, Color.BLUE);
         leftCircleBorderColor = a.getColor(R.styleable.ShopView_leftCircleBorderColor, Color.BLUE);
         leftMinusColor = a.getColor(R.styleable.ShopView_leftMinusColor, Color.DKGRAY);
@@ -98,12 +108,15 @@ public class ShopView extends View {
         rightCircleUnableColor = a.getColor(R.styleable.ShopView_rightCircleUnableColor, Color.DKGRAY);
         rightAddColor = a.getColor(R.styleable.ShopView_rightAddColor, Color.DKGRAY);
         rightCircleBorderVisibility = a.getBoolean(R.styleable.ShopView_rightCircleBorderVisibility, false);
-        gapBetweenCircle = a.getDimension(R.styleable.ShopView_gapBetweenCircle, 40);
+        gapBetweenCircle = a.getDimensionPixelSize(R.styleable.ShopView_gapBetweenCircle, (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics()));
         num = a.getInteger(R.styleable.ShopView_num, 0);
         maxNum = a.getInteger(R.styleable.ShopView_maxNum, 99);
         numColor = a.getColor(R.styleable.ShopView_numTextColor, Color.BLACK);
         numTextSize = a.getDimensionPixelSize(R.styleable.ShopView_numTextSize, (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_SP, 15, getResources().getDisplayMetrics()));
+        signPadding = a.getDimensionPixelSize(R.styleable.ShopView_signPadding, (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()));
         a.recycle();
         init();
         setClickable(true);
@@ -115,6 +128,14 @@ public class ShopView extends View {
 
     public void setNum(int num) {
         this.num = num;
+    }
+
+    public OnButtonClickCallBack getOnButtonClickCallBack() {
+        return onButtonClickCallBack;
+    }
+
+    public void setOnButtonClickCallBack(OnButtonClickCallBack onButtonClickCallBack) {
+        this.onButtonClickCallBack = onButtonClickCallBack;
     }
 
     private void init() {
@@ -269,7 +290,7 @@ public class ShopView extends View {
                 canvas.drawPath(leftPath, leftCircleBorderPaint);
             }
             canvas.rotate(360 * degreeSeed);
-            canvas.drawLine(-radius + 10, 0, radius - 10, 0, leftMinusPaint);
+            canvas.drawLine(-radius + signPadding, 0, radius - signPadding, 0, leftMinusPaint);
             canvas.restore();
 
 
@@ -300,11 +321,11 @@ public class ShopView extends View {
                 rightPath.reset();
                 //绘制左圆边框
                 rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2, radius, Path.Direction.CW);
-                canvas.drawPath(rightPath, rightAddPaint);
+                canvas.drawPath(rightPath, rightCircleBorderPaint);
             }
             //绘制右圆 '+'
-            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + 10, mHeight / 2, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2 - 10, mHeight / 2, rightCircleBorderPaint);
-            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 - radius + 10, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 + radius - 10, rightCircleBorderPaint);
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + signPadding, mHeight / 2, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2 - signPadding, mHeight / 2, rightAddPaint);
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 - radius + signPadding, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 + radius - signPadding, rightAddPaint);
 
         }
     }
@@ -323,6 +344,9 @@ public class ShopView extends View {
                     Log.i(TAG, "onTouchEvent: " + "点击‘+’号" + num);
                     if (num >= 0 && num + 1 <= maxNum) {
                         num = num + 1;
+                        if (onButtonClickCallBack != null) {
+                            onButtonClickCallBack.onAdd(num);
+                        }
                         invalidate();
                         break;
                     }
@@ -331,15 +355,24 @@ public class ShopView extends View {
                     Log.i(TAG, "onTouchEvent: " + " 点击‘-’号 " + num);
                     if (num - 1 >= 0) {
                         num = num - 1;
+                        if (onButtonClickCallBack != null) {
+                            onButtonClickCallBack.onDel(num);
+                        }
                         invalidate();
                     }
-                    if (num == 0 && !hintMode) {
+                    if (num == 0 && !hintMode && animationStatus == STATUS_END) {
                         //执行右圆的平移的动画
+                        if (onButtonClickCallBack != null) {
+                            onButtonClickCallBack.onHideButton();
+                        }
                         minus();
                     }
                 }
-                if (hintMode && rectRegion.contains((int) x, (int) y)) {
+                if (hintMode && rectRegion.contains((int) x, (int) y) && animationStatus == STATUS_END) {
                     Log.i(TAG, "onTouchEvent: " + "rectRegion " + num);
+                    if (onButtonClickCallBack != null) {
+                        onButtonClickCallBack.onShowButton();
+                    }
                     add();
                 }
                 break;
@@ -355,6 +388,19 @@ public class ShopView extends View {
     private void minus() {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(minusInAnimator(), rectOutAnimator());
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                animationStatus = STATUS_END;
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                animationStatus = STATUS_START;
+            }
+        });
         animatorSet.setDuration(500);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();
@@ -364,6 +410,19 @@ public class ShopView extends View {
     private void add() {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(rectInAnimator(), minusOutAnimator());
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                animationStatus = STATUS_END;
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                animationStatus = STATUS_START;
+            }
+        });
         animatorSet.setDuration(500);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();
@@ -472,4 +531,14 @@ public class ShopView extends View {
         return animator;
     }
 
+
+    public interface OnButtonClickCallBack {
+        void onDel(int num);
+
+        void onAdd(int num);
+
+        void onShowButton();
+
+        void onHideButton();
+    }
 }

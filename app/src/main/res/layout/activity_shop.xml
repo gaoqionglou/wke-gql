@@ -7,28 +7,32 @@
     tools:context="com.wke.gql.shop.ShopActivity">
 
     <com.wke.gql.shop.ShopView
+        android:id="@+id/shopview"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:padding="10dp"
-        app:circleBorderWidth="1dp"
+        app:circleBorderWidth="2dp"
         app:gapBetweenCircle="80dp"
         app:hintText="加入购物车"
         app:hintTextColor="#FFF"
         app:hintTextSize="15sp"
-        app:leftCircleBorderColor="#969696"
+        app:leftCircleBorderColor="#BFBFBF"
         app:leftCircleBorderVisibility="true"
         app:leftCircleColor="#eaeaea"
+        app:leftMinusColor="#BFBFBF"
         app:maxNum="5"
         app:num="2"
-        app:numTextColor="#e5004a"
-        app:numTextSize="15sp"
-        app:radius="15dp"
-        app:rectColor="@color/colorPrimary"
+        app:numTextColor="#000"
+        app:numTextSize="20sp"
+        app:radius="20dp"
+        app:rectColor="#63B8FF"
         app:rectCornerRadius="20dp"
-        app:rightCircleBorderColor="#575757"
+        app:rightAddColor="#FFF"
+        app:rightCircleBorderColor="#FFF"
         app:rightCircleBorderVisibility="false"
-        app:rightCircleColor="#FFFF00"
-        app:rightCircleUnableColor="#708090" />
+        app:rightCircleColor="#63B8FF"
+
+        app:rightCircleUnableColor="#CCCCCC" />
 
 
     <LinearLayout

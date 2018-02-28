@@ -86,5 +86,7 @@
         <attr name="num" format="integer" />
         <!-- 显示数字的最大值 -->
         <attr name="maxNum" format="integer" />
+        <!-- 加减符号到圆的边距 -->
+        <attr name="signPadding" format="dimension" />
     </declare-styleable>
 </resources>
