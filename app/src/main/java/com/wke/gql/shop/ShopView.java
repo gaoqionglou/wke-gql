@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.Region;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -40,22 +39,23 @@ public class ShopView extends View {
     //文字颜色
     private int hintTextColor;
     //文字大小
-    private int hintTextSize;
+    private int hintTextSize, numTextSize;
     //左右2个圆的半径
     private float radius;
     //左右2个圆的边框宽度
     private float circleBorderWidth;
     //左右圆及其边框的颜色
-    private int leftCircleColor, leftCircleBorderColor, rightCircleColor, rightCircleBorderColor;
+    private int leftCircleColor, leftCircleBorderColor, leftMinusColor, rightCircleColor, rightCircleBorderColor, rightCircleUnableColor, rightAddColor, numColor;
     //左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)
     private float gapBetweenCircle;
-    private Paint rectPaint, rectTextPaint, hintPaint;
-    private Paint leftCirclePaint, leftCircleBorderPaint, rightCirclePaint, rightCircleBorderPaint;
+    private Paint rectPaint, hintPaint;
+    private Paint leftCirclePaint, leftCircleBorderPaint, leftMinusPaint, rightCirclePaint, rightCircleBorderPaint, rightAddPaint, numPaint;
     private Path leftPath, rightPath;
-    private Rect rect;
+    private boolean leftCircleBorderVisibility = false, rightCircleBorderVisibility = false;
     private Region rectRegion, delRegion, addRegion, region;
     private boolean hintMode = false;
     private int num = 0;
+    private int maxNum = 0;
     private float rectSeed = 0;//[0,1]
     private float degreeSeed = 0;//[0,1]
     private float gapSeed = 0;//[0,1]
@@ -91,10 +91,19 @@ public class ShopView extends View {
         circleBorderWidth = a.getDimension(R.styleable.ShopView_circleBorderWidth, 0);
         leftCircleColor = a.getColor(R.styleable.ShopView_leftCircleColor, Color.BLUE);
         leftCircleBorderColor = a.getColor(R.styleable.ShopView_leftCircleBorderColor, Color.BLUE);
+        leftMinusColor = a.getColor(R.styleable.ShopView_leftMinusColor, Color.DKGRAY);
+        leftCircleBorderVisibility = a.getBoolean(R.styleable.ShopView_leftCircleBorderVisibility, false);
         rightCircleColor = a.getColor(R.styleable.ShopView_rightCircleColor, Color.BLUE);
         rightCircleBorderColor = a.getColor(R.styleable.ShopView_rightCircleBorderColor, Color.BLUE);
+        rightCircleUnableColor = a.getColor(R.styleable.ShopView_rightCircleUnableColor, Color.DKGRAY);
+        rightAddColor = a.getColor(R.styleable.ShopView_rightAddColor, Color.DKGRAY);
+        rightCircleBorderVisibility = a.getBoolean(R.styleable.ShopView_rightCircleBorderVisibility, false);
         gapBetweenCircle = a.getDimension(R.styleable.ShopView_gapBetweenCircle, 40);
         num = a.getInteger(R.styleable.ShopView_num, 0);
+        maxNum = a.getInteger(R.styleable.ShopView_maxNum, 99);
+        numColor = a.getColor(R.styleable.ShopView_numTextColor, Color.BLACK);
+        numTextSize = a.getDimensionPixelSize(R.styleable.ShopView_numTextSize, (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP, 15, getResources().getDisplayMetrics()));
         a.recycle();
         init();
         setClickable(true);
@@ -117,13 +126,15 @@ public class ShopView extends View {
         rectPaint.setStyle(Paint.Style.FILL);
         rectPaint.setColor(rectColor);
 
-        rectTextPaint = new Paint();
-        rectTextPaint.setColor(hintTextColor);
-        rectTextPaint.setTextSize(hintTextSize);
 
         hintPaint = new Paint();
         hintPaint.setColor(hintTextColor);
         hintPaint.setTextSize(hintTextSize);
+
+        numPaint = new Paint();
+        numPaint.setColor(numColor);
+        numPaint.setTextSize(numTextSize);
+
 
         leftCirclePaint = new Paint();
         leftCirclePaint.setColor(leftCircleColor);
@@ -133,6 +144,10 @@ public class ShopView extends View {
         leftCircleBorderPaint.setStyle(Paint.Style.STROKE);
         leftCircleBorderPaint.setStrokeWidth(circleBorderWidth);
 
+        leftMinusPaint = new Paint();
+        leftMinusPaint.setColor(leftMinusColor);
+        leftMinusPaint.setStyle(Paint.Style.FILL);
+        leftMinusPaint.setStrokeWidth(circleBorderWidth);
         rightCirclePaint = new Paint();
         rightCirclePaint.setStyle(Paint.Style.FILL);
         rightCirclePaint.setColor(rightCircleColor);
@@ -140,6 +155,10 @@ public class ShopView extends View {
         rightCircleBorderPaint.setColor(rightCircleBorderColor);
         rightCircleBorderPaint.setStyle(Paint.Style.STROKE);
         rightCircleBorderPaint.setStrokeWidth(circleBorderWidth);
+        rightAddPaint = new Paint();
+        rightAddPaint.setColor(rightAddColor);
+        rightAddPaint.setStyle(Paint.Style.FILL);
+        rightAddPaint.setStrokeWidth(circleBorderWidth);
         leftPath = new Path();
         rightPath = new Path();
 
@@ -187,6 +206,10 @@ public class ShopView extends View {
         mWidth = width;
         mHeight = height;
         setMeasuredDimension(width, height);
+        rectSeed = 0;
+        degreeSeed = 0;
+        alphaSeed = 0;
+        gapSeed = 0;
         Log.i(TAG, "onMeasure: " + toString());
     }
 
@@ -222,11 +245,11 @@ public class ShopView extends View {
                 rectRegion.set(getPaddingLeft(), getPaddingTop(), mWidth - getPaddingRight(), mHeight - getPaddingBottom());
             }
             //计算baseline绘制的起点X坐标
-            float baseX = (mWidth / 2 - rectTextPaint.measureText(hintText) / 2);
+            float baseX = (mWidth / 2 - hintPaint.measureText(hintText) / 2);
             //计算baseline绘制的起点Y坐标
-            rectTextPaint.setAlpha(255 - (int) (255 * rectSeed));
-            float baseY = mHeight / 2 - (rectTextPaint.descent() + rectTextPaint.ascent()) / 2f;
-            canvas.drawText(hintText, baseX, baseY, rectTextPaint);
+            hintPaint.setAlpha(255 - (int) (255 * rectSeed));
+            float baseY = mHeight / 2 - (hintPaint.descent() + hintPaint.ascent()) / 2f;
+            canvas.drawText(hintText, baseX, baseY, hintPaint);
         } else {
             //确定左圆的点击范围 region
             leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
@@ -236,14 +259,17 @@ public class ShopView extends View {
             canvas.save();
             //平移至圆心坐标，坐标轴原点在圆心
             float translateX = (gapBetweenCircle + radius * 2f) * gapSeed;
-            canvas.translate(getPaddingLeft() + radius + translateX, getPaddingTop() + radius);
+            canvas.translate(getPaddingLeft() + radius + translateX, mHeight / 2);
             leftPath.reset();
             leftPath.addCircle(0, 0, radius, Path.Direction.CW);
             canvas.drawPath(leftPath, leftCirclePaint);
-            leftPath.addCircle(0, 0, radius, Path.Direction.CW);
-            canvas.drawPath(leftPath, leftCircleBorderPaint);
+            if (leftCircleBorderVisibility) {
+                leftPath.reset();
+                leftPath.addCircle(0, 0, radius, Path.Direction.CW);
+                canvas.drawPath(leftPath, leftCircleBorderPaint);
+            }
             canvas.rotate(360 * degreeSeed);
-            canvas.drawLine(-radius + 10, 0, radius - 10, 0, leftCircleBorderPaint);
+            canvas.drawLine(-radius + 10, 0, radius - 10, 0, leftMinusPaint);
             canvas.restore();
 
 
@@ -253,24 +279,32 @@ public class ShopView extends View {
             float translateTextX = (gapBetweenCircle / 2 + radius) * gapSeed;
             canvas.translate(mWidth / 2 + translateTextX, mHeight / 2);
             canvas.rotate(360 * degreeSeed);
-            float baseX = -hintPaint.measureText(String.valueOf(num)) / 2f;
-            float baseY = (Math.abs(hintPaint.ascent()) + hintPaint.descent()) / 2f - hintPaint.descent();
-            hintPaint.setAlpha(255 - (int) (255 * alphaSeed));
-            canvas.drawText(String.valueOf(num), baseX, baseY, hintPaint);
+            float baseX = -numPaint.measureText(String.valueOf(num)) / 2f;
+            float baseY = (Math.abs(numPaint.ascent()) + numPaint.descent()) / 2f - numPaint.descent();
+            numPaint.setAlpha(255 - (int) (255 * alphaSeed));
+            canvas.drawText(String.valueOf(num), baseX, baseY, numPaint);
             canvas.restore();
 
             //绘制右圆
-            rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
+            rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2, radius, Path.Direction.CW);
             region.set((int) (getPaddingLeft() + radius * 2 + gapBetweenCircle), getPaddingTop(), (int) (getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2), (int) (getPaddingTop() + radius * 2));
             addRegion.setPath(rightPath, region);
+            if (num >= maxNum) {
+                num = maxNum;
+                rightCirclePaint.setColor(rightCircleUnableColor);
+            } else {
+                rightCirclePaint.setColor(rightCircleColor);
+            }
             canvas.drawPath(rightPath, rightCirclePaint);
-            rightPath.reset();
-            //绘制左圆边框
-            rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
-            canvas.drawPath(rightPath, rightCircleBorderPaint);
+            if (rightCircleBorderVisibility) {
+                rightPath.reset();
+                //绘制左圆边框
+                rightPath.addCircle(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2, radius, Path.Direction.CW);
+                canvas.drawPath(rightPath, rightAddPaint);
+            }
             //绘制右圆 '+'
-            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + 10, getPaddingTop() + radius, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2 - 10, getPaddingTop() + radius, rightCircleBorderPaint);
-            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + 10, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, getPaddingTop() + radius * 2 - 10, rightCircleBorderPaint);
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + 10, mHeight / 2, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius * 2 - 10, mHeight / 2, rightCircleBorderPaint);
+            canvas.drawLine(getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 - radius + 10, getPaddingLeft() + radius * 2 + gapBetweenCircle + radius, mHeight / 2 + radius - 10, rightCircleBorderPaint);
 
         }
     }
@@ -287,7 +321,7 @@ public class ShopView extends View {
             case MotionEvent.ACTION_UP:
                 if (addRegion.contains((int) x, (int) y)) {
                     Log.i(TAG, "onTouchEvent: " + "点击‘+’号" + num);
-                    if (num >= 0) {
+                    if (num >= 0 && num + 1 <= maxNum) {
                         num = num + 1;
                         invalidate();
                         break;
@@ -354,9 +388,7 @@ public class ShopView extends View {
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                gapSeed = (float) animation.getAnimatedValue();
-                degreeSeed = (float) animation.getAnimatedValue();
-                alphaSeed = (float) animation.getAnimatedValue();
+                gapSeed = degreeSeed = alphaSeed = (float) animation.getAnimatedValue();
                 invalidate();
                 if (gapSeed == 1) {
                     hintMode = true;

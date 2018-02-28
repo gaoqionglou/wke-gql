@@ -56,6 +56,13 @@
         <attr name="hintTextColor" format="color" />
         <!--文字大小-->
         <attr name="hintTextSize" format="dimension" />
+
+        <!--数字文本颜色-->
+        <attr name="numTextColor" format="color" />
+        <!--数字文本大小-->
+        <attr name="numTextSize" format="dimension" />
+
+
         <!--左右2个圆的半径-->
         <attr name="radius" format="dimension" />
         <!-- 左右2个圆的边框宽度 -->
@@ -65,8 +72,19 @@
         <attr name="leftCircleBorderColor" format="color" />
         <attr name="rightCircleColor" format="color" />
         <attr name="rightCircleBorderColor" format="color" />
+
+        <attr name="leftMinusColor" format="color" />
+        <attr name="rightAddColor" format="color" />
+
+        <attr name="leftCircleBorderVisibility" format="boolean" />
+        <attr name="rightCircleBorderVisibility" format="boolean" />
+
+        <!-- 右圆不可点击时的颜色 -->
+        <attr name="rightCircleUnableColor" format="color" />
         <!--左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)-->
         <attr name="gapBetweenCircle" format="dimension" />
         <attr name="num" format="integer" />
+        <!-- 显示数字的最大值 -->
+        <attr name="maxNum" format="integer" />
     </declare-styleable>
 </resources>
