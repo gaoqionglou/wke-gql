@@ -1,5 +1,6 @@
 package com.wke.gql.shop;
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -26,6 +27,7 @@ import com.wke.gql.R;
 
 public class ShopView extends View {
     private static final String TAG = "ShopView";
+    float x = 0, y = 0;
     private int mWidth, mHeight;
     //矩形按钮的长宽
     private float rectWidth, rectHeight;
@@ -47,20 +49,17 @@ public class ShopView extends View {
     private int leftCircleColor, leftCircleBorderColor, rightCircleColor, rightCircleBorderColor;
     //左右2个圆的距离 (不是圆心到圆心,是最右侧到最左侧)
     private float gapBetweenCircle;
-    private Paint rectPaint, hintPaint;
+    private Paint rectPaint, rectTextPaint, hintPaint;
     private Paint leftCirclePaint, leftCircleBorderPaint, rightCirclePaint, rightCircleBorderPaint;
     private Path leftPath, rightPath;
     private Rect rect;
-
-    private Region delRegion, addRegion, region;
+    private Region rectRegion, delRegion, addRegion, region;
     private boolean hintMode = false;
     private int num = 0;
     private float rectSeed = 0;//[0,1]
     private float degreeSeed = 0;//[0,1]
     private float gapSeed = 0;//[0,1]
-    private float alphaSeed = 0;//[1,0]
-
-    private boolean isRightAnimtorRunned = false;
+    private float alphaSeed = 0;//[0,1]
 
     public ShopView(Context context) {
         super(context);
@@ -118,6 +117,10 @@ public class ShopView extends View {
         rectPaint.setStyle(Paint.Style.FILL);
         rectPaint.setColor(rectColor);
 
+        rectTextPaint = new Paint();
+        rectTextPaint.setColor(hintTextColor);
+        rectTextPaint.setTextSize(hintTextSize);
+
         hintPaint = new Paint();
         hintPaint.setColor(hintTextColor);
         hintPaint.setTextSize(hintTextSize);
@@ -143,6 +146,7 @@ public class ShopView extends View {
         region = new Region();
         delRegion = new Region();
         addRegion = new Region();
+        rectRegion = new Region();
     }
 
     @Override
@@ -214,14 +218,15 @@ public class ShopView extends View {
             float k = right - left;
             float newLeft = k * rectSeed + left;
             canvas.drawRoundRect(newLeft, getPaddingTop(), mWidth - getPaddingRight(), mHeight - getPaddingBottom(), rectCornerRadius, rectCornerRadius, rectPaint);
-
+            if (rectSeed == 1) {
+                rectRegion.set(getPaddingLeft(), getPaddingTop(), mWidth - getPaddingRight(), mHeight - getPaddingBottom());
+            }
             //计算baseline绘制的起点X坐标
-            float baseX = (mWidth / 2 - hintPaint.measureText(hintText) / 2);
+            float baseX = (mWidth / 2 - rectTextPaint.measureText(hintText) / 2);
             //计算baseline绘制的起点Y坐标
-            hintPaint.setColor(Color.WHITE);
-            hintPaint.setAlpha(255);
-            float baseY = mHeight / 2 - (hintPaint.descent() + hintPaint.ascent()) / 2f;
-            canvas.drawText(hintText, baseX, baseY, hintPaint);
+            rectTextPaint.setAlpha(255 - (int) (255 * rectSeed));
+            float baseY = mHeight / 2 - (rectTextPaint.descent() + rectTextPaint.ascent()) / 2f;
+            canvas.drawText(hintText, baseX, baseY, rectTextPaint);
         } else {
             //确定左圆的点击范围 region
             leftPath.addCircle(getPaddingLeft() + radius, getPaddingTop() + radius, radius, Path.Direction.CW);
@@ -237,7 +242,6 @@ public class ShopView extends View {
             canvas.drawPath(leftPath, leftCirclePaint);
             leftPath.addCircle(0, 0, radius, Path.Direction.CW);
             canvas.drawPath(leftPath, leftCircleBorderPaint);
-            Log.i(TAG, "onDraw: translateX " + translateX);
             canvas.rotate(360 * degreeSeed);
             canvas.drawLine(-radius + 10, 0, radius - 10, 0, leftCircleBorderPaint);
             canvas.restore();
@@ -277,30 +281,32 @@ public class ShopView extends View {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                float x = event.getX();
-                float y = event.getY();
+                x = event.getX();
+                y = event.getY();
+                break;
+            case MotionEvent.ACTION_UP:
                 if (addRegion.contains((int) x, (int) y)) {
-                    Log.i(TAG, "onTouchEvent: " + "addRegion");
-                    if (num > 0) {
+                    Log.i(TAG, "onTouchEvent: " + "点击‘+’号" + num);
+                    if (num >= 0) {
                         num = num + 1;
                         invalidate();
                         break;
                     }
-                    if (num + 1 > 0) {
-                        num = num + 1;
-                        startRightCircleAnimator2();
-                    }
                 }
                 if (delRegion.contains((int) x, (int) y)) {
-                    Log.i(TAG, "onTouchEvent: " + "delRegion " + num);
+                    Log.i(TAG, "onTouchEvent: " + " 点击‘-’号 " + num);
                     if (num - 1 >= 0) {
                         num = num - 1;
                         invalidate();
                     }
-                    if (num == 0 && !isRightAnimtorRunned) {
+                    if (num == 0 && !hintMode) {
                         //执行右圆的平移的动画
-                        startRightCircleAnimator();
+                        minus();
                     }
+                }
+                if (hintMode && rectRegion.contains((int) x, (int) y)) {
+                    Log.i(TAG, "onTouchEvent: " + "rectRegion " + num);
+                    add();
                 }
                 break;
             default:
@@ -309,8 +315,40 @@ public class ShopView extends View {
         return super.onTouchEvent(event);
     }
 
+    /**
+     * [减号+数字]旋转缩进动画开启,接着进行矩形弹出动画
+     */
+    private void minus() {
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(minusInAnimator(), rectOutAnimator());
+        animatorSet.setDuration(500);
+        animatorSet.setInterpolator(new DecelerateInterpolator());
+        animatorSet.start();
+    }
 
-    private void startRightCircleAnimator() {
+
+    private void add() {
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(rectInAnimator(), minusOutAnimator());
+        animatorSet.setDuration(500);
+        animatorSet.setInterpolator(new DecelerateInterpolator());
+        animatorSet.start();
+    }
+
+    /**
+     * 减号缩进动画
+     */
+    private void startMinusIntAnimator() {
+        ValueAnimator animator = minusInAnimator();
+        animator.setDuration(500);
+        animator.start();
+    }
+
+    /**
+     * 减号缩进动画
+     */
+    private ValueAnimator minusInAnimator() {
+        Log.i(TAG, "减号缩进动画: ");
         ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
         animator.setInterpolator(new DecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -322,15 +360,48 @@ public class ShopView extends View {
                 invalidate();
                 if (gapSeed == 1) {
                     hintMode = true;
-                    startRectAnimator();
                 }
             }
         });
+        return animator;
+    }
+
+    /**
+     * 减号弹出动画
+     */
+    private void startMinusOutAnimator() {
+        ValueAnimator animator = minusOutAnimator();
         animator.setDuration(500);
         animator.start();
     }
 
-    private void startRectAnimator() {
+    private ValueAnimator minusOutAnimator() {
+        Log.i(TAG, "减号弹出动画: ");
+        ValueAnimator animator = ValueAnimator.ofFloat(1f, 0f);
+        animator.setInterpolator(new DecelerateInterpolator());
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                gapSeed = (float) animation.getAnimatedValue();
+                degreeSeed = (float) animation.getAnimatedValue();
+                alphaSeed = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        return animator;
+    }
+
+    /**
+     * 矩形弹出
+     */
+    private void startRectOutAnimator() {
+        ValueAnimator animator = rectOutAnimator();
+        animator.setDuration(500);
+        animator.start();
+    }
+
+    private ValueAnimator rectOutAnimator() {
+        Log.i(TAG, "矩形弹出: ");
         ValueAnimator animator = ValueAnimator.ofFloat(1f, 0f);
         animator.setInterpolator(new DecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -340,25 +411,33 @@ public class ShopView extends View {
                 invalidate();
             }
         });
+        return animator;
+    }
+
+    /**
+     * 矩形缩进
+     */
+    private void startRectInAnimator() {
+        ValueAnimator animator = rectInAnimator();
         animator.setDuration(500);
         animator.start();
     }
 
-
-    private void startRightCircleAnimator2() {
-        ValueAnimator animator = ValueAnimator.ofFloat(1f, 0f);
+    private ValueAnimator rectInAnimator() {
+        Log.i(TAG, "矩形缩进: ");
+        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
         animator.setInterpolator(new DecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                gapSeed = (float) animation.getAnimatedValue();
-                degreeSeed = (float) animation.getAnimatedValue();
-                alphaSeed = (float) animation.getAnimatedValue();
-                isRightAnimtorRunned = true;
+                rectSeed = (float) animation.getAnimatedValue();
                 invalidate();
+                if (rectSeed == 1) {
+                    hintMode = false;
+                }
             }
         });
-        animator.setDuration(500);
-        animator.start();
+        return animator;
     }
+
 }
