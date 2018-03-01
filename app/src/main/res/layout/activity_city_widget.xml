@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wke.gql.citywidget.CityWidgetActivity">
+
+    <com.wke.gql.citywidget.CityListIndexView
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        app:indexBackground="@drawable/search_tag_bg"
+        app:indexTextBackground="@drawable/select_city_bg"
+        app:indexTextColor="#FFF"
+        app:indexTextSize="10sp" />
+
+</RelativeLayout>

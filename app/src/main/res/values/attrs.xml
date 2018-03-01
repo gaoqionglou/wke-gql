@@ -89,4 +89,10 @@
         <!-- 加减符号到圆的边距 -->
         <attr name="signPadding" format="dimension" />
     </declare-styleable>
+    <declare-styleable name="CityListIndexView">
+        <attr name="indexTextColor" format="color" />
+        <attr name="indexTextSize" format="dimension" />
+        <attr name="indexTextBackground" format="reference" />
+        <attr name="indexBackground" format="reference" />
+    </declare-styleable>
 </resources>

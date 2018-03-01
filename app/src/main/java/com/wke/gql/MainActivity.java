@@ -52,4 +52,7 @@ public class MainActivity extends AppCompatActivity {
         ARouter.getInstance().build("/wkegql/shopview").navigation();
     }
 
+    public void toCityWidgetdemo(View v) {
+        ARouter.getInstance().build("/wkegql/citywidget").navigation();
+    }
 }
