@@ -4,14 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.wke.gql.citywidget.CityWidgetActivity">
 
     <com.wke.gql.citywidget.CityListIndexView
-        android:layout_width="50dp"
+        android:id="@+id/indexview"
+        android:layout_width="40dp"
         android:layout_height="match_parent"
-        app:indexBackground="@drawable/search_tag_bg"
+        android:layout_alignParentEnd="true"
+        app:indexBackground="@color/cardview_shadow_start_color"
+        app:indexMarginBottom="3dp"
+        app:indexMarginLeft="2dp"
+        app:indexMarginRight="2dp"
+        app:indexMarginTop="2dp"
         app:indexTextBackground="@drawable/select_city_bg"
         app:indexTextColor="#FFF"
-        app:indexTextSize="10sp" />
-
+        app:indexTextPaddingLeft="3dp"
+        app:indexTextPaddingRight="3dp"
+        app:indexTextSize="12sp" />
 </RelativeLayout>
