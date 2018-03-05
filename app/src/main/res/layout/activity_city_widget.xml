@@ -17,9 +17,21 @@
         app:indexMarginLeft="2dp"
         app:indexMarginRight="2dp"
         app:indexMarginTop="2dp"
-        app:indexTextBackground="@drawable/select_city_bg"
+        app:indexTextBackground="@drawable/selector_text"
         app:indexTextColor="#FFF"
         app:indexTextPaddingLeft="3dp"
         app:indexTextPaddingRight="3dp"
         app:indexTextSize="12sp" />
+
+    <TextView
+        android:id="@+id/middleText"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@color/cardview_shadow_start_color"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 </RelativeLayout>

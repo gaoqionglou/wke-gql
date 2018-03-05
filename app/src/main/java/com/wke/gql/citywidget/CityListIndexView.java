@@ -14,10 +14,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.wke.gql.R;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,17 +27,19 @@ import java.util.List;
 
 public class CityListIndexView extends LinearLayout {
     private static final String TAG = "CityListIndexView";
-    private List<String> indexContents = Arrays.asList("GPS", "热门", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+    private List<String> indexContents;
     private int indexTextColor, indexTextSize, indexTextBackground, indexBackgroud;
     private int indexMarginLeft, indexMarginRight, indexMarginTop, indexMarginBottom;
     private int indexTextWidth, indexTextHeight;
     private int indexTextPaddingLeft, indexTextPaddingRight, indexTextPaddingTop, indexTextPaddingBottom;
 
     private float mLastX, mLastY;
+    private View popUpView;
+
     private OnIndexTextClickCallBack onIndexTextClickCallBack;
 
     public CityListIndexView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public CityListIndexView(Context context, @Nullable AttributeSet attrs) {
@@ -70,9 +72,21 @@ public class CityListIndexView extends LinearLayout {
         indexTextPaddingTop = a.getDimensionPixelOffset(R.styleable.CityListIndexView_indexTextPaddingTop, 0);
         a.recycle();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.layout_citylistindex, this, true);
+        View v = inflater.inflate(R.layout.layout_citylistindex, this, true);
         initView();
         setClickable(true);//设置为true 为了后续能接收move up事件
+    }
+
+    public View getPopUpView() {
+        return popUpView;
+    }
+
+    public void setPopUpView(View popUpView) {
+        this.popUpView = popUpView;
+    }
+
+    public void setOnIndexTextClickCallBack(OnIndexTextClickCallBack onIndexTextClickCallBack) {
+        this.onIndexTextClickCallBack = onIndexTextClickCallBack;
     }
 
     private void initView() {
@@ -88,28 +102,23 @@ public class CityListIndexView extends LinearLayout {
                 params.setMargins(indexMarginLeft, indexMarginTop, indexMarginRight, indexMarginBottom);
                 params.weight = 1;
                 textView.setPadding(indexTextPaddingLeft, indexTextPaddingTop, indexTextPaddingRight, indexTextPaddingBottom);
+                textView.setId(i);
                 textView.setGravity(Gravity.CENTER);
                 textView.setText(indexContents.get(i));
                 textView.setTag(indexContents.get(i));
                 textView.setTextColor(indexTextColor);
-                textView.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (onIndexTextClickCallBack != null) {
-                            onIndexTextClickCallBack.onClick(v);
-                        }
-                    }
-                });
                 textView.setOnTouchListener(new OnTouchListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent ev) {
+                    public boolean onTouch(View v, MotionEvent event) {
+                        Log.e(TAG, "AAAonTouch: ");
                         if (onIndexTextClickCallBack != null) {
-                            onIndexTextClickCallBack.onTouch(v, ev);
+                            onIndexTextClickCallBack.onClick(v);
                         }
                         return false;
                     }
                 });
                 textView.setClickable(true);
+                textView.setSelected(false);
                 textView.setBackgroundResource(indexTextBackground);
                 textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, indexTextSize);
                 layout.addView(textView, params);
@@ -121,26 +130,38 @@ public class CityListIndexView extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         int action = ev.getAction();
+        mLastX = ev.getX();
+        mLastY = ev.getY();
+        View v = isInChildView(mLastX, mLastY);
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                mLastX = ev.getX();
-                mLastY = ev.getY();
+                if (v != null) v.setSelected(true);
                 Log.i(TAG, "dispatchTouchEvent: ACTION_DOWN " + mLastX + "," + mLastY);
                 break;
             case MotionEvent.ACTION_MOVE:
-                mLastX = ev.getX();
-                mLastY = ev.getY();
+
                 Log.i(TAG, "dispatchTouchEvent: ACTION_MOVE " + mLastX + "," + mLastY);
+                if (v == null) {
+                    popUpView.setVisibility(GONE);
+                } else {
+                    setAllSelected(false);
+                    v.setSelected(true);
+                    popUpView.setVisibility(VISIBLE);
+                    if (popUpView instanceof TextView) {
+                        ((TextView) popUpView).setText(v.getTag().toString());
+                    }
+                }
                 break;
             case MotionEvent.ACTION_UP:
-                mLastX = ev.getX();
-                mLastY = ev.getY();
                 Log.i(TAG, "dispatchTouchEvent: ACTION_UP " + mLastX + "," + mLastY);
+                popUpView.setVisibility(GONE);
+                setAllSelected(false);
+                if (v != null) v.setSelected(true);
+
                 break;
             default:
                 break;
         }
-
         return super.dispatchTouchEvent(ev);
     }
 
@@ -182,7 +203,6 @@ public class CityListIndexView extends LinearLayout {
             case MotionEvent.ACTION_MOVE:
                 mLastX = ev.getX();
                 mLastY = ev.getY();
-                Log.i(TAG, "onTouchEvent: ACTION_MOVE " + mLastX + "," + mLastY);
                 break;
             case MotionEvent.ACTION_UP:
                 mLastX = ev.getX();
@@ -237,6 +257,40 @@ public class CityListIndexView extends LinearLayout {
         this.indexBackgroud = indexBackgroud;
     }
 
+    /**
+     * 点击位置是否在某个子View内,如果在，返回这个View，不在返回null
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    private View isInChildView(float x, float y) {
+        View v = null;
+        LinearLayout root = (LinearLayout) getChildAt(0);
+        for (int i = 0; i < root.getChildCount(); i++) {
+            View childView = root.getChildAt(i);
+            int top = childView.getTop();
+            int bottom = childView.getBottom();
+            int left = childView.getLeft();
+            int right = childView.getRight();
+            boolean inWidth = x >= left && x <= right;
+            boolean inHeight = y >= top && y <= bottom;
+            boolean isInChildView = inWidth && inHeight;
+            if (isInChildView) {
+                v = childView;
+                break;
+            }
+        }
+        return v;
+    }
+
+    private void setAllSelected(boolean selected) {
+        LinearLayout root = (LinearLayout) getChildAt(0);
+        for (int i = 0; i < root.getChildCount(); i++) {
+            View childView = root.getChildAt(i);
+            childView.setSelected(false);
+        }
+    }
 
     public interface OnIndexTextClickCallBack {
         public void onTouch(View v, MotionEvent ev);
