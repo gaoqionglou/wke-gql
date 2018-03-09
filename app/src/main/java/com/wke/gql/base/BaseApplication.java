@@ -13,7 +13,12 @@ import com.wke.gql.dagger2.component.RxNetWorkUtilComponent;
 import com.wke.gql.dagger2.module.AppMoudle;
 import com.wke.gql.dagger2.module.NetWorkUtilModule;
 import com.wke.gql.dagger2.module.RxNetWorkUtilModule;
+import com.wke.gql.greendao.DaoManager;
 import com.wke.gql.utils.Contants;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -28,9 +33,11 @@ public class BaseApplication extends MultiDexApplication {
     private NetWorkUtilComponent netWorkUtilComponent;
     private Retrofit retrofit;
     private Gson gson;
+
     public BaseApplication() {
         application = this;
     }
+
     public static BaseApplication getApplication() {
         return application;
     }
@@ -42,6 +49,9 @@ public class BaseApplication extends MultiDexApplication {
         initRetrofit();
         initARouter();
         appComponent = DaggerAppComponent.builder().appMoudle(new AppMoudle(this, retrofit, gson)).build();
+
+        DaoManager.getInstance();
+
     }
 
     public AppComponent getAppComponent() {
@@ -76,10 +86,48 @@ public class BaseApplication extends MultiDexApplication {
     //初始化ARouter
     private void initARouter() {
 //        if (BuildConfig.DEBUG) {
-            Log.i(TAG, "initARouter:openLog openDebug");
-            ARouter.openLog();
-            ARouter.openDebug();
+        Log.i(TAG, "initARouter:openLog openDebug");
+        ARouter.openLog();
+        ARouter.openDebug();
 //        }
         ARouter.init(this);
+    }
+
+    private void loadCityJsonIntoDB(String fileName) {
+        String json = readFromAssets("city.json");
+    }
+
+
+    /**
+     * 从assets中读取txt
+     */
+    private String readFromAssets(String fileName) {
+        try {
+            InputStream is = getAssets().open("qq.txt");
+            String text = read(is);
+            return text;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    /**
+     * 按行读取txt
+     *
+     * @param is
+     * @return
+     * @throws Exception
+     */
+    private String read(InputStream is) throws Exception {
+        InputStreamReader reader = new InputStreamReader(is);
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        StringBuffer buffer = new StringBuffer("");
+        String str;
+        while ((str = bufferedReader.readLine()) != null) {
+            buffer.append(str);
+            buffer.append("\n");
+        }
+        return buffer.toString();
     }
 }
