@@ -72,5 +72,7 @@ dependencies {
     //java注解
     compile 'org.glassfish:javax.annotation:10.0-b28'
     compile "com.github.bumptech.glide:glide:4.0.0"
+
+    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
     testCompile 'junit:junit:4.12'
 }

@@ -12,5 +12,5 @@ import java.util.List;
 public class CityDataModel {
     public String code;
     public String version;
-    private List<CityItem> result;
+    public List<CityItem> result;
 }

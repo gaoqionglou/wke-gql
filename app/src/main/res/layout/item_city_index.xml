@@ -2,20 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#eaeaea"
     android:orientation="vertical">
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/item_city_name"
+        android:id="@+id/item_city_index"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_height="20dp"
         android:gravity="start|center_vertical"
         android:paddingLeft="5dp"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#787878" />
 </LinearLayout>

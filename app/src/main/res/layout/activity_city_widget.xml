@@ -35,7 +35,7 @@
             app:indexMarginRight="2dp"
             app:indexMarginTop="2dp"
             app:indexTextBackground="@drawable/selector_text"
-            app:indexTextColor="#FFF"
+            app:indexTextColor="#000"
             app:indexTextPaddingLeft="3dp"
             app:indexTextPaddingRight="3dp"
             app:indexTextSize="12sp" />
@@ -50,6 +50,6 @@
             android:textColor="#FFF"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:visibility="visible" />
+            android:visibility="gone" />
     </RelativeLayout>
 </RelativeLayout>

@@ -35,7 +35,7 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
      * Creates the underlying database table.
      */
     public static void createTable(Database db, boolean ifNotExists) {
-        String constraint = ifNotExists ? "IF NOT EXISTS " : "";
+        String constraint = ifNotExists ? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"City\" (" + //
                 "\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: airportId
                 "\"AIRPORT_CODE\" TEXT," + // 1: airportCode
@@ -54,17 +54,13 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
                 "\"CONTINENT_ENNAME\" TEXT," + // 14: continentEnName
                 "\"LONGITUDE\" TEXT," + // 15: longitude
                 "\"LATITUDE\" TEXT," + // 16: latitude
-                "\"IS_DOMESTIC\" INTEGER," + // 17: isDomestic
-                "\"IS_HOT\" INTEGER," + // 18: isHot
-                "\"TRIPGUIDE_INFO\" TEXT," + // 19: tripguideInfo
-                "\"CITY_CODE_BAIDU\" TEXT," + // 20: cityCodeBaidu
-                "\"AIRPORT_NAME_SIMPLE\" TEXT," + // 21: airportNameSimple
-                "\"AIRPORT_NAME_EN_SIMPLE\" TEXT);"); // 22: airportEnNameSimple
+                "\"IS_DOMESTIC\" TEXT," + // 17: isDomestic
+                "\"IS_HOT\" TEXT," + // 18: isHot
+                "\"AIRPORT_NAME_SIMPLE\" TEXT," + // 19: airportNameSimple
+                "\"AIRPORT_NAME_EN_SIMPLE\" TEXT);"); // 20: airportEnNameSimple
     }
 
-    /**
-     * Drops the underlying database table.
-     */
+    /** Drops the underlying database table. */
     public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"City\"";
         db.execSQL(sql);
@@ -159,34 +155,24 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
             stmt.bindString(17, latitude);
         }
 
-        Boolean isDomestic = entity.getIsDomestic();
+        String isDomestic = entity.getIsDomestic();
         if (isDomestic != null) {
-            stmt.bindLong(18, isDomestic ? 1L : 0L);
+            stmt.bindString(18, isDomestic);
         }
 
-        Boolean isHot = entity.getIsHot();
+        String isHot = entity.getIsHot();
         if (isHot != null) {
-            stmt.bindLong(19, isHot ? 1L : 0L);
-        }
-
-        String tripguideInfo = entity.getTripguideInfo();
-        if (tripguideInfo != null) {
-            stmt.bindString(20, tripguideInfo);
-        }
-
-        String cityCodeBaidu = entity.getCityCodeBaidu();
-        if (cityCodeBaidu != null) {
-            stmt.bindString(21, cityCodeBaidu);
+            stmt.bindString(19, isHot);
         }
 
         String airportNameSimple = entity.getAirportNameSimple();
         if (airportNameSimple != null) {
-            stmt.bindString(22, airportNameSimple);
+            stmt.bindString(20, airportNameSimple);
         }
 
         String airportEnNameSimple = entity.getAirportEnNameSimple();
         if (airportEnNameSimple != null) {
-            stmt.bindString(23, airportEnNameSimple);
+            stmt.bindString(21, airportEnNameSimple);
         }
     }
 
@@ -279,34 +265,24 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
             stmt.bindString(17, latitude);
         }
 
-        Boolean isDomestic = entity.getIsDomestic();
+        String isDomestic = entity.getIsDomestic();
         if (isDomestic != null) {
-            stmt.bindLong(18, isDomestic ? 1L : 0L);
+            stmt.bindString(18, isDomestic);
         }
 
-        Boolean isHot = entity.getIsHot();
+        String isHot = entity.getIsHot();
         if (isHot != null) {
-            stmt.bindLong(19, isHot ? 1L : 0L);
-        }
-
-        String tripguideInfo = entity.getTripguideInfo();
-        if (tripguideInfo != null) {
-            stmt.bindString(20, tripguideInfo);
-        }
-
-        String cityCodeBaidu = entity.getCityCodeBaidu();
-        if (cityCodeBaidu != null) {
-            stmt.bindString(21, cityCodeBaidu);
+            stmt.bindString(19, isHot);
         }
 
         String airportNameSimple = entity.getAirportNameSimple();
         if (airportNameSimple != null) {
-            stmt.bindString(22, airportNameSimple);
+            stmt.bindString(20, airportNameSimple);
         }
 
         String airportEnNameSimple = entity.getAirportEnNameSimple();
         if (airportEnNameSimple != null) {
-            stmt.bindString(23, airportEnNameSimple);
+            stmt.bindString(21, airportEnNameSimple);
         }
     }
 
@@ -335,12 +311,10 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
                 cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // continentEnName
                 cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // longitude
                 cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // latitude
-                cursor.isNull(offset + 17) ? null : cursor.getShort(offset + 17) != 0, // isDomestic
-                cursor.isNull(offset + 18) ? null : cursor.getShort(offset + 18) != 0, // isHot
-                cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // tripguideInfo
-                cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20), // cityCodeBaidu
-                cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21), // airportNameSimple
-                cursor.isNull(offset + 22) ? null : cursor.getString(offset + 22) // airportEnNameSimple
+                cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17), // isDomestic
+                cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18), // isHot
+                cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // airportNameSimple
+                cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20) // airportEnNameSimple
         );
         return entity;
     }
@@ -364,20 +338,18 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
         entity.setContinentEnName(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
         entity.setLongitude(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
         entity.setLatitude(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
-        entity.setIsDomestic(cursor.isNull(offset + 17) ? null : cursor.getShort(offset + 17) != 0);
-        entity.setIsHot(cursor.isNull(offset + 18) ? null : cursor.getShort(offset + 18) != 0);
-        entity.setTripguideInfo(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
-        entity.setCityCodeBaidu(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
-        entity.setAirportNameSimple(cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21));
-        entity.setAirportEnNameSimple(cursor.isNull(offset + 22) ? null : cursor.getString(offset + 22));
-    }
-
+        entity.setIsDomestic(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
+        entity.setIsHot(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
+        entity.setAirportNameSimple(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
+        entity.setAirportEnNameSimple(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
+     }
+     
     @Override
     protected final Long updateKeyAfterInsert(CityItem entity, long rowId) {
         entity.setAirportId(rowId);
         return rowId;
     }
-
+    
     @Override
     public Long getKey(CityItem entity) {
         if (entity != null) {
@@ -386,16 +358,16 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
             return null;
         }
     }
-
+    
     @Override
     protected final boolean isEntityUpdateable() {
         return true;
     }
 
-    /**
+/**
      * Properties of entity CityItem.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-     */
+    */
     public static class Properties {
         public final static Property AirportId = new Property(0, Long.class, "airportId", true, "ID");
         public final static Property AirportCode = new Property(1, String.class, "airportCode", false, "AIRPORT_CODE");
@@ -414,12 +386,10 @@ public class CityItemDao extends AbstractDao<CityItem, Long> {
         public final static Property ContinentEnName = new Property(14, String.class, "continentEnName", false, "CONTINENT_ENNAME");
         public final static Property Longitude = new Property(15, String.class, "longitude", false, "LONGITUDE");
         public final static Property Latitude = new Property(16, String.class, "latitude", false, "LATITUDE");
-        public final static Property IsDomestic = new Property(17, Boolean.class, "isDomestic", false, "IS_DOMESTIC");
-        public final static Property IsHot = new Property(18, Boolean.class, "isHot", false, "IS_HOT");
-        public final static Property TripguideInfo = new Property(19, String.class, "tripguideInfo", false, "TRIPGUIDE_INFO");
-        public final static Property CityCodeBaidu = new Property(20, String.class, "cityCodeBaidu", false, "CITY_CODE_BAIDU");
-        public final static Property AirportNameSimple = new Property(21, String.class, "airportNameSimple", false, "AIRPORT_NAME_SIMPLE");
-        public final static Property AirportEnNameSimple = new Property(22, String.class, "airportEnNameSimple", false, "AIRPORT_NAME_EN_SIMPLE");
+    public final static Property IsDomestic = new Property(17, String.class, "isDomestic", false, "IS_DOMESTIC");
+    public final static Property IsHot = new Property(18, String.class, "isHot", false, "IS_HOT");
+    public final static Property AirportNameSimple = new Property(19, String.class, "airportNameSimple", false, "AIRPORT_NAME_SIMPLE");
+    public final static Property AirportEnNameSimple = new Property(20, String.class, "airportEnNameSimple", false, "AIRPORT_NAME_EN_SIMPLE");
     }
-
+    
 }

@@ -21,8 +21,8 @@
       "continentEnname": "Asia",
       "latitude": 23.392435,
       "longitude": 113.309493,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "PEK",
@@ -43,8 +43,8 @@
       "continentEnname": "Asia",
       "latitude": 40.0611,
       "longitude": 116.62117,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "SHA",
@@ -65,8 +65,8 @@
       "continentEnname": "Asia",
       "latitude": 31.200171,
       "longitude": 121.334574,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "PVG",
@@ -87,8 +87,8 @@
       "continentEnname": "Asia",
       "latitude": 31.157386,
       "longitude": 121.81502,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "SZX",
@@ -109,8 +109,8 @@
       "continentEnname": "Asia",
       "latitude": 22.630569,
       "longitude": 113.820131,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "AHJ",
@@ -131,8 +131,8 @@
       "continentEnname": "Asia",
       "latitude": 32.532957,
       "longitude": 102.365627,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ABV",
@@ -153,8 +153,8 @@
       "continentEnname": "Africa",
       "latitude": 9.007115,
       "longitude": 7.2634001,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ABJ",
@@ -175,8 +175,8 @@
       "continentEnname": "Africa",
       "latitude": 5.2544696,
       "longitude": -3.9296293,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "EDI",
@@ -197,8 +197,8 @@
       "continentEnname": "Europe",
       "latitude": 55.950785,
       "longitude": -3.3614532,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ADL",
@@ -219,8 +219,8 @@
       "continentEnname": "Australia",
       "latitude": -34.9461557,
       "longitude": 138.5332378,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YEG",
@@ -241,8 +241,8 @@
       "continentEnname": "North America",
       "latitude": 53.3075047,
       "longitude": -113.5843516,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ALG",
@@ -263,8 +263,8 @@
       "continentEnname": "Africa",
       "latitude": 36.6981425,
       "longitude": 3.2067834,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YIE",
@@ -285,8 +285,8 @@
       "continentEnname": "Asia",
       "latitude": 47.315574,
       "longitude": 119.929568,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AMD",
@@ -307,8 +307,8 @@
       "continentEnname": "Asia",
       "latitude": 23.0734262,
       "longitude": 72.626571,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AKA",
@@ -329,8 +329,8 @@
       "continentEnname": "Asia",
       "latitude": 32.713537,
       "longitude": 108.946255,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ACC",
@@ -351,8 +351,8 @@
       "continentEnname": "Africa",
       "latitude": 5.6060955,
       "longitude": -0.1681235,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AKL",
@@ -373,8 +373,8 @@
       "continentEnname": "Australia",
       "latitude": -37.0082476,
       "longitude": 174.7850358,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "ANC",
@@ -395,8 +395,8 @@
       "continentEnname": "North America",
       "latitude": 61.1758863,
       "longitude": -149.9900791,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AKU",
@@ -417,8 +417,8 @@
       "continentEnname": "Asia",
       "latitude": 41.265828,
       "longitude": 80.304945,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NGQ",
@@ -439,8 +439,8 @@
       "continentEnname": "Asia",
       "latitude": 32.11347,
       "longitude": 80.062168,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MCO",
@@ -461,8 +461,8 @@
       "continentEnname": "North America",
       "latitude": 28.4311577,
       "longitude": -81.308083,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ALA",
@@ -483,8 +483,8 @@
       "continentEnname": "Asia",
       "latitude": 43.3499265,
       "longitude": 77.0252894,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RHT",
@@ -505,8 +505,8 @@
       "continentEnname": "Asia",
       "latitude": 38.770372,
       "longitude": 105.68506,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AXF",
@@ -527,8 +527,8 @@
       "continentEnname": "Asia",
       "latitude": 39.214066,
       "longitude": 101.648294,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AAT",
@@ -549,8 +549,8 @@
       "continentEnname": "Asia",
       "latitude": 47.760323,
       "longitude": 88.096306,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AMM",
@@ -571,8 +571,8 @@
       "continentEnname": "Asia",
       "latitude": 31.7202574,
       "longitude": 35.994232,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "EMD",
@@ -593,8 +593,8 @@
       "continentEnname": "Australia",
       "latitude": -23.5690731,
       "longitude": 148.1745808,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ATQ",
@@ -615,8 +615,8 @@
       "continentEnname": "Asia",
       "latitude": 31.7054448,
       "longitude": 74.8066626,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AMS",
@@ -637,8 +637,8 @@
       "continentEnname": "Europe",
       "latitude": 52.3105386,
       "longitude": 4.7682744,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "MFM",
@@ -659,8 +659,8 @@
       "continentEnname": "Asia",
       "latitude": 22.160557,
       "longitude": 113.586672,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "APW",
@@ -681,8 +681,8 @@
       "continentEnname": "Australia",
       "latitude": -13.83045,
       "longitude": -172.0081099,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AQG",
@@ -703,8 +703,8 @@
       "continentEnname": "Asia",
       "latitude": 30.588697,
       "longitude": 117.058934,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AOG",
@@ -725,8 +725,8 @@
       "continentEnname": "Asia",
       "latitude": 41.108653,
       "longitude": 122.868804,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "AVA",
@@ -747,8 +747,8 @@
       "continentEnname": "Asia",
       "latitude": 26.259809,
       "longitude": 105.883145,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "OSS",
@@ -769,8 +769,8 @@
       "continentEnname": "Asia",
       "latitude": 40.608333,
       "longitude": 72.793333,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ASB",
@@ -791,8 +791,8 @@
       "continentEnname": "Asia",
       "latitude": 37.9845133,
       "longitude": 58.3665111,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OSL",
@@ -813,8 +813,8 @@
       "continentEnname": "Europe",
       "latitude": 60.1975501,
       "longitude": 11.1004153,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AUS",
@@ -835,8 +835,8 @@
       "continentEnname": "North America",
       "latitude": 30.1974292,
       "longitude": -97.6663058,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TSE",
@@ -857,8 +857,8 @@
       "continentEnname": "Asia",
       "latitude": 51.0270402,
       "longitude": 71.4608109,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PEN",
@@ -879,8 +879,8 @@
       "continentEnname": "Asia",
       "latitude": 5.2926492,
       "longitude": 100.2657369,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BDB",
@@ -901,8 +901,8 @@
       "continentEnname": "Australia",
       "latitude": -24.9000749,
       "longitude": 152.3220921,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BOD",
@@ -923,8 +923,8 @@
       "continentEnname": "Europe",
       "latitude": 44.8305935,
       "longitude": 0.7103052,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BHD",
@@ -945,8 +945,8 @@
       "continentEnname": "Europe",
       "latitude": 54.6176164,
       "longitude": -5.8718304,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BEG",
@@ -967,8 +967,8 @@
       "continentEnname": "Europe",
       "latitude": 44.820498,
       "longitude": 20.291691,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OPO",
@@ -989,8 +989,8 @@
       "continentEnname": "Europe",
       "latitude": 41.2421186,
       "longitude": -8.6785514,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BUF",
@@ -1011,8 +1011,8 @@
       "continentEnname": "North America",
       "latitude": 42.9397059,
       "longitude": -78.7295067,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BOG",
@@ -1033,8 +1033,8 @@
       "continentEnname": "South America",
       "latitude": 4.6983396,
       "longitude": -74.1419602,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IXB",
@@ -1055,8 +1055,8 @@
       "continentEnname": "Asia",
       "latitude": 26.6815486,
       "longitude": 88.3297499,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BHY",
@@ -1077,8 +1077,8 @@
       "continentEnname": "Asia",
       "latitude": 21.546925,
       "longitude": 109.298737,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BFJ",
@@ -1099,8 +1099,8 @@
       "continentEnname": "Asia",
       "latitude": 27.26632,
       "longitude": 105.487725,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BLR",
@@ -1121,8 +1121,8 @@
       "continentEnname": "Asia",
       "latitude": 13.1986348,
       "longitude": 77.7065928,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OTP",
@@ -1143,8 +1143,8 @@
       "continentEnname": "Europe",
       "latitude": 44.5707306,
       "longitude": 26.0844123,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KKJ",
@@ -1165,8 +1165,8 @@
       "continentEnname": "Asia",
       "latitude": 33.8381101,
       "longitude": 131.0321048,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GYD",
@@ -1187,8 +1187,8 @@
       "continentEnname": "Asia",
       "latitude": 40.4650264,
       "longitude": 50.0522984,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BAH",
@@ -1209,8 +1209,8 @@
       "continentEnname": "Asia",
       "latitude": 26.2697119,
       "longitude": 50.6259871,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TXL",
@@ -1231,8 +1231,8 @@
       "continentEnname": "Europe",
       "latitude": 52.5588327,
       "longitude": 13.2884374,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SXF",
@@ -1253,8 +1253,8 @@
       "continentEnname": "Europe",
       "latitude": 52.3889085,
       "longitude": 13.5183387,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BPL",
@@ -1275,8 +1275,8 @@
       "continentEnname": "Asia",
       "latitude": 44.906311,
       "longitude": 82.309316,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ORY",
@@ -1297,8 +1297,8 @@
       "continentEnname": "Europe",
       "latitude": 48.7262433,
       "longitude": 2.3652472,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "CDG",
@@ -1319,8 +1319,8 @@
       "continentEnname": "Europe",
       "latitude": 49.0096906,
       "longitude": 2.5479245,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "BPN",
@@ -1341,8 +1341,8 @@
       "continentEnname": "Asia",
       "latitude": -1.2634814,
       "longitude": 116.896138,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BDQ",
@@ -1363,8 +1363,8 @@
       "continentEnname": "Asia",
       "latitude": 22.3319844,
       "longitude": 73.2167786,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DPS",
@@ -1385,8 +1385,8 @@
       "continentEnname": "Asia",
       "latitude": -8.7467172,
       "longitude": 115.166787,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PRG",
@@ -1407,8 +1407,8 @@
       "continentEnname": "Europe",
       "latitude": 50.101791,
       "longitude": 14.2631811,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BLQ",
@@ -1429,8 +1429,8 @@
       "continentEnname": "Europe",
       "latitude": 44.5345216,
       "longitude": 11.2878593,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PLM",
@@ -1451,8 +1451,8 @@
       "continentEnname": "Asia",
       "latitude": -2.8957888,
       "longitude": 104.7042993,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BNE",
@@ -1473,8 +1473,8 @@
       "continentEnname": "Australia",
       "latitude": -27.3942144,
       "longitude": 153.1218303,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "BRU",
@@ -1495,8 +1495,8 @@
       "continentEnname": "Europe",
       "latitude": 50.900999,
       "longitude": 4.4855744,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BEY",
@@ -1517,8 +1517,8 @@
       "continentEnname": "Asia",
       "latitude": 33.8193756,
       "longitude": 35.4912043,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VLC",
@@ -1539,8 +1539,8 @@
       "continentEnname": "Europe",
       "latitude": 39.4892327,
       "longitude": -0.4780256,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BHX",
@@ -1561,8 +1561,8 @@
       "continentEnname": "Europe",
       "latitude": 52.4523821,
       "longitude": -1.7435071,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BKO",
@@ -1583,8 +1583,8 @@
       "continentEnname": "Africa",
       "latitude": 12.534634,
       "longitude": -7.936321,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PTY",
@@ -1605,8 +1605,8 @@
       "continentEnname": "South America",
       "latitude": 9.0667013,
       "longitude": -79.3873743,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BHO",
@@ -1627,8 +1627,8 @@
       "continentEnname": "Asia",
       "latitude": 23.2909735,
       "longitude": 77.3356189,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AEB",
@@ -1649,8 +1649,8 @@
       "continentEnname": "Asia",
       "latitude": 23.721448,
       "longitude": 106.978638,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BSD",
@@ -1671,8 +1671,8 @@
       "continentEnname": "Asia",
       "latitude": 25.057749,
       "longitude": 99.172129,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "PSA",
@@ -1693,8 +1693,8 @@
       "continentEnname": "Europe",
       "latitude": 43.6890842,
       "longitude": 10.3978845,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BOS",
@@ -1715,8 +1715,8 @@
       "continentEnname": "North America",
       "latitude": 42.3656132,
       "longitude": -71.0095602,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FRU",
@@ -1737,8 +1737,8 @@
       "continentEnname": "Asia",
       "latitude": 43.0584523,
       "longitude": 74.4730782,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BCN",
@@ -1759,8 +1759,8 @@
       "continentEnname": "Europe",
       "latitude": 41.297445,
       "longitude": 2.0832941,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BAV",
@@ -1781,8 +1781,8 @@
       "continentEnname": "Asia",
       "latitude": 40.571959,
       "longitude": 110.01111,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "PDX",
@@ -1803,8 +1803,8 @@
       "continentEnname": "North America",
       "latitude": 45.5897694,
       "longitude": -122.5950942,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PAT",
@@ -1825,8 +1825,8 @@
       "continentEnname": "Asia",
       "latitude": 25.5944326,
       "longitude": 85.0908065,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "UTP",
@@ -1847,8 +1847,8 @@
       "continentEnname": "Asia",
       "latitude": 12.6758516,
       "longitude": 100.997692,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PVR",
@@ -1869,8 +1869,8 @@
       "continentEnname": "North America",
       "latitude": 20.6805184,
       "longitude": -105.2523762,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AEP",
@@ -1891,8 +1891,8 @@
       "continentEnname": "South America",
       "latitude": -34.556636,
       "longitude": -58.412543,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "EZE",
@@ -1913,8 +1913,8 @@
       "continentEnname": "South America",
       "latitude": -34.8150044,
       "longitude": -58.5348284,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BZN",
@@ -1935,8 +1935,8 @@
       "continentEnname": "North America",
       "latitude": 45.77746,
       "longitude": -111.160161,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IBR",
@@ -1957,8 +1957,8 @@
       "continentEnname": "Asia",
       "latitude": 36.1778435,
       "longitude": 140.4076491,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BPX",
@@ -1979,8 +1979,8 @@
       "continentEnname": "Asia",
       "latitude": 30.554397,
       "longitude": 97.113613,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CGD",
@@ -2001,8 +2001,8 @@
       "continentEnname": "Asia",
       "latitude": 28.926913,
       "longitude": 111.649933,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CTU",
@@ -2023,8 +2023,8 @@
       "continentEnname": "Asia",
       "latitude": 30.584712,
       "longitude": 103.965204,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "IXC",
@@ -2045,8 +2045,8 @@
       "continentEnname": "Asia",
       "latitude": 30.6683787,
       "longitude": 76.7868333,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CIF",
@@ -2067,8 +2067,8 @@
       "continentEnname": "Asia",
       "latitude": 42.162092,
       "longitude": 118.844597,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "OKA",
@@ -2089,8 +2089,8 @@
       "continentEnname": "Asia",
       "latitude": 26.2064033,
       "longitude": 127.6465422,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CHG",
@@ -2111,8 +2111,8 @@
       "continentEnname": "Asia",
       "latitude": 41.552705,
       "longitude": 120.448886,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CWJ",
@@ -2133,8 +2133,8 @@
       "continentEnname": "Asia",
       "latitude": 23.151089,
       "longitude": 99.254172,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CZX",
@@ -2155,8 +2155,8 @@
       "continentEnname": "Asia",
       "latitude": 31.917769,
       "longitude": 119.790679,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JUH",
@@ -2177,8 +2177,8 @@
       "continentEnname": "Asia",
       "latitude": 30.742646,
       "longitude": 117.695397,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LIA",
@@ -2199,8 +2199,8 @@
       "continentEnname": "Asia",
       "latitude": 30.681818,
       "longitude": 107.801542,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DLA",
@@ -2221,8 +2221,8 @@
       "continentEnname": "Africa",
       "latitude": 4.01346,
       "longitude": 9.717018,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DUR",
@@ -2243,8 +2243,8 @@
       "continentEnname": "Africa",
       "latitude": -29.6099786,
       "longitude": 31.1168871,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DXB",
@@ -2265,8 +2265,8 @@
       "continentEnname": "Asia",
       "latitude": 25.2531745,
       "longitude": 55.3656728,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KIX",
@@ -2287,8 +2287,8 @@
       "continentEnname": "Asia",
       "latitude": 34.4320024,
       "longitude": 135.2303939,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "DUB",
@@ -2309,8 +2309,8 @@
       "continentEnname": "Europe",
       "latitude": 53.4264481,
       "longitude": -6.2499098,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TBS",
@@ -2331,8 +2331,8 @@
       "continentEnname": "Europe",
       "latitude": 41.6695682,
       "longitude": 44.9646172,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DCY",
@@ -2353,8 +2353,8 @@
       "continentEnname": "Asia",
       "latitude": 29.315215,
       "longitude": 100.073237,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DDG",
@@ -2375,8 +2375,8 @@
       "continentEnname": "Asia",
       "latitude": 40.039776,
       "longitude": 124.292857,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DRW",
@@ -2397,8 +2397,8 @@
       "continentEnname": "Australia",
       "latitude": -12.4112158,
       "longitude": 130.877545,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DEN",
@@ -2419,8 +2419,8 @@
       "continentEnname": "North America",
       "latitude": 39.8560963,
       "longitude": -104.6737376,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DNH",
@@ -2441,8 +2441,8 @@
       "continentEnname": "Asia",
       "latitude": 40.172536,
       "longitude": 94.811195,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DOH",
@@ -2463,8 +2463,8 @@
       "continentEnname": "Asia",
       "latitude": 25.2605946,
       "longitude": 51.6137665,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IKA",
@@ -2485,8 +2485,8 @@
       "continentEnname": "Asia",
       "latitude": 35.4089938,
       "longitude": 51.1554896,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HND",
@@ -2507,8 +2507,8 @@
       "continentEnname": "Asia",
       "latitude": 35.5493932,
       "longitude": 139.7798386,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "NRT",
@@ -2529,8 +2529,8 @@
       "continentEnname": "Asia",
       "latitude": 35.7719867,
       "longitude": 140.3928501,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "DAC",
@@ -2551,8 +2551,8 @@
       "continentEnname": "Asia",
       "latitude": 23.846615,
       "longitude": 90.4026234,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DKR",
@@ -2573,8 +2573,8 @@
       "continentEnname": "Africa",
       "latitude": 14.744975,
       "longitude": -17.490194,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DEL",
@@ -2595,8 +2595,8 @@
       "continentEnname": "Asia",
       "latitude": 28.5561624,
       "longitude": 77.0999578,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DLC",
@@ -2617,8 +2617,8 @@
       "continentEnname": "Asia",
       "latitude": 38.968846,
       "longitude": 121.550463,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "DLU",
@@ -2639,8 +2639,8 @@
       "continentEnname": "Asia",
       "latitude": 25.653529,
       "longitude": 100.330443,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YYZ",
@@ -2661,8 +2661,8 @@
       "continentEnname": "North America",
       "latitude": 43.6777176,
       "longitude": -79.6248197,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HXD",
@@ -2683,8 +2683,8 @@
       "continentEnname": "Asia",
       "latitude": 37.176171,
       "longitude": 97.361875,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DAR",
@@ -2705,8 +2705,8 @@
       "continentEnname": "Africa",
       "latitude": -6.8725389,
       "longitude": 39.2069164,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DFW",
@@ -2727,8 +2727,8 @@
       "continentEnname": "North America",
       "latitude": 32.8998091,
       "longitude": -97.0403352,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DMM",
@@ -2749,8 +2749,8 @@
       "continentEnname": "Asia",
       "latitude": 26.4683641,
       "longitude": 49.7971637,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DUD",
@@ -2771,8 +2771,8 @@
       "continentEnname": "Australia",
       "latitude": -45.9258615,
       "longitude": 170.2021681,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DIG",
@@ -2793,8 +2793,8 @@
       "continentEnname": "Asia",
       "latitude": 27.799121,
       "longitude": 99.689555,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DQA",
@@ -2815,8 +2815,8 @@
       "continentEnname": "Asia",
       "latitude": 46.755079,
       "longitude": 125.145801,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TAE",
@@ -2837,8 +2837,8 @@
       "continentEnname": "Asia",
       "latitude": 35.8994871,
       "longitude": 128.6383866,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DYU",
@@ -2859,8 +2859,8 @@
       "continentEnname": "Asia",
       "latitude": 38.5486429,
       "longitude": 68.8154959,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DUS",
@@ -2881,8 +2881,8 @@
       "continentEnname": "Europe",
       "latitude": 51.2876146,
       "longitude": 6.7667912,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DAT",
@@ -2903,8 +2903,8 @@
       "continentEnname": "Asia",
       "latitude": 40.063971,
       "longitude": 113.493758,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DTT",
@@ -2925,8 +2925,8 @@
       "continentEnname": "North America",
       "latitude": 42.4090607,
       "longitude": -83.0038868,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DTW",
@@ -2947,8 +2947,8 @@
       "continentEnname": "North America",
       "latitude": 42.2161722,
       "longitude": -83.3553842,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DOY",
@@ -2969,8 +2969,8 @@
       "continentEnname": "Asia",
       "latitude": 37.515693,
       "longitude": 118.796593,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DAX",
@@ -2991,8 +2991,8 @@
       "continentEnname": "Asia",
       "latitude": 31.13643,
       "longitude": 31.13643,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "EBB",
@@ -3013,8 +3013,8 @@
       "continentEnname": "Africa",
       "latitude": 0.0435913,
       "longitude": 32.4417943,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DSN",
@@ -3035,8 +3035,8 @@
       "continentEnname": "Asia",
       "latitude": 39.507608,
       "longitude": 109.873042,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "EJN",
@@ -3057,8 +3057,8 @@
       "continentEnname": "Asia",
       "latitude": 42.019133,
       "longitude": 101.008454,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ERL",
@@ -3079,8 +3079,8 @@
       "continentEnname": "Asia",
       "latitude": 43.435321,
       "longitude": 112.111023,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ENH",
@@ -3101,8 +3101,8 @@
       "continentEnname": "Asia",
       "latitude": 30.325586,
       "longitude": 109.492771,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "PHL",
@@ -3123,8 +3123,8 @@
       "continentEnname": "North America",
       "latitude": 39.8743959,
       "longitude": -75.2424229,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FKS",
@@ -3145,8 +3145,8 @@
       "continentEnname": "Asia",
       "latitude": 37.2284245,
       "longitude": 140.4286325,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FUK",
@@ -3167,8 +3167,8 @@
       "continentEnname": "Asia",
       "latitude": 33.5903145,
       "longitude": 130.4467091,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PQC",
@@ -3189,8 +3189,8 @@
       "continentEnname": "Asia",
       "latitude": 10.1630359,
       "longitude": 103.9981516,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PHX",
@@ -3211,8 +3211,8 @@
       "continentEnname": "North America",
       "latitude": 33.4372686,
       "longitude": -112.0077881,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VVO",
@@ -3233,8 +3233,8 @@
       "continentEnname": "Europe",
       "latitude": 43.3948533,
       "longitude": 132.1477422,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FRA",
@@ -3255,8 +3255,8 @@
       "continentEnname": "Europe",
       "latitude": 50.0379326,
       "longitude": 8.5621518,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "FAT",
@@ -3277,8 +3277,8 @@
       "continentEnname": "North America",
       "latitude": 36.7758493,
       "longitude": -119.7181083,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PUS",
@@ -3299,8 +3299,8 @@
       "continentEnname": "Asia",
       "latitude": 35.17322,
       "longitude": 128.9464591,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TOY",
@@ -3321,8 +3321,8 @@
       "continentEnname": "Asia",
       "latitude": 36.6437954,
       "longitude": 137.1895089,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FUG",
@@ -3343,8 +3343,8 @@
       "continentEnname": "Asia",
       "latitude": 32.882857,
       "longitude": 115.750676,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "FYJ",
@@ -3365,8 +3365,8 @@
       "continentEnname": "Asia",
       "latitude": 48.212122,
       "longitude": 134.379633,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "FYN",
@@ -3387,8 +3387,8 @@
       "continentEnname": "Asia",
       "latitude": 46.819376,
       "longitude": 89.527292,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "FOC",
@@ -3409,8 +3409,8 @@
       "continentEnname": "Asia",
       "latitude": 25.934816,
       "longitude": 119.681241,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CPH",
@@ -3431,8 +3431,8 @@
       "continentEnname": "Europe",
       "latitude": 55.6180236,
       "longitude": 12.6507628,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GUM",
@@ -3453,8 +3453,8 @@
       "continentEnname": "North America",
       "latitude": 13.4856448,
       "longitude": 144.8001467,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HIJ",
@@ -3475,8 +3475,8 @@
       "continentEnname": "Asia",
       "latitude": 34.4397672,
       "longitude": 132.9190371,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KUA",
@@ -3497,8 +3497,8 @@
       "continentEnname": "Asia",
       "latitude": 3.780664,
       "longitude": 103.214626,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GOT",
@@ -3519,8 +3519,8 @@
       "continentEnname": "Europe",
       "latitude": 57.6678013,
       "longitude": 12.29612,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KBR",
@@ -3541,8 +3541,8 @@
       "continentEnname": "Asia",
       "latitude": 6.1697722,
       "longitude": 102.2931816,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BKI",
@@ -3563,8 +3563,8 @@
       "continentEnname": "Asia",
       "latitude": 5.923076,
       "longitude": 116.051017,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GDL",
@@ -3585,8 +3585,8 @@
       "continentEnname": "North America",
       "latitude": 20.5259561,
       "longitude": -103.307625,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GOQ",
@@ -3607,8 +3607,8 @@
       "continentEnname": "Asia",
       "latitude": 36.408467,
       "longitude": 94.796812,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "GHN",
@@ -3629,8 +3629,8 @@
       "continentEnname": "Asia",
       "latitude": 30.951429,
       "longitude": 104.331181,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KCH",
@@ -3651,8 +3651,8 @@
       "continentEnname": "Asia",
       "latitude": 1.4868427,
       "longitude": 110.3417682,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GMQ",
@@ -3673,8 +3673,8 @@
       "continentEnname": "Asia",
       "latitude": 34.42921,
       "longitude": 100.310704,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KWL",
@@ -3695,8 +3695,8 @@
       "continentEnname": "Asia",
       "latitude": 25.221343,
       "longitude": 110.058192,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CMH",
@@ -3717,8 +3717,8 @@
       "continentEnname": "North America",
       "latitude": 39.9999399,
       "longitude": -82.8871767,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TGG",
@@ -3739,8 +3739,8 @@
       "continentEnname": "Asia",
       "latitude": 5.3794538,
       "longitude": 103.1054704,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GLT",
@@ -3761,8 +3761,8 @@
       "continentEnname": "Australia",
       "latitude": -23.8680503,
       "longitude": 151.223884,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GLA",
@@ -3783,8 +3783,8 @@
       "continentEnname": "Europe",
       "latitude": 55.8690744,
       "longitude": -4.4350529,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OKJ",
@@ -3805,8 +3805,8 @@
       "continentEnname": "Asia",
       "latitude": 34.7600289,
       "longitude": 133.8531594,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GAU",
@@ -3827,8 +3827,8 @@
       "continentEnname": "Asia",
       "latitude": 26.1064727,
       "longitude": 91.5860468,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KHH",
@@ -3849,8 +3849,8 @@
       "continentEnname": "Asia",
       "latitude": 22.57720762,
       "longitude": 120.3448068,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GYS",
@@ -3871,8 +3871,8 @@
       "continentEnname": "Asia",
       "latitude": 32.39893,
       "longitude": 105.711194,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "GYU",
@@ -3893,8 +3893,8 @@
       "continentEnname": "Asia",
       "latitude": 36.082673,
       "longitude": 106.232272,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KWE",
@@ -3915,8 +3915,8 @@
       "continentEnname": "Asia",
       "latitude": 26.549112,
       "longitude": 106.807162,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "GYE",
@@ -3937,8 +3937,8 @@
       "continentEnname": "South America",
       "latitude": -2.1556461,
       "longitude": -79.885382,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KOW",
@@ -3959,8 +3959,8 @@
       "continentEnname": "Asia",
       "latitude": 25.851316,
       "longitude": 114.78979,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MWX",
@@ -3981,8 +3981,8 @@
       "continentEnname": "Asia",
       "latitude": 34.9935855,
       "longitude": 126.3878438,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HIA",
@@ -4003,8 +4003,8 @@
       "continentEnname": "Asia",
       "latitude": 33.79383,
       "longitude": 119.141458,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HAM",
@@ -4025,8 +4025,8 @@
       "continentEnname": "Europe",
       "latitude": 53.633622,
       "longitude": 9.9974128,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KHV",
@@ -4047,8 +4047,8 @@
       "continentEnname": "Europe",
       "latitude": 48.5242969,
       "longitude": 135.1689899,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HBA",
@@ -4069,8 +4069,8 @@
       "continentEnname": "Australia",
       "latitude": -42.836354,
       "longitude": 147.5074608,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HCJ",
@@ -4091,8 +4091,8 @@
       "continentEnname": "Asia",
       "latitude": 24.823152,
       "longitude": 107.750931,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "VVO",
@@ -4113,8 +4113,8 @@
       "continentEnname": "Europe",
       "latitude": 43.3948533,
       "longitude": 132.1477422,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HDG",
@@ -4135,8 +4135,8 @@
       "continentEnname": "Asia",
       "latitude": 36.530018,
       "longitude": 114.441706,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HYD",
@@ -4157,8 +4157,8 @@
       "continentEnname": "Asia",
       "latitude": 17.2402633,
       "longitude": 78.4293851,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HRB",
@@ -4179,8 +4179,8 @@
       "continentEnname": "Asia",
       "latitude": 45.629936,
       "longitude": 126.246145,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "HEL",
@@ -4201,8 +4201,8 @@
       "continentEnname": "Europe",
       "latitude": 60.3210416,
       "longitude": 24.9528604,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HFE",
@@ -4223,8 +4223,8 @@
       "continentEnname": "Asia",
       "latitude": 31.9929,
       "longitude": 116.976059,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HEK",
@@ -4245,8 +4245,8 @@
       "continentEnname": "Asia",
       "latitude": 50.186652,
       "longitude": 127.326404,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HJJ",
@@ -4267,8 +4267,8 @@
       "continentEnname": "Asia",
       "latitude": 27.447604,
       "longitude": 109.712109,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HET",
@@ -4289,8 +4289,8 @@
       "continentEnname": "Asia",
       "latitude": 40.860529,
       "longitude": 111.829296,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "OOL",
@@ -4311,8 +4311,8 @@
       "continentEnname": "Australia",
       "latitude": -28.1656448,
       "longitude": 153.509074,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HAK",
@@ -4333,8 +4333,8 @@
       "continentEnname": "Asia",
       "latitude": 19.944221,
       "longitude": 110.468596,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "PHC",
@@ -4355,8 +4355,8 @@
       "continentEnname": "Africa",
       "latitude": 5.0074989,
       "longitude": 6.9502154,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WLG",
@@ -4377,8 +4377,8 @@
       "continentEnname": "Australia",
       "latitude": -41.3275941,
       "longitude": 174.8075984,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HLD",
@@ -4399,8 +4399,8 @@
       "continentEnname": "Asia",
       "latitude": 49.218347,
       "longitude": 119.833005,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HRE",
@@ -4421,8 +4421,8 @@
       "continentEnname": "Africa",
       "latitude": -17.918784,
       "longitude": 31.0972791,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HMI",
@@ -4443,8 +4443,8 @@
       "continentEnname": "Asia",
       "latitude": 42.846955,
       "longitude": 93.66387,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HIS",
@@ -4465,8 +4465,8 @@
       "continentEnname": "Australia",
       "latitude": -20.0598882,
       "longitude": 148.8809037,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HLZ",
@@ -4487,8 +4487,8 @@
       "continentEnname": "North America",
       "latitude": 43.1675265,
       "longitude": -79.9288532,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HTI",
@@ -4509,8 +4509,8 @@
       "continentEnname": "Australia",
       "latitude": -20.3516823,
       "longitude": 148.9487532,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HAN",
@@ -4531,8 +4531,8 @@
       "continentEnname": "Asia",
       "latitude": 21.2187149,
       "longitude": 105.8041709,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HNL",
@@ -4553,8 +4553,8 @@
       "continentEnname": "North America",
       "latitude": 21.3245132,
       "longitude": -157.9250736,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HAJ",
@@ -4575,8 +4575,8 @@
       "continentEnname": "Europe",
       "latitude": 52.4618486,
       "longitude": 9.6889919,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TXN",
@@ -4597,8 +4597,8 @@
       "continentEnname": "Asia",
       "latitude": 29.733374,
       "longitude": 118.265538,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WAW",
@@ -4619,8 +4619,8 @@
       "continentEnname": "Europe",
       "latitude": 52.1672369,
       "longitude": 20.9678911,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DCA",
@@ -4641,8 +4641,8 @@
       "continentEnname": "North America",
       "latitude": 38.851242,
       "longitude": -77.0402315,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IAD",
@@ -4663,8 +4663,8 @@
       "continentEnname": "North America",
       "latitude": 38.9531162,
       "longitude": -77.4565388,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HTN",
@@ -4685,8 +4685,8 @@
       "continentEnname": "Asia",
       "latitude": 37.046612,
       "longitude": 79.881109,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BDL",
@@ -4707,8 +4707,8 @@
       "continentEnname": "North America",
       "latitude": 41.9388735,
       "longitude": -72.6860314,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HNY",
@@ -4729,8 +4729,8 @@
       "continentEnname": "Asia",
       "latitude": 26.72638,
       "longitude": 112.62556,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HGH",
@@ -4751,8 +4751,8 @@
       "continentEnname": "Asia",
       "latitude": 30.241497,
       "longitude": 120.443764,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "HUZ",
@@ -4773,8 +4773,8 @@
       "continentEnname": "Asia",
       "latitude": 25.497432,
       "longitude": 119.797195,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HZG",
@@ -4795,8 +4795,8 @@
       "continentEnname": "Asia",
       "latitude": 33.130302,
       "longitude": 107.207303,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LBD",
@@ -4817,8 +4817,8 @@
       "continentEnname": "Asia",
       "latitude": 40.215,
       "longitude": 69.696667,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SGN",
@@ -4839,8 +4839,8 @@
       "continentEnname": "Asia",
       "latitude": 10.8184631,
       "longitude": 106.6588245,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "PNH",
@@ -4861,8 +4861,8 @@
       "continentEnname": "Asia",
       "latitude": 11.5512605,
       "longitude": 104.8456431,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "JLR",
@@ -4883,8 +4883,8 @@
       "continentEnname": "Asia",
       "latitude": 23.1845455,
       "longitude": 80.0587971,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JIB",
@@ -4905,8 +4905,8 @@
       "continentEnname": "Africa",
       "latitude": 11.547222,
       "longitude": 43.1591669,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JIC",
@@ -4927,8 +4927,8 @@
       "continentEnname": "Asia",
       "latitude": 38.546691,
       "longitude": 102.352908,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JED",
@@ -4949,8 +4949,8 @@
       "continentEnname": "Asia",
       "latitude": 21.6613644,
       "longitude": 39.1735383,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "UIO",
@@ -4971,8 +4971,8 @@
       "continentEnname": "South America",
       "latitude": -0.1433981,
       "longitude": -78.491022,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CHC",
@@ -4993,8 +4993,8 @@
       "continentEnname": "Australia",
       "latitude": -43.4863981,
       "longitude": 172.5368705,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KTM",
@@ -5015,8 +5015,8 @@
       "continentEnname": "Asia",
       "latitude": 27.6980899,
       "longitude": 85.3592231,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JDZ",
@@ -5037,8 +5037,8 @@
       "continentEnname": "Asia",
       "latitude": 29.338375,
       "longitude": 117.190106,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CCU",
@@ -5059,8 +5059,8 @@
       "continentEnname": "Asia",
       "latitude": 22.6520429,
       "longitude": 88.4463299,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IEV",
@@ -5081,8 +5081,8 @@
       "continentEnname": "Europe",
       "latitude": 50.4119842,
       "longitude": 30.4432539,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FSZ",
@@ -5103,8 +5103,8 @@
       "continentEnname": "Asia",
       "latitude": 34.7971742,
       "longitude": 138.1805917,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JGD",
@@ -5125,8 +5125,8 @@
       "continentEnname": "Asia",
       "latitude": 50.381015,
       "longitude": 124.124886,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JGS",
@@ -5147,8 +5147,8 @@
       "continentEnname": "Asia",
       "latitude": 26.857204,
       "longitude": 114.754321,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JIU",
@@ -5169,8 +5169,8 @@
       "continentEnname": "Asia",
       "latitude": 29.488738,
       "longitude": 115.813805,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JJN",
@@ -5191,8 +5191,8 @@
       "continentEnname": "Asia",
       "latitude": 24.806761,
       "longitude": 118.598594,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KGL",
@@ -5213,8 +5213,8 @@
       "continentEnname": "Africa",
       "latitude": -1.963042,
       "longitude": 30.135014,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SFO",
@@ -5235,8 +5235,8 @@
       "continentEnname": "North America",
       "latitude": 37.6213129,
       "longitude": -122.3789554,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "JAX",
@@ -5257,8 +5257,8 @@
       "continentEnname": "North America",
       "latitude": 30.4940713,
       "longitude": -81.6879368,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CCS",
@@ -5279,8 +5279,8 @@
       "continentEnname": "South America",
       "latitude": 10.5977061,
       "longitude": -67.005879,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YLW",
@@ -5301,8 +5301,8 @@
       "continentEnname": "North America",
       "latitude": 49.9569281,
       "longitude": -119.3787305,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KUL",
@@ -5323,8 +5323,8 @@
       "continentEnname": "Asia",
       "latitude": 2.7402008,
       "longitude": 101.7081373,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KBV",
@@ -5345,8 +5345,8 @@
       "continentEnname": "Asia",
       "latitude": 8.0992802,
       "longitude": 98.9831948,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JMU",
@@ -5367,8 +5367,8 @@
       "continentEnname": "Asia",
       "latitude": 46.853251,
       "longitude": 130.469934,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KNH",
@@ -5389,8 +5389,8 @@
       "continentEnname": "Asia",
       "latitude": 24.4311257,
       "longitude": 118.3634816,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JNG",
@@ -5411,8 +5411,8 @@
       "continentEnname": "Asia",
       "latitude": 35.303038,
       "longitude": 116.363233,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MAA",
@@ -5433,8 +5433,8 @@
       "continentEnname": "Asia",
       "latitude": 12.994112,
       "longitude": 80.1708668,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TNA",
@@ -5455,8 +5455,8 @@
       "continentEnname": "Asia",
       "latitude": 36.857949,
       "longitude": 117.220069,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JSJ",
@@ -5477,8 +5477,8 @@
       "continentEnname": "Asia",
       "latitude": 47.11107,
       "longitude": 132.67248,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "FIH",
@@ -5499,8 +5499,8 @@
       "continentEnname": "Africa",
       "latitude": -4.3864492,
       "longitude": 15.4453718,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JDH",
@@ -5521,8 +5521,8 @@
       "continentEnname": "Asia",
       "latitude": 26.2642477,
       "longitude": 73.0505734,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JXA",
@@ -5543,8 +5543,8 @@
       "continentEnname": "Asia",
       "latitude": 45.309138,
       "longitude": 131.19407,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SWA",
@@ -5565,8 +5565,8 @@
       "continentEnname": "Asia",
       "latitude": 23.554619,
       "longitude": 116.519223,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JGN",
@@ -5587,8 +5587,8 @@
       "continentEnname": "Asia",
       "latitude": 39.868617,
       "longitude": 98.348848,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CJU",
@@ -5609,8 +5609,8 @@
       "continentEnname": "Asia",
       "latitude": 33.5104135,
       "longitude": 126.4913534,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JNZ",
@@ -5631,8 +5631,8 @@
       "continentEnname": "Asia",
       "latitude": 40.938548,
       "longitude": 121.292494,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SHS",
@@ -5653,8 +5653,8 @@
       "continentEnname": "Asia",
       "latitude": 30.325614,
       "longitude": 112.288859,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JZH",
@@ -5675,8 +5675,8 @@
       "continentEnname": "Asia",
       "latitude": 32.856884,
       "longitude": 103.694725,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KBL",
@@ -5697,8 +5697,8 @@
       "continentEnname": "Asia",
       "latitude": 34.565833,
       "longitude": 69.2125,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KCA",
@@ -5719,8 +5719,8 @@
       "continentEnname": "Asia",
       "latitude": 41.689382,
       "longitude": 82.882797,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KGT",
@@ -5741,8 +5741,8 @@
       "continentEnname": "Asia",
       "latitude": 30.136084,
       "longitude": 101.75837,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YYC",
@@ -5763,8 +5763,8 @@
       "continentEnname": "North America",
       "latitude": 51.1250608,
       "longitude": -114.0168895,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KRL",
@@ -5785,8 +5785,8 @@
       "continentEnname": "Asia",
       "latitude": 41.628738,
       "longitude": 86.14977,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CNS",
@@ -5807,8 +5807,8 @@
       "continentEnname": "Australia",
       "latitude": -16.8777626,
       "longitude": 145.7499352,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CFS",
@@ -5829,8 +5829,8 @@
       "continentEnname": "Australia",
       "latitude": -30.3229265,
       "longitude": 153.1158258,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OGG",
@@ -5851,8 +5851,8 @@
       "continentEnname": "North America",
       "latitude": 20.8967924,
       "longitude": -156.4329379,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HJR",
@@ -5873,8 +5873,8 @@
       "continentEnname": "Asia",
       "latitude": 24.8194969,
       "longitude": 79.919477,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CUN",
@@ -5895,8 +5895,8 @@
       "continentEnname": "North America",
       "latitude": 21.0403409,
       "longitude": -86.873564,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CAI",
@@ -5917,8 +5917,8 @@
       "continentEnname": "Africa",
       "latitude": 30.1188025,
       "longitude": 31.4103638,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CGN",
@@ -5939,8 +5939,8 @@
       "continentEnname": "Europe",
       "latitude": 50.8707168,
       "longitude": 7.1407344,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KJH",
@@ -5961,8 +5961,8 @@
       "continentEnname": "Asia",
       "latitude": 26.978687,
       "longitude": 107.99003,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CLE",
@@ -5983,8 +5983,8 @@
       "continentEnname": "North America",
       "latitude": 41.4124339,
       "longitude": -81.8479925,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CRK",
@@ -6005,8 +6005,8 @@
       "continentEnname": "Asia",
       "latitude": 15.18738,
       "longitude": 120.5503456,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KRK",
@@ -6027,8 +6027,8 @@
       "continentEnname": "Europe",
       "latitude": 50.0769776,
       "longitude": 19.7881188,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CCJ",
@@ -6049,8 +6049,8 @@
       "continentEnname": "Asia",
       "latitude": 11.1393794,
       "longitude": 75.9504042,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KRY",
@@ -6071,8 +6071,8 @@
       "continentEnname": "Asia",
       "latitude": 45.474533,
       "longitude": 84.965837,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CMB",
@@ -6093,8 +6093,8 @@
       "continentEnname": "Asia",
       "latitude": 7.1801552,
       "longitude": 79.8842521,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KMG",
@@ -6115,8 +6115,8 @@
       "continentEnname": "Asia",
       "latitude": 25.104579,
       "longitude": 102.936818,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "KAN",
@@ -6137,8 +6137,8 @@
       "continentEnname": "Africa",
       "latitude": 12.0456496,
       "longitude": 8.5220753,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KJI",
@@ -6159,8 +6159,8 @@
       "continentEnname": "Asia",
       "latitude": 48.230671,
       "longitude": 87.011791,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CPT",
@@ -6181,8 +6181,8 @@
       "continentEnname": "Africa",
       "latitude": -33.971463,
       "longitude": 18.6020851,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CBR",
@@ -6203,8 +6203,8 @@
       "continentEnname": "Australia",
       "latitude": -35.3052327,
       "longitude": 149.1933934,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "COK",
@@ -6225,8 +6225,8 @@
       "continentEnname": "Asia",
       "latitude": 10.1517834,
       "longitude": 76.392958,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KHG",
@@ -6247,8 +6247,8 @@
       "continentEnname": "Asia",
       "latitude": 39.542484,
       "longitude": 76.020707,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CAS",
@@ -6269,8 +6269,8 @@
       "continentEnname": "Africa",
       "latitude": 3.5561099,
       "longitude": -7.661667,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KRT",
@@ -6291,8 +6291,8 @@
       "continentEnname": "Africa",
       "latitude": 15.5927666,
       "longitude": 32.5522355,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "COO",
@@ -6313,8 +6313,8 @@
       "continentEnname": "Africa",
       "latitude": 6.356111,
       "longitude": 2.383333,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KWI",
@@ -6335,8 +6335,8 @@
       "continentEnname": "Asia",
       "latitude": 29.2397456,
       "longitude": 47.9714192,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LYS",
@@ -6357,8 +6357,8 @@
       "continentEnname": "Europe",
       "latitude": 45.7234181,
       "longitude": 5.0887768,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LAD",
@@ -6379,8 +6379,8 @@
       "continentEnname": "Africa",
       "latitude": -8.847951,
       "longitude": 13.234862,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LLB",
@@ -6401,8 +6401,8 @@
       "continentEnname": "Asia",
       "latitude": 25.44941,
       "longitude": 107.974374,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "RPR",
@@ -6423,8 +6423,8 @@
       "continentEnname": "Asia",
       "latitude": 21.1860208,
       "longitude": 81.7403814,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LJU",
@@ -6445,8 +6445,8 @@
       "continentEnname": "Europe",
       "latitude": 46.2259433,
       "longitude": 14.4559143,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LBV",
@@ -6467,8 +6467,8 @@
       "continentEnname": "Africa",
       "latitude": 0.456963,
       "longitude": 9.409852,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IXL",
@@ -6489,8 +6489,8 @@
       "continentEnname": "Asia",
       "latitude": 34.1425054,
       "longitude": 77.5557216,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LNJ",
@@ -6511,8 +6511,8 @@
       "continentEnname": "Asia",
       "latitude": 23.747581,
       "longitude": 100.033727,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LHR",
@@ -6533,8 +6533,8 @@
       "continentEnname": "Europe",
       "latitude": 51.4700223,
       "longitude": -0.4542955,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "STN",
@@ -6555,8 +6555,8 @@
       "continentEnname": "Europe",
       "latitude": 51.8860181,
       "longitude": 0.2388661,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "LGW",
@@ -6577,8 +6577,8 @@
       "continentEnname": "Europe",
       "latitude": 1.1536621,
       "longitude": -0.1820629,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "FLL",
@@ -6599,8 +6599,8 @@
       "continentEnname": "North America",
       "latitude": 26.0742344,
       "longitude": -80.1506022,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KOJ",
@@ -6621,8 +6621,8 @@
       "continentEnname": "Asia",
       "latitude": 31.8028526,
       "longitude": 130.7180234,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LFQ",
@@ -6643,8 +6643,8 @@
       "continentEnname": "Asia",
       "latitude": 36.136396,
       "longitude": 111.65004,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LOS",
@@ -6665,8 +6665,8 @@
       "continentEnname": "Africa",
       "latitude": 6.5818185,
       "longitude": 3.3211348,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LJG",
@@ -6687,8 +6687,8 @@
       "continentEnname": "Asia",
       "latitude": 26.674474,
       "longitude": 100.255596,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "RIX",
@@ -6709,8 +6709,8 @@
       "continentEnname": "Europe",
       "latitude": 56.9226554,
       "longitude": 23.9733129,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YQR",
@@ -6731,8 +6731,8 @@
       "continentEnname": "North America",
       "latitude": 50.4333992,
       "longitude": -104.655818,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ROK",
@@ -6753,8 +6753,8 @@
       "continentEnname": "Australia",
       "latitude": -23.3796336,
       "longitude": 150.476056,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LKO",
@@ -6775,8 +6775,8 @@
       "continentEnname": "Asia",
       "latitude": 26.7617317,
       "longitude": 80.885655,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LGK",
@@ -6797,8 +6797,8 @@
       "continentEnname": "Asia",
       "latitude": 6.34206,
       "longitude": 99.731519,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KEF",
@@ -6819,8 +6819,8 @@
       "continentEnname": "Europe",
       "latitude": 64.139832,
       "longitude": -21.888804,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LLV",
@@ -6841,8 +6841,8 @@
       "continentEnname": "Asia",
       "latitude": 37.69155,
       "longitude": 111.151571,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "RDU",
@@ -6863,8 +6863,8 @@
       "continentEnname": "North America",
       "latitude": 35.880079,
       "longitude": -78.7879963,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RAR",
@@ -6885,8 +6885,8 @@
       "continentEnname": "Australia",
       "latitude": -21.2027,
       "longitude": -159.805677,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LIM",
@@ -6907,8 +6907,8 @@
       "continentEnname": "North America",
       "latitude": -12.0240527,
       "longitude": -77.112036,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "FCO",
@@ -6929,8 +6929,8 @@
       "continentEnname": "Europe",
       "latitude": 41.7998868,
       "longitude": 12.2462384,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LCA",
@@ -6951,8 +6951,8 @@
       "continentEnname": "Europe",
       "latitude": 34.8723402,
       "longitude": 33.6203516,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HZH",
@@ -6973,8 +6973,8 @@
       "continentEnname": "Asia",
       "latitude": 26.322642,
       "longitude": 109.165119,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LPF",
@@ -6995,8 +6995,8 @@
       "continentEnname": "Asia",
       "latitude": 26.609053,
       "longitude": 104.979145,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "IXR",
@@ -7017,8 +7017,8 @@
       "continentEnname": "Asia",
       "latitude": 23.3440997,
       "longitude": 85.309562,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LXA",
@@ -7039,8 +7039,8 @@
       "continentEnname": "Asia",
       "latitude": 29.295342,
       "longitude": 90.908106,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LIS",
@@ -7061,8 +7061,8 @@
       "continentEnname": "Europe",
       "latitude": 38.7755936,
       "longitude": -9.1353667,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LUX",
@@ -7083,8 +7083,8 @@
       "continentEnname": "Europe",
       "latitude": 49.6289002,
       "longitude": 6.2147446,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LAX",
@@ -7105,8 +7105,8 @@
       "continentEnname": "North America",
       "latitude": 33.9415889,
       "longitude": -118.40853,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "LUN",
@@ -7127,8 +7127,8 @@
       "continentEnname": "Africa",
       "latitude": -15.330904,
       "longitude": 28.454345,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LAS",
@@ -7149,8 +7149,8 @@
       "continentEnname": "North America",
       "latitude": 36.0839998,
       "longitude": -115.1537389,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LCX",
@@ -7171,8 +7171,8 @@
       "continentEnname": "Asia",
       "latitude": 25.685391,
       "longitude": 116.765554,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LYA",
@@ -7193,8 +7193,8 @@
       "continentEnname": "Asia",
       "latitude": 34.741476,
       "longitude": 112.398812,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LYI",
@@ -7215,8 +7215,8 @@
       "continentEnname": "Asia",
       "latitude": 35.054479,
       "longitude": 118.419676,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "RUH",
@@ -7237,8 +7237,8 @@
       "continentEnname": "Asia",
       "latitude": 24.9417788,
       "longitude": 46.7115595,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RIY",
@@ -7259,8 +7259,8 @@
       "continentEnname": "Asia",
       "latitude": 14.6662384,
       "longitude": 49.3780083,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LYG",
@@ -7281,8 +7281,8 @@
       "continentEnname": "Asia",
       "latitude": 34.57024,
       "longitude": 118.888422,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "GIG",
@@ -7303,8 +7303,8 @@
       "continentEnname": "South America",
       "latitude": -22.8134098,
       "longitude": -43.2494233,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LHW",
@@ -7325,8 +7325,8 @@
       "continentEnname": "Asia",
       "latitude": 36.512275,
       "longitude": 103.622763,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LZH",
@@ -7347,8 +7347,8 @@
       "continentEnname": "Asia",
       "latitude": 24.209098,
       "longitude": 109.409919,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LZO",
@@ -7369,8 +7369,8 @@
       "continentEnname": "Asia",
       "latitude": 28.847541,
       "longitude": 105.388594,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LZY",
@@ -7391,8 +7391,8 @@
       "continentEnname": "Asia",
       "latitude": 29.312636,
       "longitude": 94.342806,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MIA",
@@ -7413,8 +7413,8 @@
       "continentEnname": "North America",
       "latitude": 25.795865,
       "longitude": -80.2870457,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MAN",
@@ -7435,8 +7435,8 @@
       "continentEnname": "Europe",
       "latitude": 53.3588026,
       "longitude": -2.2727303,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MFR",
@@ -7457,8 +7457,8 @@
       "continentEnname": "North America",
       "latitude": 42.3684191,
       "longitude": -122.8740066,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MDG",
@@ -7479,8 +7479,8 @@
       "continentEnname": "Asia",
       "latitude": 44.543339,
       "longitude": 129.596095,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MAD",
@@ -7501,8 +7501,8 @@
       "continentEnname": "Europe",
       "latitude": 40.4839361,
       "longitude": -3.5679515,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MED",
@@ -7523,8 +7523,8 @@
       "continentEnname": "Asia",
       "latitude": 24.5740078,
       "longitude": 39.7150786,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MEL",
@@ -7545,8 +7545,8 @@
       "continentEnname": "Australia",
       "latitude": -37.6690123,
       "longitude": 144.8410273,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "MQL",
@@ -7567,8 +7567,8 @@
       "continentEnname": "Australia",
       "latitude": -34.2306723,
       "longitude": 142.0846395,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "POM",
@@ -7589,8 +7589,8 @@
       "continentEnname": "Australia",
       "latitude": -9.441944,
       "longitude": 147.218889,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MKE",
@@ -7611,8 +7611,8 @@
       "continentEnname": "North America",
       "latitude": 42.9475534,
       "longitude": -87.896646,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MEM",
@@ -7633,8 +7633,8 @@
       "continentEnname": "North America",
       "latitude": 35.0420679,
       "longitude": -89.9791729,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BKK",
@@ -7655,8 +7655,8 @@
       "continentEnname": "Asia",
       "latitude": 13.6899991,
       "longitude": 100.7501124,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "NGO",
@@ -7677,8 +7677,8 @@
       "continentEnname": "Asia",
       "latitude": 34.8590935,
       "longitude": 136.8146005,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OHE",
@@ -7699,8 +7699,8 @@
       "continentEnname": "Asia",
       "latitude": 52.932214,
       "longitude": 122.433269,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MKY",
@@ -7721,8 +7721,8 @@
       "continentEnname": "Australia",
       "latitude": -21.1727083,
       "longitude": 149.1821662,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PQQ",
@@ -7743,8 +7743,8 @@
       "continentEnname": "Australia",
       "latitude": -31.4323471,
       "longitude": 152.8655035,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MES",
@@ -7765,8 +7765,8 @@
       "continentEnname": "Asia",
       "latitude": 3.5633018,
       "longitude": 98.6764964,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KNO",
@@ -7787,8 +7787,8 @@
       "continentEnname": "Asia",
       "latitude": 3.65827294,
       "longitude": 98.8743138,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LIN",
@@ -7809,8 +7809,8 @@
       "continentEnname": "Europe",
       "latitude": 45.452176,
       "longitude": 9.276308,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MXP",
@@ -7831,8 +7831,8 @@
       "continentEnname": "Europe",
       "latitude": 45.6269788,
       "longitude": 8.7111113,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MLE",
@@ -7853,8 +7853,8 @@
       "continentEnname": "Asia",
       "latitude": 4.1887827,
       "longitude": 73.5285805,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "AGP",
@@ -7875,8 +7875,8 @@
       "continentEnname": "Europe",
       "latitude": 36.6744295,
       "longitude": -4.4913013,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MKZ",
@@ -7897,8 +7897,8 @@
       "continentEnname": "Asia",
       "latitude": 2.255507,
       "longitude": 102.250859,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MRU",
@@ -7919,8 +7919,8 @@
       "continentEnname": "Africa",
       "latitude": -20.4329066,
       "longitude": 57.6807428,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BOM",
@@ -7941,8 +7941,8 @@
       "continentEnname": "Asia",
       "latitude": 19.0895595,
       "longitude": 72.8656144,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MSP",
@@ -7963,8 +7963,8 @@
       "continentEnname": "North America",
       "latitude": 44.8847554,
       "longitude": -93.2222846,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MUC",
@@ -7985,8 +7985,8 @@
       "continentEnname": "Europe",
       "latitude": 48.3536621,
       "longitude": 11.7750279,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MNL",
@@ -8007,8 +8007,8 @@
       "continentEnname": "Asia",
       "latitude": 14.5122739,
       "longitude": 121.016508,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LUM",
@@ -8029,8 +8029,8 @@
       "continentEnname": "Asia",
       "latitude": 24.40207,
       "longitude": 98.53234,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MRS",
@@ -8051,8 +8051,8 @@
       "continentEnname": "Europe",
       "latitude": 43.4384235,
       "longitude": 5.214414,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SVO",
@@ -8073,8 +8073,8 @@
       "continentEnname": "Europe",
       "latitude": 55.9736482,
       "longitude": 37.4125029,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VKO",
@@ -8095,8 +8095,8 @@
       "continentEnname": "Europe",
       "latitude": 55.599648,
       "longitude": 37.2712342,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MSQ",
@@ -8117,8 +8117,8 @@
       "continentEnname": "Europe",
       "latitude": 53.8894559,
       "longitude": 28.0343199,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MCT",
@@ -8139,8 +8139,8 @@
       "continentEnname": "Asia",
       "latitude": 23.6016268,
       "longitude": 58.2870647,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ISA",
@@ -8161,8 +8161,8 @@
       "continentEnname": "Australia",
       "latitude": -20.6685047,
       "longitude": 139.4909192,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MRY",
@@ -8183,8 +8183,8 @@
       "continentEnname": "North America",
       "latitude": 36.588269,
       "longitude": -121.8491091,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YUL",
@@ -8205,8 +8205,8 @@
       "continentEnname": "North America",
       "latitude": 45.4697382,
       "longitude": -73.7449195,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MTY",
@@ -8227,8 +8227,8 @@
       "continentEnname": "North America",
       "latitude": 25.7778185,
       "longitude": -100.1079853,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "MEX",
@@ -8249,8 +8249,8 @@
       "continentEnname": "North America",
       "latitude": 19.4360762,
       "longitude": -99.0719083,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "MIG",
@@ -8271,8 +8271,8 @@
       "continentEnname": "Asia",
       "latitude": 31.431933,
       "longitude": 104.757432,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MXZ",
@@ -8293,8 +8293,8 @@
       "continentEnname": "Asia",
       "latitude": 24.269302,
       "longitude": 116.115523,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NZH",
@@ -8315,8 +8315,8 @@
       "continentEnname": "Asia",
       "latitude": 49.578928,
       "longitude": 117.346433,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NGB",
@@ -8337,8 +8337,8 @@
       "continentEnname": "Asia",
       "latitude": 29.824821,
       "longitude": 121.472906,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NYT",
@@ -8359,8 +8359,8 @@
       "continentEnname": "Asia",
       "latitude": 19.578402,
       "longitude": 96.429685,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KHN",
@@ -8381,8 +8381,8 @@
       "continentEnname": "Asia",
       "latitude": 28.863106,
       "longitude": 115.918503,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NAO",
@@ -8403,8 +8403,8 @@
       "continentEnname": "Asia",
       "latitude": 30.79416,
       "longitude": 106.172461,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NAN",
@@ -8425,8 +8425,8 @@
       "continentEnname": "Australia",
       "latitude": -17.7534652,
       "longitude": 177.4507196,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NAG",
@@ -8447,8 +8447,8 @@
       "continentEnname": "Asia",
       "latitude": 21.0907559,
       "longitude": 79.054887,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NKG",
@@ -8469,8 +8469,8 @@
       "continentEnname": "Asia",
       "latitude": 31.736253,
       "longitude": 118.88325,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "TBU",
@@ -8491,8 +8491,8 @@
       "continentEnname": "Australia",
       "latitude": -21.242525,
       "longitude": -175.142205,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NTL",
@@ -8513,8 +8513,8 @@
       "continentEnname": "Australia",
       "latitude": -32.8040858,
       "longitude": 151.8400072,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NCL",
@@ -8535,8 +8535,8 @@
       "continentEnname": "Europe",
       "latitude": 55.0377152,
       "longitude": -1.7022861,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NLH",
@@ -8557,8 +8557,8 @@
       "continentEnname": "Asia",
       "latitude": 27.546495,
       "longitude": 100.766287,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NBO",
@@ -8579,8 +8579,8 @@
       "continentEnname": "Africa",
       "latitude": -1.3227102,
       "longitude": 36.9260693,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NUE",
@@ -8601,8 +8601,8 @@
       "continentEnname": "Europe",
       "latitude": 49.4971202,
       "longitude": 11.079808,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NLT",
@@ -8623,8 +8623,8 @@
       "continentEnname": "Asia",
       "latitude": 43.435833,
       "longitude": 83.385719,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NNG",
@@ -8645,8 +8645,8 @@
       "continentEnname": "Asia",
       "latitude": 22.606707,
       "longitude": 108.192499,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NCE",
@@ -8667,8 +8667,8 @@
       "continentEnname": "Europe",
       "latitude": 43.6597689,
       "longitude": 7.2148214,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "BNA",
@@ -8689,8 +8689,8 @@
       "continentEnname": "North America",
       "latitude": 36.126317,
       "longitude": -86.6773713,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "NTG",
@@ -8711,8 +8711,8 @@
       "continentEnname": "Asia",
       "latitude": 32.076878,
       "longitude": 120.986705,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NNY",
@@ -8733,8 +8733,8 @@
       "continentEnname": "Asia",
       "latitude": 32.987077,
       "longitude": 112.626396,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LGA",
@@ -8755,8 +8755,8 @@
       "continentEnname": "North America",
       "latitude": 40.7769271,
       "longitude": -73.8739659,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "EWR",
@@ -8777,8 +8777,8 @@
       "continentEnname": "North America",
       "latitude": 40.6895314,
       "longitude": -74.1744624,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "JFK",
@@ -8799,8 +8799,8 @@
       "continentEnname": "North America",
       "latitude": 40.6413111,
       "longitude": -73.7781391,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "SYM",
@@ -8821,8 +8821,8 @@
       "continentEnname": "Asia",
       "latitude": 22.799377,
       "longitude": 100.969591,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HKT",
@@ -8843,8 +8843,8 @@
       "continentEnname": "Asia",
       "latitude": 8.1110951,
       "longitude": 98.3064646,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PBM",
@@ -8865,8 +8865,8 @@
       "continentEnname": "South America",
       "latitude": 5.4560033,
       "longitude": -55.2000586,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PPP",
@@ -8887,8 +8887,8 @@
       "continentEnname": "Australia",
       "latitude": -20.4892075,
       "longitude": 148.5517627,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PNQ",
@@ -8909,8 +8909,8 @@
       "continentEnname": "Asia",
       "latitude": 18.5788768,
       "longitude": 73.9091163,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PER",
@@ -8931,8 +8931,8 @@
       "continentEnname": "Australia",
       "latitude": -31.9385476,
       "longitude": 115.9672492,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KPO",
@@ -8953,8 +8953,8 @@
       "continentEnname": "Asia",
       "latitude": 35.9846608,
       "longitude": 129.4339184,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "PZI",
@@ -8975,8 +8975,8 @@
       "continentEnname": "Asia",
       "latitude": 26.540825,
       "longitude": 101.802194,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TAO",
@@ -8997,8 +8997,8 @@
       "continentEnname": "Asia",
       "latitude": 36.272238,
       "longitude": 120.393137,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BAR",
@@ -9019,8 +9019,8 @@
       "continentEnname": "Asia",
       "latitude": 19.145557,
       "longitude": 110.469181,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BPE",
@@ -9041,8 +9041,8 @@
       "continentEnname": "Asia",
       "latitude": 39.668282,
       "longitude": 119.071312,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JIQ",
@@ -9063,8 +9063,8 @@
       "continentEnname": "Asia",
       "latitude": 29.520791,
       "longitude": 108.840418,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CEI",
@@ -9085,8 +9085,8 @@
       "continentEnname": "Asia",
       "latitude": 19.9545032,
       "longitude": 99.8790186,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JRO",
@@ -9107,8 +9107,8 @@
       "continentEnname": "Africa",
       "latitude": -3.4019599,
       "longitude": 37.0645441,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CNX",
@@ -9129,8 +9129,8 @@
       "continentEnname": "Asia",
       "latitude": 18.767749,
       "longitude": 98.9640088,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IQM",
@@ -9151,8 +9151,8 @@
       "continentEnname": "Asia",
       "latitude": 38.144305,
       "longitude": 85.5334313,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NDG",
@@ -9173,8 +9173,8 @@
       "continentEnname": "Asia",
       "latitude": 47.259933,
       "longitude": 123.931125,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "IQN",
@@ -9195,8 +9195,8 @@
       "continentEnname": "Asia",
       "latitude": 35.807496,
       "longitude": 107.617272,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CJJ",
@@ -9217,8 +9217,8 @@
       "continentEnname": "Asia",
       "latitude": 36.7220651,
       "longitude": 127.4957156,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YXS",
@@ -9239,8 +9239,8 @@
       "continentEnname": "North America",
       "latitude": 53.883601,
       "longitude": -122.674283,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RKZ",
@@ -9261,8 +9261,8 @@
       "continentEnname": "Asia",
       "latitude": 29.352643,
       "longitude": 89.307203,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "GVA",
@@ -9283,8 +9283,8 @@
       "continentEnname": "Europe",
       "latitude": 46.2370097,
       "longitude": 6.1091564,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RQA",
@@ -9305,8 +9305,8 @@
       "continentEnname": "Asia",
       "latitude": 39.008918686,
       "longitude": 88.0801296,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "VII",
@@ -9327,8 +9327,8 @@
       "continentEnname": "Asia",
       "latitude": 18.15,
       "longitude": 106.2667,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RIZ",
@@ -9349,8 +9349,8 @@
       "continentEnname": "Asia",
       "latitude": 35.405947,
       "longitude": 119.334423,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "BKI",
@@ -9371,8 +9371,8 @@
       "continentEnname": "Asia",
       "latitude": 5.923076,
       "longitude": 116.051017,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SPN",
@@ -9393,8 +9393,8 @@
       "continentEnname": "North America",
       "latitude": 15.1197429,
       "longitude": 145.7282789,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SBA",
@@ -9415,8 +9415,8 @@
       "continentEnname": "North America",
       "latitude": 34.4271935,
       "longitude": -119.8398835,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "LED",
@@ -9437,8 +9437,8 @@
       "continentEnname": "Europe",
       "latitude": 59.8029127,
       "longitude": 30.2678391,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GEG",
@@ -9459,8 +9459,8 @@
       "continentEnname": "North America",
       "latitude": 47.6217478,
       "longitude": -117.534812,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GRU",
@@ -9481,8 +9481,8 @@
       "continentEnname": "South America",
       "latitude": 44.8847554,
       "longitude": -93.2222846,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "QSZ",
@@ -9503,8 +9503,8 @@
       "continentEnname": "Asia",
       "latitude": 38.248188,
       "longitude": 77.06372,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ARN",
@@ -9525,8 +9525,8 @@
       "continentEnname": "Europe",
       "latitude": 58.7890201,
       "longitude": 16.9153649,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SAN",
@@ -9547,8 +9547,8 @@
       "continentEnname": "North America",
       "latitude": 32.7338006,
       "longitude": -117.1933038,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SCL",
@@ -9569,8 +9569,8 @@
       "continentEnname": "South America",
       "latitude": -33.3935486,
       "longitude": -70.7935671,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GMP",
@@ -9591,8 +9591,8 @@
       "continentEnname": "Asia",
       "latitude": 37.5586545,
       "longitude": 126.7944739,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "ICN",
@@ -9613,8 +9613,8 @@
       "continentEnname": "Asia",
       "latitude": 37.4601908,
       "longitude": 126.4406957,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "SOF",
@@ -9635,8 +9635,8 @@
       "continentEnname": "Europe",
       "latitude": 42.6893691,
       "longitude": 23.4144249,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ZAG",
@@ -9657,8 +9657,8 @@
       "continentEnname": "Europe",
       "latitude": 45.7407504,
       "longitude": 16.0674365,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SJC",
@@ -9679,8 +9679,8 @@
       "continentEnname": "North America",
       "latitude": 37.3639472,
       "longitude": -121.9289375,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SHF",
@@ -9701,8 +9701,8 @@
       "continentEnname": "Asia",
       "latitude": 41.74163,
       "longitude": 86.181347,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SHJ",
@@ -9723,8 +9723,8 @@
       "continentEnname": "Asia",
       "latitude": 25.3284352,
       "longitude": 55.5122577,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SJW",
@@ -9745,8 +9745,8 @@
       "continentEnname": "Asia",
       "latitude": 38.282791,
       "longitude": 114.704277,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SMF",
@@ -9767,8 +9767,8 @@
       "continentEnname": "North America",
       "latitude": 38.6950854,
       "longitude": -121.5900648,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SXR",
@@ -9789,8 +9789,8 @@
       "continentEnname": "Asia",
       "latitude": 34.0023092,
       "longitude": 74.762496,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ZRH",
@@ -9811,8 +9811,8 @@
       "continentEnname": "Europe",
       "latitude": 47.4582165,
       "longitude": 8.5554755,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SQJ",
@@ -9833,8 +9833,8 @@
       "continentEnname": "Asia",
       "latitude": 26.428541,
       "longitude": 117.851714,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "XMN",
@@ -9855,8 +9855,8 @@
       "continentEnname": "Asia",
       "latitude": 24.540416,
       "longitude": 118.138758,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "USM",
@@ -9877,8 +9877,8 @@
       "continentEnname": "Asia",
       "latitude": 9.5484366,
       "longitude": 100.0630279,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SAH",
@@ -9899,8 +9899,8 @@
       "continentEnname": "Asia",
       "latitude": 15.479167,
       "longitude": 44.219722,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HPG",
@@ -9921,8 +9921,8 @@
       "continentEnname": "Asia",
       "latitude": 31.624255,
       "longitude": 110.349717,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SQD",
@@ -9943,8 +9943,8 @@
       "continentEnname": "Asia",
       "latitude": 28.381231,
       "longitude": 117.969176,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MYJ",
@@ -9965,8 +9965,8 @@
       "continentEnname": "Asia",
       "latitude": 25.067566,
       "longitude": 121.552699,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SUB",
@@ -9987,8 +9987,8 @@
       "continentEnname": "Asia",
       "latitude": -7.3788851,
       "longitude": 112.7872891,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SWA",
@@ -10009,8 +10009,8 @@
       "continentEnname": "Asia",
       "latitude": 23.554619,
       "longitude": 116.519223,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "STR",
@@ -10031,8 +10031,8 @@
       "continentEnname": "Europe",
       "latitude": 48.6876365,
       "longitude": 9.205576,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SXB",
@@ -10053,8 +10053,8 @@
       "continentEnname": "Europe",
       "latitude": 48.5447277,
       "longitude": 7.6281328,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SHE",
@@ -10075,8 +10075,8 @@
       "continentEnname": "Asia",
       "latitude": 41.643593,
       "longitude": 123.500408,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "SYX",
@@ -10097,8 +10097,8 @@
       "continentEnname": "Asia",
       "latitude": 18.313637,
       "longitude": 109.418797,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "WDS",
@@ -10119,8 +10119,8 @@
       "continentEnname": "Asia",
       "latitude": 32.591347,
       "longitude": 110.916552,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WGN",
@@ -10141,8 +10141,8 @@
       "continentEnname": "Asia",
       "latitude": 26.797318,
       "longitude": 110.64856,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YSQ",
@@ -10163,8 +10163,8 @@
       "continentEnname": "Asia",
       "latitude": 45.1436054,
       "longitude": 124.79983,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TPE",
@@ -10185,8 +10185,8 @@
       "continentEnname": "Asia",
       "latitude": 25.0796514,
       "longitude": 121.2320283,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "TSA",
@@ -10207,8 +10207,8 @@
       "continentEnname": "Asia",
       "latitude": 42.160924,
       "longitude": 118.860332,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "TCG",
@@ -10229,8 +10229,8 @@
       "continentEnname": "Asia",
       "latitude": 46.7080857,
       "longitude": 83.026139,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TCZ",
@@ -10251,8 +10251,8 @@
       "continentEnname": "Asia",
       "latitude": 24.942615,
       "longitude": 98.489369,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TNH",
@@ -10273,8 +10273,8 @@
       "continentEnname": "Asia",
       "latitude": 42.0561266,
       "longitude": 125.7519992,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TSN",
@@ -10295,8 +10295,8 @@
       "continentEnname": "Asia",
       "latitude": 38.90516,
       "longitude": 117.672425,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TGO",
@@ -10317,8 +10317,8 @@
       "continentEnname": "Asia",
       "latitude": 43.565156,
       "longitude": 122.216952,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TLL",
@@ -10339,8 +10339,8 @@
       "continentEnname": "Europe",
       "latitude": 59.4139241,
       "longitude": 24.8279904,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TLQ",
@@ -10361,8 +10361,8 @@
       "continentEnname": "Asia",
       "latitude": 43.034312,
       "longitude": 89.109909,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TRV",
@@ -10383,8 +10383,8 @@
       "continentEnname": "Asia",
       "latitude": 8.4834201,
       "longitude": 76.9198194,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TNR",
@@ -10405,8 +10405,8 @@
       "continentEnname": "Africa",
       "latitude": -18.7957745,
       "longitude": 47.476111,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TUN",
@@ -10427,8 +10427,8 @@
       "continentEnname": "Africa",
       "latitude": 36.8458578,
       "longitude": 10.2190745,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TPA",
@@ -10449,8 +10449,8 @@
       "continentEnname": "North America",
       "latitude": 27.9834776,
       "longitude": -82.5370781,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TEN",
@@ -10471,8 +10471,8 @@
       "continentEnname": "Asia",
       "latitude": 27.888212,
       "longitude": 109.316852,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "THQ",
@@ -10493,8 +10493,8 @@
       "continentEnname": "Asia",
       "latitude": 34.560739,
       "longitude": 105.874649,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TVS",
@@ -10515,8 +10515,8 @@
       "continentEnname": "Asia",
       "latitude": 39.7303,
       "longitude": 118.006218,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "TAS",
@@ -10537,8 +10537,8 @@
       "continentEnname": "Asia",
       "latitude": 41.257222,
       "longitude": 69.281667,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TSV",
@@ -10559,8 +10559,8 @@
       "continentEnname": "Australia",
       "latitude": -19.2564798,
       "longitude": 146.770808,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "TYN",
@@ -10581,8 +10581,8 @@
       "continentEnname": "Asia",
       "latitude": 37.760044,
       "longitude": 112.640865,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HYN",
@@ -10603,8 +10603,8 @@
       "continentEnname": "Asia",
       "latitude": 28.56122,
       "longitude": 121.428145,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YTY",
@@ -10625,8 +10625,8 @@
       "continentEnname": "Asia",
       "latitude": 32.565303,
       "longitude": 119.725804,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "RMQ",
@@ -10647,8 +10647,8 @@
       "continentEnname": "Asia",
       "latitude": 24.2595623,
       "longitude": 120.6265333,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "UDR",
@@ -10669,8 +10669,8 @@
       "continentEnname": "Asia",
       "latitude": 24.6200127,
       "longitude": 73.8904059,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WEF",
@@ -10691,8 +10691,8 @@
       "continentEnname": "Asia",
       "latitude": 36.647119,
       "longitude": 119.125659,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YVR",
@@ -10713,8 +10713,8 @@
       "continentEnname": "North America",
       "latitude": 49.1966913,
       "longitude": -123.1815123,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "WEH",
@@ -10735,8 +10735,8 @@
       "continentEnname": "Asia",
       "latitude": 37.195368,
       "longitude": 122.246937,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WUA",
@@ -10757,8 +10757,8 @@
       "continentEnname": "Asia",
       "latitude": 39.799205,
       "longitude": 106.814868,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WUH",
@@ -10779,8 +10779,8 @@
       "continentEnname": "Asia",
       "latitude": 30.776258,
       "longitude": 114.217379,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "UCB",
@@ -10801,8 +10801,8 @@
       "continentEnname": "Asia",
       "latitude": 41.131701,
       "longitude": 113.125012,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HLH",
@@ -10823,8 +10823,8 @@
       "continentEnname": "Asia",
       "latitude": 46.20094,
       "longitude": 122.014058,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "URC",
@@ -10845,8 +10845,8 @@
       "continentEnname": "Asia",
       "latitude": 43.90969,
       "longitude": 87.484684,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "VNS",
@@ -10867,8 +10867,8 @@
       "continentEnname": "Asia",
       "latitude": 25.4486988,
       "longitude": 82.8568054,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YWG",
@@ -10889,8 +10889,8 @@
       "continentEnname": "North America",
       "latitude": 49.9098283,
       "longitude": -97.2365461,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VCE",
@@ -10911,8 +10911,8 @@
       "continentEnname": "Europe",
       "latitude": 45.5047775,
       "longitude": 12.3396246,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WNH",
@@ -10933,8 +10933,8 @@
       "continentEnname": "Asia",
       "latitude": 23.569081,
       "longitude": 104.340542,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YOW",
@@ -10955,8 +10955,8 @@
       "continentEnname": "North America",
       "latitude": 45.319212,
       "longitude": -75.6691652,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VTE",
@@ -10977,8 +10977,8 @@
       "continentEnname": "Asia",
       "latitude": 17.9869192,
       "longitude": 102.5634402,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WUX",
@@ -10999,8 +10999,8 @@
       "continentEnname": "Asia",
       "latitude": 31.509027,
       "longitude": 120.439442,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MDC",
@@ -11021,8 +11021,8 @@
       "continentEnname": "Asia",
       "latitude": 1.5504203,
       "longitude": 124.9255451,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "VIE",
@@ -11043,8 +11043,8 @@
       "continentEnname": "Europe",
       "latitude": 48.1158333,
       "longitude": 16.5665751,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WUS",
@@ -11065,8 +11065,8 @@
       "continentEnname": "Asia",
       "latitude": 27.710607,
       "longitude": 118.011532,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WNZ",
@@ -11087,8 +11087,8 @@
       "continentEnname": "Asia",
       "latitude": 27.919948,
       "longitude": 120.858742,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WUZ",
@@ -11109,8 +11109,8 @@
       "continentEnname": "Asia",
       "latitude": 23.459468,
       "longitude": 111.262547,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "WXN",
@@ -11131,8 +11131,8 @@
       "continentEnname": "Asia",
       "latitude": 30.804131,
       "longitude": 108.438668,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "XIY",
@@ -11153,8 +11153,8 @@
       "continentEnname": "Asia",
       "latitude": 34.441706,
       "longitude": 108.76709,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "MSY",
@@ -11175,8 +11175,8 @@
       "continentEnname": "North America",
       "latitude": 29.9922012,
       "longitude": -90.2590112,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "XIC",
@@ -11197,8 +11197,8 @@
       "continentEnname": "Asia",
       "latitude": 27.98489,
       "longitude": 102.196289,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "DAD",
@@ -11219,8 +11219,8 @@
       "continentEnname": "Asia",
       "latitude": 16.0533557,
       "longitude": 108.2025862,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "HKG",
@@ -11241,8 +11241,8 @@
       "continentEnname": "Asia",
       "latitude": 22.317334,
       "longitude": 113.943881,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "GXH",
@@ -11263,8 +11263,8 @@
       "continentEnname": "Asia",
       "latitude": 34.828596,
       "longitude": 102.628797,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SIN",
@@ -11285,8 +11285,8 @@
       "continentEnname": "Asia",
       "latitude": 1.3644202,
       "longitude": 103.9915308,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "REP",
@@ -11307,8 +11307,8 @@
       "continentEnname": "Asia",
       "latitude": 13.4115325,
       "longitude": 103.8139191,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "XIL",
@@ -11329,8 +11329,8 @@
       "continentEnname": "Asia",
       "latitude": 43.925265,
       "longitude": 115.972426,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CLT",
@@ -11351,8 +11351,8 @@
       "continentEnname": "North America",
       "latitude": 35.2144026,
       "longitude": -80.9473146,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SYD",
@@ -11373,8 +11373,8 @@
       "continentEnname": "Australia",
       "latitude": -33.9399228,
       "longitude": 151.1752764,
-      "isDomestic": "N",
-      "isHot": "Y"
+      "isDomestic": "0",
+      "isHot": "1"
     },
     {
       "airportCode": "XNN",
@@ -11395,8 +11395,8 @@
       "continentEnname": "Asia",
       "latitude": 36.531243,
       "longitude": 102.046527,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "KMQ",
@@ -11417,8 +11417,8 @@
       "continentEnname": "Asia",
       "latitude": 36.401653,
       "longitude": 136.413355,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JHG",
@@ -11439,8 +11439,8 @@
       "continentEnname": "Asia",
       "latitude": 21.977242,
       "longitude": 100.774319,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "HOU",
@@ -11461,8 +11461,8 @@
       "continentEnname": "North America",
       "latitude": 29.6452718,
       "longitude": -95.2773289,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IAH",
@@ -11483,8 +11483,8 @@
       "continentEnname": "North America",
       "latitude": 29.9902199,
       "longitude": -95.3367827,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SDJ",
@@ -11505,8 +11505,8 @@
       "continentEnname": "Asia",
       "latitude": 38.1397222,
       "longitude": 140.9169444,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "KIJ",
@@ -11527,8 +11527,8 @@
       "continentEnname": "Asia",
       "latitude": 37.952125,
       "longitude": 139.1129315,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "OVB",
@@ -11549,8 +11549,8 @@
       "continentEnname": "Europe",
       "latitude": 55.0113541,
       "longitude": 82.652163,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CVG",
@@ -11571,8 +11571,8 @@
       "continentEnname": "North America",
       "latitude": 39.0532746,
       "longitude": -84.6630165,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ACX",
@@ -11593,8 +11593,8 @@
       "continentEnname": "Asia",
       "latitude": 25.087167,
       "longitude": 104.965681,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "XFN",
@@ -11615,8 +11615,8 @@
       "continentEnname": "Asia",
       "latitude": 32.155506,
       "longitude": 112.301567,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "XIY",
@@ -11637,8 +11637,8 @@
       "continentEnname": "Asia",
       "latitude": 34.441706,
       "longitude": 108.76709,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "SEA",
@@ -11659,8 +11659,8 @@
       "continentEnname": "North America",
       "latitude": 47.4502499,
       "longitude": -122.3088165,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "WUT",
@@ -11681,8 +11681,8 @@
       "continentEnname": "Asia",
       "latitude": 38.605583,
       "longitude": 112.997697,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "XUZ",
@@ -11703,8 +11703,8 @@
       "continentEnname": "Asia",
       "latitude": 34.058054,
       "longitude": 117.567361,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ENY",
@@ -11725,8 +11725,8 @@
       "continentEnname": "Asia",
       "latitude": 36.64553,
       "longitude": 109.563193,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YBP",
@@ -11747,8 +11747,8 @@
       "continentEnname": "Asia",
       "latitude": 28.801421,
       "longitude": 104.562193,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "INC",
@@ -11769,8 +11769,8 @@
       "continentEnname": "Asia",
       "latitude": 38.329916,
       "longitude": 106.396727,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LDS",
@@ -11791,8 +11791,8 @@
       "continentEnname": "Asia",
       "latitude": 47.757842,
       "longitude": 129.029169,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YCU",
@@ -11813,8 +11813,8 @@
       "continentEnname": "Asia",
       "latitude": 35.119172,
       "longitude": 111.049722,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YIC",
@@ -11835,8 +11835,8 @@
       "continentEnname": "Asia",
       "latitude": 27.802433,
       "longitude": 114.322639,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YIH",
@@ -11857,8 +11857,8 @@
       "continentEnname": "Asia",
       "latitude": 30.552947,
       "longitude": 111.492331,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YNZ",
@@ -11879,8 +11879,8 @@
       "continentEnname": "Asia",
       "latitude": 33.436101,
       "longitude": 120.215175,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ATH",
@@ -11901,8 +11901,8 @@
       "continentEnname": "Europe",
       "latitude": 37.9356467,
       "longitude": 23.9484156,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IND",
@@ -11923,8 +11923,8 @@
       "continentEnname": "North America",
       "latitude": 39.7168593,
       "longitude": -86.2955952,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ADD",
@@ -11945,8 +11945,8 @@
       "continentEnname": "Africa",
       "latitude": 8.9800689,
       "longitude": 38.7989319,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IKT",
@@ -11967,8 +11967,8 @@
       "continentEnname": "Europe",
       "latitude": 52.2685014,
       "longitude": 104.3833366,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "RGN",
@@ -11989,8 +11989,8 @@
       "continentEnname": "Asia",
       "latitude": 16.9030555,
       "longitude": 96.1353171,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "SLC",
@@ -12011,8 +12011,8 @@
       "continentEnname": "North America",
       "latitude": 40.7899404,
       "longitude": -111.9790706,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JNB",
@@ -12033,8 +12033,8 @@
       "continentEnname": "Africa",
       "latitude": -26.1366728,
       "longitude": 28.2411459,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YNJ",
@@ -12055,8 +12055,8 @@
       "continentEnname": "Asia",
       "latitude": 42.895429,
       "longitude": 129.454642,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CGK",
@@ -12077,8 +12077,8 @@
       "continentEnname": "Asia",
       "latitude": -6.1275118,
       "longitude": 106.6536859,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "JKT",
@@ -12099,8 +12099,8 @@
       "continentEnname": "Asia",
       "latitude": -6.1275118,
       "longitude": 106.6536859,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YKH",
@@ -12121,8 +12121,8 @@
       "continentEnname": "Asia",
       "latitude": 40.546999,
       "longitude": 122.3255443,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "UYN",
@@ -12143,8 +12143,8 @@
       "continentEnname": "Asia",
       "latitude": 38.367685,
       "longitude": 109.608985,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YIN",
@@ -12165,8 +12165,8 @@
       "continentEnname": "Asia",
       "latitude": 43.958538,
       "longitude": 81.339643,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YUS",
@@ -12187,8 +12187,8 @@
       "continentEnname": "Asia",
       "latitude": 32.843811,
       "longitude": 97.045079,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ISB",
@@ -12209,8 +12209,8 @@
       "continentEnname": "Asia",
       "latitude": 33.6164555,
       "longitude": 73.0961992,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "IST",
@@ -12231,8 +12231,8 @@
       "continentEnname": "Europe",
       "latitude": 40.9829888,
       "longitude": 28.8104425,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YNT",
@@ -12253,8 +12253,8 @@
       "continentEnname": "Asia",
       "latitude": 37.66451,
       "longitude": 120.998216,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ATL",
@@ -12275,8 +12275,8 @@
       "continentEnname": "North America",
       "latitude": 33.6407282,
       "longitude": -84.4277001,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YIW",
@@ -12297,8 +12297,8 @@
       "continentEnname": "Asia",
       "latitude": 29.346399,
       "longitude": 120.038869,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "LLF",
@@ -12319,8 +12319,8 @@
       "continentEnname": "Asia",
       "latitude": 26.347486,
       "longitude": 111.624354,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CXR",
@@ -12341,8 +12341,8 @@
       "continentEnname": "Asia",
       "latitude": 12.0070536,
       "longitude": 109.2168524,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "YTY",
@@ -12363,8 +12363,8 @@
       "continentEnname": "Asia",
       "latitude": 32.565303,
       "longitude": 119.725804,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NBS",
@@ -12385,8 +12385,8 @@
       "continentEnname": "Asia",
       "latitude": 42.072469,
       "longitude": 127.620841,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CGQ",
@@ -12407,8 +12407,8 @@
       "continentEnname": "Asia",
       "latitude": 44.000999,
       "longitude": 125.703786,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CTS",
@@ -12429,8 +12429,8 @@
       "continentEnname": "Asia",
       "latitude": 42.7925942,
       "longitude": 141.6704785,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ZUH",
@@ -12451,8 +12451,8 @@
       "continentEnname": "Asia",
       "latitude": 22.015462,
       "longitude": 113.381493,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ZHA",
@@ -12473,8 +12473,8 @@
       "continentEnname": "Asia",
       "latitude": 21.218207,
       "longitude": 110.372695,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "MDW",
@@ -12495,8 +12495,8 @@
       "continentEnname": "North America",
       "latitude": 41.7867759,
       "longitude": -87.7521884,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "ORD",
@@ -12517,8 +12517,8 @@
       "continentEnname": "North America",
       "latitude": 41.9741625,
       "longitude": -87.9073214,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "DYG",
@@ -12539,8 +12539,8 @@
       "continentEnname": "Asia",
       "latitude": 29.109857,
       "longitude": 110.457773,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ZQZ",
@@ -12561,8 +12561,8 @@
       "continentEnname": "Asia",
       "latitude": 40.752784,
       "longitude": 114.961845,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "NZL",
@@ -12583,8 +12583,8 @@
       "continentEnname": "Asia",
       "latitude": 47.876456,
       "longitude": 122.773882,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "JAI",
@@ -12605,8 +12605,8 @@
       "continentEnname": "Asia",
       "latitude": 26.8279735,
       "longitude": 75.8059323,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CKG",
@@ -12627,8 +12627,8 @@
       "continentEnname": "Asia",
       "latitude": 29.727675,
       "longitude": 106.648039,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "NGS",
@@ -12649,8 +12649,8 @@
       "continentEnname": "Asia",
       "latitude": 32.913643,
       "longitude": 129.9184937,
-      "isDomestic": "N",
-      "isHot": "N"
+      "isDomestic": "0",
+      "isHot": "0"
     },
     {
       "airportCode": "CSX",
@@ -12671,8 +12671,8 @@
       "continentEnname": "Asia",
       "latitude": 28.192531,
       "longitude": 113.226919,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "HSN",
@@ -12693,8 +12693,8 @@
       "continentEnname": "Asia",
       "latitude": 29.938086,
       "longitude": 122.368207,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ZAT",
@@ -12715,8 +12715,8 @@
       "continentEnname": "Asia",
       "latitude": 27.330297,
       "longitude": 103.761262,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ZHY",
@@ -12737,8 +12737,8 @@
       "continentEnname": "Asia",
       "latitude": 37.575209,
       "longitude": 105.163408,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "YZY",
@@ -12759,8 +12759,8 @@
       "continentEnname": "Asia",
       "latitude": 38.820469,
       "longitude": 100.662678,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "ZYI",
@@ -12781,8 +12781,8 @@
       "continentEnname": "Asia",
       "latitude": 27.805915,
       "longitude": 107.26045,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     },
     {
       "airportCode": "CGO",
@@ -12803,8 +12803,8 @@
       "continentEnname": "Asia",
       "latitude": 34.530807,
       "longitude": 113.852683,
-      "isDomestic": "Y",
-      "isHot": "Y"
+      "isDomestic": "1",
+      "isHot": "1"
     },
     {
       "airportCode": "CIH",
@@ -12825,8 +12825,8 @@
       "continentEnname": "Asia",
       "latitude": 36.251826,
       "longitude": 113.134367,
-      "isDomestic": "Y",
-      "isHot": "N"
+      "isDomestic": "1",
+      "isHot": "0"
     }
   ]
 }

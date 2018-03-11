@@ -1,5 +1,6 @@
 package com.wke.gql.greendao.gen;
 
+import com.wke.gql.greendao.bean.CityDataBaseVersion;
 import com.wke.gql.greendao.bean.CityItem;
 
 import org.greenrobot.greendao.AbstractDao;
@@ -14,14 +15,16 @@ import java.util.Map;
 
 /**
  * {@inheritDoc}
- *
+ * 
  * @see org.greenrobot.greendao.AbstractDaoSession
  */
 public class DaoSession extends AbstractDaoSession {
 
     private final DaoConfig cityItemDaoConfig;
+    private final DaoConfig cityDataBaseVersionDaoConfig;
 
     private final CityItemDao cityItemDao;
+    private final CityDataBaseVersionDao cityDataBaseVersionDao;
 
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
@@ -30,17 +33,27 @@ public class DaoSession extends AbstractDaoSession {
         cityItemDaoConfig = daoConfigMap.get(CityItemDao.class).clone();
         cityItemDaoConfig.initIdentityScope(type);
 
+        cityDataBaseVersionDaoConfig = daoConfigMap.get(CityDataBaseVersionDao.class).clone();
+        cityDataBaseVersionDaoConfig.initIdentityScope(type);
+
         cityItemDao = new CityItemDao(cityItemDaoConfig, this);
+        cityDataBaseVersionDao = new CityDataBaseVersionDao(cityDataBaseVersionDaoConfig, this);
 
         registerDao(CityItem.class, cityItemDao);
+        registerDao(CityDataBaseVersion.class, cityDataBaseVersionDao);
     }
 
     public void clear() {
         cityItemDaoConfig.getIdentityScope().clear();
+        cityDataBaseVersionDaoConfig.getIdentityScope().clear();
     }
 
     public CityItemDao getCityItemDao() {
         return cityItemDao;
+    }
+
+    public CityDataBaseVersionDao getCityDataBaseVersionDao() {
+        return cityDataBaseVersionDao;
     }
 
 }
