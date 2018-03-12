@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -35,8 +36,9 @@ public class CityListIndexView extends LinearLayout {
 
     private float mLastX, mLastY;
     private View popUpView;
-
+    private RecyclerView cityList;
     private OnIndexTextClickCallBack onIndexTextClickCallBack;
+    private OnScrollListener onScrollListener;
 
     public CityListIndexView(Context context) {
         this(context, null);
@@ -87,6 +89,10 @@ public class CityListIndexView extends LinearLayout {
 
     public void setOnIndexTextClickCallBack(OnIndexTextClickCallBack onIndexTextClickCallBack) {
         this.onIndexTextClickCallBack = onIndexTextClickCallBack;
+    }
+
+    public void attachToCityList(RecyclerView recyclerView) {
+        this.cityList = recyclerView;
     }
 
     private void initView() {
@@ -144,6 +150,15 @@ public class CityListIndexView extends LinearLayout {
                 if (v == null) {
                     popUpView.setVisibility(GONE);
                 } else {
+                    LinearLayout root = (LinearLayout) getChildAt(0);
+                    int position = root.indexOfChild(v);
+                    if (onScrollListener != null)
+                        onScrollListener.onScroll(v, v.getTag().toString(), position);
+                    if (cityList != null) {
+                        Log.i(TAG, "dispatchTouchEvent: position" + position);
+                        RecyclerView.LayoutManager layoutManager = cityList.getLayoutManager();
+                        layoutManager.scrollToPosition(100);
+                    }
                     setAllSelected(false);
                     v.setSelected(true);
                     popUpView.setVisibility(VISIBLE);
@@ -290,6 +305,20 @@ public class CityListIndexView extends LinearLayout {
             View childView = root.getChildAt(i);
             childView.setSelected(false);
         }
+    }
+
+    public void setIndexHighLight(String index) {
+        if (indexContents != null) {
+            int i = indexContents.indexOf(index);
+            setAllSelected(false);
+            LinearLayout root = (LinearLayout) getChildAt(0);
+            View v = root.getChildAt(i);
+            v.setSelected(true);
+        }
+    }
+
+    public interface OnScrollListener {
+        public void onScroll(View v, String index, int position);
     }
 
     public interface OnIndexTextClickCallBack {

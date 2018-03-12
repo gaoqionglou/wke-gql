@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
@@ -59,7 +58,6 @@ public class CityWidgetActivity extends AppCompatActivity {
                     cityAdapter.setCityItems(items);
                     cityAdapter.notifyDataSetChanged();
                 }
-                Toast.makeText(CityWidgetActivity.this, tab.getText(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -97,8 +95,37 @@ public class CityWidgetActivity extends AppCompatActivity {
         });  //刷新数据的时候回刷新头部
         rv.addItemDecoration(headersDecor);
         rv.setLayoutManager(new LinearLayoutManager(this));
+        cityListIndexView.attachToCityList(rv);
+        cityAdapter.setIndexView(cityListIndexView);
+        cityAdapter.setOnItemClickListener(new CityAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(CityItem cityItem) {
+                Log.i(TAG, "onItemClick: " + cityItem.cityCnName);
+            }
+
+            @Override
+            public void onItemIndexClick(String index) {
+                Log.i(TAG, "onItemIndexClick: " + index);
+            }
+        });
+        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                String index = items.get(firstVisibleItemPosition).airportPinyinShort.substring(0, 1);
+                cityListIndexView.setIndexHighLight(index);
+                Log.i(TAG, "index: " + index);
+
+            }
+        });
         rv.setAdapter(cityAdapter);
-        Log.i(TAG, "getIndexList: " + items.toString());
 
     }
 

@@ -35,15 +35,13 @@ public class CityDataBaseVersionDao extends AbstractDao<CityDataBaseVersion, Lon
      * Creates the underlying database table.
      */
     public static void createTable(Database db, boolean ifNotExists) {
-        String constraint = ifNotExists ? "IF NOT EXISTS " : "";
+        String constraint = ifNotExists ? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"CityVersion\" (" + //
                 "\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
                 "\"VERSION\" TEXT);"); // 1: version
     }
 
-    /**
-     * Drops the underlying database table.
-     */
+    /** Drops the underlying database table. */
     public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"CityVersion\"";
         db.execSQL(sql);
@@ -89,14 +87,14 @@ public class CityDataBaseVersionDao extends AbstractDao<CityDataBaseVersion, Lon
     public void readEntity(Cursor cursor, CityDataBaseVersion entity, int offset) {
         entity.setId(cursor.getLong(offset + 0));
         entity.setVersion(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-    }
-
+     }
+     
     @Override
     protected final Long updateKeyAfterInsert(CityDataBaseVersion entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
-
+    
     @Override
     public Long getKey(CityDataBaseVersion entity) {
         if (entity != null) {
@@ -105,19 +103,19 @@ public class CityDataBaseVersionDao extends AbstractDao<CityDataBaseVersion, Lon
             return null;
         }
     }
-
+    
     @Override
     protected final boolean isEntityUpdateable() {
         return true;
     }
 
-    /**
+/**
      * Properties of entity CityDataBaseVersion.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-     */
+    */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "ID");
         public final static Property Version = new Property(1, String.class, "version", false, "VERSION");
     }
-
+    
 }
