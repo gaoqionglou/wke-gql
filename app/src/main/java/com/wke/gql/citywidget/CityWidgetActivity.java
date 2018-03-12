@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -13,6 +15,7 @@ import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
 import com.wke.gql.R;
 import com.wke.gql.greendao.bean.CityItem;
 import com.wke.gql.greendao.gen.CityItemDao;
+import com.wke.gql.utils.UtilTool;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -72,7 +75,6 @@ public class CityWidgetActivity extends AppCompatActivity {
         });
 
         getData();
-
     }
 
 
@@ -126,7 +128,50 @@ public class CityWidgetActivity extends AppCompatActivity {
             }
         });
         rv.setAdapter(cityAdapter);
+        cityListIndexView.setOnIndexTextClickCallBack(new CityListIndexView.OnIndexTextClickCallBack() {
+            @Override
+            public void onTouch(View v, MotionEvent ev) {
 
+            }
+
+            @Override
+            public void onClick(View v) {
+                scrollToIndex(v.getTag().toString());
+            }
+        });
+    }
+
+    private void scrollToIndex(String index) {
+        int a = 0;
+        for (int i = 0; i < items.size(); i++) {
+            if (index.equalsIgnoreCase(items.get(i).airportPinyinShort.substring(0, 1))) {
+                a = i;
+                break;
+            }
+        }
+        smoothMoveToPosition(rv, a);
+    }
+
+    private void smoothMoveToPosition(RecyclerView mRecyclerView, final int position) {
+        mRecyclerView.getChildCount();
+        // 第一个可见位置
+        int firstItem = mRecyclerView.getChildLayoutPosition(mRecyclerView.getChildAt(0));
+        // 最后一个可见位置
+        int lastItem = mRecyclerView.getChildLayoutPosition(mRecyclerView.getChildAt(mRecyclerView.getChildCount() - 1));
+        if (position < firstItem) {
+            // 第一种可能:跳转位置在第一个可见位置之前
+            mRecyclerView.scrollToPosition(position);
+        } else if (position <= lastItem) {
+            // 第二种可能:跳转位置在第一个可见位置之后
+            int movePosition = position - firstItem;
+            if (movePosition >= 0 && movePosition < mRecyclerView.getChildCount()) {
+                int top = mRecyclerView.getChildAt(movePosition).getTop();
+                mRecyclerView.scrollBy(0, top - UtilTool.dip2px(20));
+            }
+        } else {
+            // 第三种可能:跳转位置在最后可见项之后
+            mRecyclerView.scrollToPosition(position);
+        }
     }
 
     private void getIndexList(List<CityItem> items) {
