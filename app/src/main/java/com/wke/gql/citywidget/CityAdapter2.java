@@ -72,7 +72,7 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
     public int getItemViewType(int position) {
         CityData data = cityData.get(position);
         List<CityItem> items = data.itemList;
-        if (data.index.equalsIgnoreCase("GPS") || data.index.equalsIgnoreCase("历史")) {
+        if (data.index.equalsIgnoreCase("定位") || data.index.equalsIgnoreCase("历史")) {
             return GPS_HISTORY;
         } else {
             return LETTER;
@@ -83,18 +83,19 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
     public void onBindViewHolder(CityViewHolder holder, int position) {
         CityData data = cityData.get(position);
         List<CityItem> items = data.itemList;
-        if (data.index.equalsIgnoreCase("GPS") || data.index.equalsIgnoreCase("历史")) {
+        if (data.index.equalsIgnoreCase("定位") || data.index.equalsIgnoreCase("历史")) {
             holder.gridLayout.removeAllViews();
-            for (CityItem cityItem : items) {
+            for (int i = 0; i < items.size(); i++) {
+                CityItem cityItem = items.get(i);
                 AppCompatTextView textView = new AppCompatTextView(context);
-                GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(GridLayout.spec(GridLayout.UNDEFINED, 1f),
-                        GridLayout.spec(GridLayout.UNDEFINED, 1f));
+                GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(GridLayout.spec(i / 3, 1f),
+                        GridLayout.spec(i % 3, 1f));
                 layoutParams.height = GridLayout.LayoutParams.WRAP_CONTENT;
-                layoutParams.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                layoutParams.width = 0;
                 //设置一些Margin
-                layoutParams.setMargins(8, 8, 8, 8);
-                layoutParams.setGravity(Gravity.CENTER);
+                layoutParams.setMargins(8, 5, 8, 5);
                 textView.setText(cityItem.cityCnName);
+                textView.setGravity(Gravity.CENTER);
                 textView.setBackgroundResource(R.drawable.select_city_bg);
                 holder.gridLayout.addView(textView, layoutParams);
             }
