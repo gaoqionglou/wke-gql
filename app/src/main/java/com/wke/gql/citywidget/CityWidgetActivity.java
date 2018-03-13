@@ -88,17 +88,21 @@ public class CityWidgetActivity extends AppCompatActivity {
         });
         getIndexList(items);
         cityAdapter = new CityAdapter(items);
+        //装载头部！
         headersDecor = new StickyRecyclerHeadersDecoration(cityAdapter); //绑定之前的adapter
+        //刷新数据的时候回刷新头部
         cityAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override
             public void onChanged() {
                 headersDecor.invalidateHeaders();
             }
-        });  //刷新数据的时候回刷新头部
+        });
         rv.addItemDecoration(headersDecor);
         rv.setLayoutManager(new LinearLayoutManager(this));
+        //建立index和rv的联系
         cityListIndexView.attachToCityList(rv);
         cityAdapter.setIndexView(cityListIndexView);
+        //列表的点击事件 包括index
         cityAdapter.setOnItemClickListener(new CityAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(CityItem cityItem) {
@@ -110,6 +114,7 @@ public class CityWidgetActivity extends AppCompatActivity {
                 Log.i(TAG, "onItemIndexClick: " + index);
             }
         });
+        //列表的滑动事件
         rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -128,6 +133,7 @@ public class CityWidgetActivity extends AppCompatActivity {
             }
         });
         rv.setAdapter(cityAdapter);
+        //index的点击事件
         cityListIndexView.setOnIndexTextClickCallBack(new CityListIndexView.OnIndexTextClickCallBack() {
             @Override
             public void onTouch(View v, MotionEvent ev) {
@@ -136,7 +142,19 @@ public class CityWidgetActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                Log.i(TAG, "onClick: ");
                 scrollToIndex(v.getTag().toString());
+            }
+        });
+        //index的滑动事件
+        cityListIndexView.setOnScrollListener(new CityListIndexView.OnScrollListener() {
+            @Override
+            public void onScroll(View v, String index, int position) {
+                LinearLayoutManager layoutManager = (LinearLayoutManager) rv.getLayoutManager();
+                int p = layoutManager.findFirstVisibleItemPosition();
+                Log.i(TAG, "onScroll: " + index + "," + p);
+                if (items.get(p).airportPinyinShort.substring(0, 1).equalsIgnoreCase(index)) return;
+                scrollToIndex(index);
             }
         });
     }
@@ -152,7 +170,7 @@ public class CityWidgetActivity extends AppCompatActivity {
         smoothMoveToPosition(rv, a);
     }
 
-    private void smoothMoveToPosition(RecyclerView mRecyclerView, final int position) {
+    private void smoothMoveToPosition(RecyclerView mRecyclerView, int position) {
         mRecyclerView.getChildCount();
         // 第一个可见位置
         int firstItem = mRecyclerView.getChildLayoutPosition(mRecyclerView.getChildAt(0));
@@ -166,6 +184,7 @@ public class CityWidgetActivity extends AppCompatActivity {
             int movePosition = position - firstItem;
             if (movePosition >= 0 && movePosition < mRecyclerView.getChildCount()) {
                 int top = mRecyclerView.getChildAt(movePosition).getTop();
+                //减去index的高度
                 mRecyclerView.scrollBy(0, top - UtilTool.dip2px(20));
             }
         } else {

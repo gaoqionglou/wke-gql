@@ -79,6 +79,10 @@ public class CityListIndexView extends LinearLayout {
         setClickable(true);//设置为true 为了后续能接收move up事件
     }
 
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.onScrollListener = onScrollListener;
+    }
+
     public View getPopUpView() {
         return popUpView;
     }
@@ -113,14 +117,12 @@ public class CityListIndexView extends LinearLayout {
                 textView.setText(indexContents.get(i));
                 textView.setTag(indexContents.get(i));
                 textView.setTextColor(indexTextColor);
-                textView.setOnTouchListener(new OnTouchListener() {
+                textView.setOnClickListener(new OnClickListener() {
                     @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        Log.e(TAG, "AAAonTouch: ");
+                    public void onClick(View v) {
                         if (onIndexTextClickCallBack != null) {
                             onIndexTextClickCallBack.onClick(v);
                         }
-                        return false;
                     }
                 });
                 textView.setClickable(true);
@@ -154,11 +156,6 @@ public class CityListIndexView extends LinearLayout {
                     int position = root.indexOfChild(v);
                     if (onScrollListener != null)
                         onScrollListener.onScroll(v, v.getTag().toString(), position);
-                    if (cityList != null) {
-                        Log.i(TAG, "dispatchTouchEvent: position" + position);
-                        RecyclerView.LayoutManager layoutManager = cityList.getLayoutManager();
-                        layoutManager.scrollToPosition(100);
-                    }
                     setAllSelected(false);
                     v.setSelected(true);
                     popUpView.setVisibility(VISIBLE);
