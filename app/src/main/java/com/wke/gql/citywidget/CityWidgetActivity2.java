@@ -16,9 +16,8 @@ import com.wke.gql.R;
 import com.wke.gql.greendao.bean.CityItem;
 import com.wke.gql.greendao.bean.HistoryCityItem;
 import com.wke.gql.greendao.gen.CityItemDao;
+import com.wke.gql.utils.BeanUtils;
 import com.wke.gql.utils.UtilTool;
-
-import org.apache.commons.beanutils.BeanUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +37,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     private List<CityItem> items;
     private boolean domestic = true;
     private boolean isChinese = true;
-    private CityAdapter cityAdapter;
+    private CityAdapter2 cityAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +56,11 @@ public class CityWidgetActivity2 extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 if ("国内".equalsIgnoreCase(tab.getText().toString())) {
                     items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
-                    cityAdapter.setCityItems(items);
+                    cityAdapter.setCityData(getData2(items));
                     cityAdapter.notifyDataSetChanged();
                 } else if ("国际".equalsIgnoreCase(tab.getText().toString())) {
                     items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("0")).list();
-                    cityAdapter.setCityItems(items);
+                    cityAdapter.setCityData(getData2(items));
                     cityAdapter.notifyDataSetChanged();
                 }
             }
@@ -83,7 +82,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
 
     private void getData() {
         items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
-        addHistoryItems(items);
+        List<CityData> datas = getData2(items);
         Collections.sort(items, new Comparator<CityItem>() {
             @Override
             public int compare(CityItem o1, CityItem o2) {
@@ -91,7 +90,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
             }
         });
         getIndexList(items);
-        cityAdapter = new CityAdapter(items);
+        cityAdapter = new CityAdapter2(this, datas);
         //装载头部！
         headersDecor = new StickyRecyclerHeadersDecoration(cityAdapter); //绑定之前的adapter
         //刷新数据的时候回刷新头部
@@ -107,7 +106,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
         cityListIndexView.attachToCityList(rv);
         cityAdapter.setIndexView(cityListIndexView);
         //列表的点击事件 包括index
-        cityAdapter.setOnItemClickListener(new CityAdapter.OnItemClickListener() {
+        cityAdapter.setOnItemClickListener(new CityAdapter2.OnItemClickListener() {
             @Override
             public void onItemClick(CityItem cityItem) {
                 Log.i(TAG, "onItemClick: " + cityItem.cityCnName);
@@ -222,30 +221,26 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     }
 
 
-    private List<CityData> addHistoryItems(List<CityItem> cityItems) {
+    private List<CityData> getData2(List<CityItem> cityItems) {
         List<CityData> data = new ArrayList<>();
         try {
             List<HistoryCityItem> historys = HistoryCityItem.findAll(HistoryCityItem.class);
             List<CityItem> historyCityItemList = new ArrayList<>();
             for (HistoryCityItem history : historys) {
-                CityItem item = new CityItem();
-                BeanUtils.copyProperties(item, history);
-                historyCityItemList.add(item);
+                historyCityItemList.add(BeanUtils.convert2CityItem(history));
             }
 
             CityData gpsData = new CityData();
             gpsData.index = "定位";
             gpsData.itemList = new ArrayList<CityItem>();
             gpsData.itemList.add(cityItems.get(0));
-
+            data.add(gpsData);
             CityData historyData = new CityData();
             historyData.index = "历史";
             historyData.itemList = historyCityItemList;
             data.add(historyData);
 
 
-            data.add(gpsData);
-            data.add(historyData);
             for (CityItem item : cityItems) {
                 CityData d = new CityData();
                 d.index = item.airportPinyinShort.substring(0, 1).toUpperCase();

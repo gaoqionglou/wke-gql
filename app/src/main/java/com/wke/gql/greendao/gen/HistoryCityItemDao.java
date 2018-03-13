@@ -35,7 +35,7 @@ public class HistoryCityItemDao extends AbstractDao<HistoryCityItem, Long> {
      * Creates the underlying database table.
      */
     public static void createTable(Database db, boolean ifNotExists) {
-        String constraint = ifNotExists ? "IF NOT EXISTS " : "";
+        String constraint = ifNotExists ? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"HistoryCityItem\" (" + //
                 "\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: airportId
                 "\"AIRPORT_CODE\" TEXT," + // 1: airportCode
@@ -60,9 +60,7 @@ public class HistoryCityItemDao extends AbstractDao<HistoryCityItem, Long> {
                 "\"AIRPORT_NAME_EN_SIMPLE\" TEXT);"); // 20: airportEnNameSimple
     }
 
-    /**
-     * Drops the underlying database table.
-     */
+    /** Drops the underlying database table. */
     public static void dropTable(Database db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"HistoryCityItem\"";
         db.execSQL(sql);
@@ -344,14 +342,14 @@ public class HistoryCityItemDao extends AbstractDao<HistoryCityItem, Long> {
         entity.setIsHot(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
         entity.setAirportNameSimple(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
         entity.setAirportEnNameSimple(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
-    }
-
+     }
+     
     @Override
     protected final Long updateKeyAfterInsert(HistoryCityItem entity, long rowId) {
         entity.setAirportId(rowId);
         return rowId;
     }
-
+    
     @Override
     public Long getKey(HistoryCityItem entity) {
         if (entity != null) {
@@ -360,16 +358,16 @@ public class HistoryCityItemDao extends AbstractDao<HistoryCityItem, Long> {
             return null;
         }
     }
-
+    
     @Override
     protected final boolean isEntityUpdateable() {
         return true;
     }
 
-    /**
+/**
      * Properties of entity HistoryCityItem.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-     */
+    */
     public static class Properties {
         public final static Property AirportId = new Property(0, Long.class, "airportId", true, "ID");
         public final static Property AirportCode = new Property(1, String.class, "airportCode", false, "AIRPORT_CODE");
@@ -393,5 +391,5 @@ public class HistoryCityItemDao extends AbstractDao<HistoryCityItem, Long> {
         public final static Property AirportNameSimple = new Property(19, String.class, "airportNameSimple", false, "AIRPORT_NAME_SIMPLE");
         public final static Property AirportEnNameSimple = new Property(20, String.class, "airportEnNameSimple", false, "AIRPORT_NAME_EN_SIMPLE");
     }
-
+    
 }

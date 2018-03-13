@@ -2,8 +2,8 @@ package com.wke.gql.greendao.bean;
 
 import com.google.gson.annotations.SerializedName;
 import com.wke.gql.greendao.gen.HistoryCityItemDao;
+import com.wke.gql.utils.BeanUtils;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -17,7 +17,7 @@ import org.greenrobot.greendao.query.QueryBuilder;
 @Entity(nameInDb = "HistoryCityItem")
 public class HistoryCityItem extends BaseEntity {
 
-    //    "airportCode": "OSL",
+    //        "airportCode": "OSL",
 //            "airportEnname": "Oslo Gardermoen Airport",
 //            "airportCnname": "奥斯陆机场",
 //            "airportPinyin": "AoSiLuJiChang",
@@ -127,13 +127,7 @@ public class HistoryCityItem extends BaseEntity {
     }
 
     public static void addHistoryCity(CityItem item) {
-        HistoryCityItem historyCity = new HistoryCityItem();
-        try {
-            BeanUtils.copyProperties(historyCity, item);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        HistoryCityItem historyCity = BeanUtils.convert2HistoryCityItem(item);
         // 若该机场历史记录已存在，则先进行删除操作
         deleteHistoryCity(historyCity);
 
