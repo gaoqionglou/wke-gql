@@ -119,16 +119,23 @@ public class CityWidgetActivity extends AppCompatActivity {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                    int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                    String index = items.get(firstVisibleItemPosition).airportPinyinShort.substring(0, 1);
+                    cityListIndexView.setIndexHighLight(index);
+                    Log.i(TAG, "index: " + index);
+                }
             }
 
+            /**
+             * @param recyclerView
+             * @param dx           水平滚动距离
+             * @param dy           垂直滚动距离
+             */
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-                String index = items.get(firstVisibleItemPosition).airportPinyinShort.substring(0, 1);
-                cityListIndexView.setIndexHighLight(index);
-                Log.i(TAG, "index: " + index);
 
             }
         });
@@ -142,7 +149,7 @@ public class CityWidgetActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: ");
+                Log.i(TAG, "onClick: " + v.getTag().toString());
                 scrollToIndex(v.getTag().toString());
             }
         });

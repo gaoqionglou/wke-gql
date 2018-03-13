@@ -117,14 +117,6 @@ public class CityListIndexView extends LinearLayout {
                 textView.setText(indexContents.get(i));
                 textView.setTag(indexContents.get(i));
                 textView.setTextColor(indexTextColor);
-                textView.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (onIndexTextClickCallBack != null) {
-                            onIndexTextClickCallBack.onClick(v);
-                        }
-                    }
-                });
                 textView.setClickable(true);
                 textView.setSelected(false);
                 textView.setBackgroundResource(indexTextBackground);
@@ -168,8 +160,12 @@ public class CityListIndexView extends LinearLayout {
                 Log.i(TAG, "dispatchTouchEvent: ACTION_UP " + mLastX + "," + mLastY);
                 popUpView.setVisibility(GONE);
                 setAllSelected(false);
-                if (v != null) v.setSelected(true);
-
+                if (v != null) {
+                    if (onIndexTextClickCallBack != null) {
+                        onIndexTextClickCallBack.onClick(v);
+                    }
+                    v.setSelected(true);
+                }
                 break;
             default:
                 break;
@@ -305,6 +301,7 @@ public class CityListIndexView extends LinearLayout {
     }
 
     public void setIndexHighLight(String index) {
+        Log.i(TAG, "setIndexHighLight: " + index);
         if (indexContents != null) {
             int i = indexContents.indexOf(index);
             setAllSelected(false);
