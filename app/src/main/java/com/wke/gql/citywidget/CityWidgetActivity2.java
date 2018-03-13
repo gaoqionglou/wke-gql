@@ -18,6 +18,8 @@ import com.wke.gql.greendao.bean.HistoryCityItem;
 import com.wke.gql.greendao.gen.CityItemDao;
 import com.wke.gql.utils.UtilTool;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,8 +27,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Route(path = "/wkegql/citywidget")
-public class CityWidgetActivity extends AppCompatActivity {
+@Route(path = "/wkegql/citywidget2")
+public class CityWidgetActivity2 extends AppCompatActivity {
     private static final String TAG = "CityWidgetActivity";
     private CityListIndexView cityListIndexView;
     private TextView middleView;
@@ -81,6 +83,7 @@ public class CityWidgetActivity extends AppCompatActivity {
 
     private void getData() {
         items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
+        addHistoryItems(items);
         Collections.sort(items, new Comparator<CityItem>() {
             @Override
             public int compare(CityItem o1, CityItem o2) {
@@ -201,6 +204,7 @@ public class CityWidgetActivity extends AppCompatActivity {
             mRecyclerView.scrollToPosition(position);
         }
     }
+
     private void getIndexList(List<CityItem> items) {
         Set<String> indexs = new HashSet<>();
         for (CityItem item : items) {
@@ -216,4 +220,43 @@ public class CityWidgetActivity extends AppCompatActivity {
         cityListIndexView.setIndexContents(indexList);
         Log.i(TAG, "getIndexList: " + indexList.toString());
     }
+
+
+    private List<CityData> addHistoryItems(List<CityItem> cityItems) {
+        List<CityData> data = new ArrayList<>();
+        try {
+            List<HistoryCityItem> historys = HistoryCityItem.findAll(HistoryCityItem.class);
+            List<CityItem> historyCityItemList = new ArrayList<>();
+            for (HistoryCityItem history : historys) {
+                CityItem item = new CityItem();
+                BeanUtils.copyProperties(item, history);
+                historyCityItemList.add(item);
+            }
+
+            CityData gpsData = new CityData();
+            gpsData.index = "定位";
+            gpsData.itemList = new ArrayList<CityItem>();
+            gpsData.itemList.add(cityItems.get(0));
+
+            CityData historyData = new CityData();
+            historyData.index = "历史";
+            historyData.itemList = historyCityItemList;
+            data.add(historyData);
+
+
+            data.add(gpsData);
+            data.add(historyData);
+            for (CityItem item : cityItems) {
+                CityData d = new CityData();
+                d.index = item.airportPinyinShort.substring(0, 1).toUpperCase();
+                d.itemList = new ArrayList<CityItem>();
+                d.itemList.add(item);
+                data.add(d);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
 }
