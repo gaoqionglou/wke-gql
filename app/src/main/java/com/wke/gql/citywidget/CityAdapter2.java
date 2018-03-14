@@ -4,11 +4,12 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.GridLayout;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
 import com.wke.gql.R;
@@ -21,7 +22,7 @@ import java.util.List;
  */
 
 public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHolder> implements StickyRecyclerHeadersAdapter<CityAdapter2.CityIndexViewHolder> {
-    private int GPS_HISTORY = 1, LETTER = 2;
+    private int GPS_HISTORY_HOT = 1, LETTER = 2;
     private List<CityData> cityData;
     private OnItemClickListener onItemClickListener;
     private CityListIndexView indexView;
@@ -63,7 +64,7 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
 
     @Override
     public CityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        int layout = viewType == GPS_HISTORY ? R.layout.item_city2 : R.layout.item_city;
+        int layout = viewType == GPS_HISTORY_HOT ? R.layout.item_city2 : R.layout.item_city;
         View view = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
         return new CityViewHolder(view);
     }
@@ -72,8 +73,8 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
     public int getItemViewType(int position) {
         CityData data = cityData.get(position);
         List<CityItem> items = data.itemList;
-        if (data.index.equalsIgnoreCase("定位") || data.index.equalsIgnoreCase("历史")) {
-            return GPS_HISTORY;
+        if ("GPS/历史".equalsIgnoreCase(data.index) || "热门".equalsIgnoreCase(data.index)) {
+            return GPS_HISTORY_HOT;
         } else {
             return LETTER;
         }
@@ -83,21 +84,22 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
     public void onBindViewHolder(CityViewHolder holder, int position) {
         CityData data = cityData.get(position);
         List<CityItem> items = data.itemList;
-        if (data.index.equalsIgnoreCase("定位") || data.index.equalsIgnoreCase("历史")) {
+        if ("GPS/历史".equalsIgnoreCase(data.index) || "热门".equalsIgnoreCase(data.index)) {
             holder.gridLayout.removeAllViews();
             for (int i = 0; i < items.size(); i++) {
                 CityItem cityItem = items.get(i);
-                AppCompatTextView textView = new AppCompatTextView(context);
                 GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams(GridLayout.spec(i / 3, 1f),
                         GridLayout.spec(i % 3, 1f));
                 layoutParams.height = GridLayout.LayoutParams.WRAP_CONTENT;
                 layoutParams.width = 0;
                 //设置一些Margin
-                layoutParams.setMargins(8, 5, 8, 5);
+                layoutParams.setMargins(30, 10, 30, 10);
+                View view = LayoutInflater.from(context).inflate(R.layout.item_city_name, null);
+                ImageView imageView = (ImageView) view.findViewById(R.id.iv_gpsIcon);
+                imageView.setVisibility(cityItem.isGPS ? View.VISIBLE : View.GONE);
+                TextView textView = (TextView) view.findViewById(R.id.tv_cityName);
                 textView.setText(cityItem.cityCnName);
-                textView.setGravity(Gravity.CENTER);
-                textView.setBackgroundResource(R.drawable.select_city_bg);
-                holder.gridLayout.addView(textView, layoutParams);
+                holder.gridLayout.addView(view, layoutParams);
             }
         } else {
             if ("1".equalsIgnoreCase(items.get(0).isDomestic)) {

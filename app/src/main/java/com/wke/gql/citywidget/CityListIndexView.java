@@ -135,7 +135,14 @@ public class CityListIndexView extends LinearLayout {
         View v = isInChildView(mLastX, mLastY);
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                if (v != null) v.setSelected(true);
+                if (v != null) {
+                    popUpView.setVisibility(VISIBLE);
+                    setAllSelected(false);
+                    v.setSelected(true);
+                    if (popUpView instanceof TextView) {
+                        ((TextView) popUpView).setText(v.getTag().toString());
+                    }
+                }
                 Log.i(TAG, "dispatchTouchEvent: ACTION_DOWN " + mLastX + "," + mLastY);
                 break;
             case MotionEvent.ACTION_MOVE:

@@ -56,11 +56,11 @@ public class CityWidgetActivity2 extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 if ("国内".equalsIgnoreCase(tab.getText().toString())) {
                     items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
-                    cityAdapter.setCityData(getData2(items));
+                    cityAdapter.setCityData(getData2(items, "1"));
                     cityAdapter.notifyDataSetChanged();
                 } else if ("国际".equalsIgnoreCase(tab.getText().toString())) {
                     items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("0")).list();
-                    cityAdapter.setCityData(getData2(items));
+                    cityAdapter.setCityData(getData2(items, "0"));
                     cityAdapter.notifyDataSetChanged();
                 }
             }
@@ -82,7 +82,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
 
     private void getData() {
         items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
-        List<CityData> datas = getData2(items);
+        List<CityData> datas = getData2(items, "1");
         Collections.sort(items, new Comparator<CityItem>() {
             @Override
             public int compare(CityItem o1, CityItem o2) {
@@ -126,7 +126,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
                     int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-                    String index = items.get(firstVisibleItemPosition).airportPinyinShort.substring(0, 1);
+                    String index = cityAdapter.getCityData().get(firstVisibleItemPosition).index;
                     cityListIndexView.setIndexHighLight(index);
                     Log.i(TAG, "index: " + index);
                 }
@@ -164,7 +164,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 LinearLayoutManager layoutManager = (LinearLayoutManager) rv.getLayoutManager();
                 int p = layoutManager.findFirstVisibleItemPosition();
                 Log.i(TAG, "onScroll: " + index + "," + p);
-                if (items.get(p).airportPinyinShort.substring(0, 1).equalsIgnoreCase(index)) return;
+                if (cityAdapter.getCityData().get(p).index.equalsIgnoreCase(index)) return;
                 scrollToIndex(index);
             }
         });
@@ -172,11 +172,18 @@ public class CityWidgetActivity2 extends AppCompatActivity {
 
     private void scrollToIndex(String index) {
         int a = 0;
-        for (int i = 0; i < items.size(); i++) {
-            if (index.equalsIgnoreCase(items.get(i).airportPinyinShort.substring(0, 1))) {
+        for (int i = 0; i < cityAdapter.getCityData().size(); i++) {
+
+            if (index.equalsIgnoreCase(cityAdapter.getCityData().get(i).index)) {
                 a = i;
                 break;
             }
+        }
+        if (index.equalsIgnoreCase("GPS/历史")) {
+            a = 0;
+        }
+        if (index.equalsIgnoreCase("热门")) {
+            a = 1;
         }
         smoothMoveToPosition(rv, a);
     }
@@ -216,12 +223,15 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 return o1.compareTo(o2);
             }
         });
+        indexList.add(0, "热门");
+        indexList.add(0, "历史");
+        indexList.add(0, "GPS");
         cityListIndexView.setIndexContents(indexList);
         Log.i(TAG, "getIndexList: " + indexList.toString());
     }
 
 
-    private List<CityData> getData2(List<CityItem> cityItems) {
+    private List<CityData> getData2(List<CityItem> cityItems, String isDomestic) {
         List<CityData> data = new ArrayList<>();
         try {
             List<HistoryCityItem> historys = HistoryCityItem.findAll(HistoryCityItem.class);
@@ -230,15 +240,19 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 historyCityItemList.add(BeanUtils.convert2CityItem(history));
             }
 
-            CityData gpsData = new CityData();
-            gpsData.index = "定位";
-            gpsData.itemList = new ArrayList<CityItem>();
-            gpsData.itemList.add(cityItems.get(0));
-            data.add(gpsData);
+
             CityData historyData = new CityData();
-            historyData.index = "历史";
+            historyData.index = "GPS/历史";
             historyData.itemList = historyCityItemList;
-            data.add(historyData);
+            CityItem gpsItem = cityItems.get(0);
+            gpsItem.isGPS = true;
+            historyData.itemList.add(0, gpsItem);
+
+            CityData hotData = new CityData();
+            hotData.index = "热门";
+            hotData.itemList =
+                    CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq(isDomestic), CityItemDao.Properties.IsHot.eq("1")).list();
+            ;
 
 
             for (CityItem item : cityItems) {
@@ -248,6 +262,18 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 d.itemList.add(item);
                 data.add(d);
             }
+
+            //先排序字母类
+            Collections.sort(data, new Comparator<CityData>() {
+                @Override
+                public int compare(CityData o1, CityData o2) {
+                    return o1.index.compareTo(o2.index);
+                }
+            });
+
+            data.add(0, hotData);
+            data.add(0, historyData);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,6 +6,7 @@ import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Property;
+import org.greenrobot.greendao.annotation.Transient;
 
 /**
  * @author gql
@@ -86,8 +87,8 @@ public class CityItem extends BaseEntity {
     public String airportNameSimple;
     @Property(nameInDb = "AIRPORT_NAME_EN_SIMPLE")
     public String airportEnNameSimple;
-
-
+    @Transient
+    public boolean isGPS;
     @Generated(hash = 780127632)
     public CityItem(Long airportId, String airportCode, String airportCnName,
                     String airportEnName, String airportPinyin, String airportPinyinShort,
@@ -118,246 +119,173 @@ public class CityItem extends BaseEntity {
         this.airportNameSimple = airportNameSimple;
         this.airportEnNameSimple = airportEnNameSimple;
     }
-
-
     @Generated(hash = 67413975)
     public CityItem() {
     }
-
-
-    @Override
-    public String toString() {
-        return "CityItem{" +
-                "airportId=" + airportId +
-                ", airportCode='" + airportCode + '\'' +
-                ", airportCnName='" + airportCnName + '\'' +
-                ", airportEnName='" + airportEnName + '\'' +
-                ", airportPinyin='" + airportPinyin + '\'' +
-                ", airportPinyinShort='" + airportPinyinShort + '\'' +
-                ", cityCode='" + cityCode + '\'' +
-                ", cityCnName='" + cityCnName + '\'' +
-                ", cityEnName='" + cityEnName + '\'' +
-                ", cityPinyin='" + cityPinyin + '\'' +
-                ", cityPinyinShort='" + cityPinyinShort + '\'' +
-                ", countryCnName='" + countryCnName + '\'' +
-                ", countryEnName='" + countryEnName + '\'' +
-                ", continentCnName='" + continentCnName + '\'' +
-                ", continentEnName='" + continentEnName + '\'' +
-                ", longitude='" + longitude + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", isDomestic=" + isDomestic +
-                ", isHot=" + isHot +
-                ", airportNameSimple='" + airportNameSimple + '\'' +
-                ", airportEnNameSimple='" + airportEnNameSimple + '\'' +
-                '}';
-    }
-
-
 
     public String getAirportEnNameSimple() {
         return this.airportEnNameSimple;
     }
 
-
     public void setAirportEnNameSimple(String airportEnNameSimple) {
         this.airportEnNameSimple = airportEnNameSimple;
     }
-
 
     public String getAirportNameSimple() {
         return this.airportNameSimple;
     }
 
-
     public void setAirportNameSimple(String airportNameSimple) {
         this.airportNameSimple = airportNameSimple;
     }
-
 
     public String getIsHot() {
         return this.isHot;
     }
 
-
     public void setIsHot(String isHot) {
         this.isHot = isHot;
     }
-
 
     public String getIsDomestic() {
         return this.isDomestic;
     }
 
-
     public void setIsDomestic(String isDomestic) {
         this.isDomestic = isDomestic;
     }
-
 
     public String getLatitude() {
         return this.latitude;
     }
 
-
     public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
-
 
     public String getLongitude() {
         return this.longitude;
     }
 
-
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
-
 
     public String getContinentEnName() {
         return this.continentEnName;
     }
 
-
     public void setContinentEnName(String continentEnName) {
         this.continentEnName = continentEnName;
     }
-
 
     public String getContinentCnName() {
         return this.continentCnName;
     }
 
-
     public void setContinentCnName(String continentCnName) {
         this.continentCnName = continentCnName;
     }
-
 
     public String getCountryEnName() {
         return this.countryEnName;
     }
 
-
     public void setCountryEnName(String countryEnName) {
         this.countryEnName = countryEnName;
     }
-
 
     public String getCountryCnName() {
         return this.countryCnName;
     }
 
-
     public void setCountryCnName(String countryCnName) {
         this.countryCnName = countryCnName;
     }
-
 
     public String getCityPinyinShort() {
         return this.cityPinyinShort;
     }
 
-
     public void setCityPinyinShort(String cityPinyinShort) {
         this.cityPinyinShort = cityPinyinShort;
     }
-
 
     public String getCityPinyin() {
         return this.cityPinyin;
     }
 
-
     public void setCityPinyin(String cityPinyin) {
         this.cityPinyin = cityPinyin;
     }
-
 
     public String getCityEnName() {
         return this.cityEnName;
     }
 
-
     public void setCityEnName(String cityEnName) {
         this.cityEnName = cityEnName;
     }
-
 
     public String getCityCnName() {
         return this.cityCnName;
     }
 
-
     public void setCityCnName(String cityCnName) {
         this.cityCnName = cityCnName;
     }
-
 
     public String getCityCode() {
         return this.cityCode;
     }
 
-
     public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
-
 
     public String getAirportPinyinShort() {
         return this.airportPinyinShort;
     }
 
-
     public void setAirportPinyinShort(String airportPinyinShort) {
         this.airportPinyinShort = airportPinyinShort;
     }
-
 
     public String getAirportPinyin() {
         return this.airportPinyin;
     }
 
-
     public void setAirportPinyin(String airportPinyin) {
         this.airportPinyin = airportPinyin;
     }
-
 
     public String getAirportEnName() {
         return this.airportEnName;
     }
 
-
     public void setAirportEnName(String airportEnName) {
         this.airportEnName = airportEnName;
     }
-
 
     public String getAirportCnName() {
         return this.airportCnName;
     }
 
-
     public void setAirportCnName(String airportCnName) {
         this.airportCnName = airportCnName;
     }
-
 
     public String getAirportCode() {
         return this.airportCode;
     }
 
-
     public void setAirportCode(String airportCode) {
         this.airportCode = airportCode;
     }
 
-
     public Long getAirportId() {
         return this.airportId;
     }
-
 
     public void setAirportId(Long airportId) {
         this.airportId = airportId;
