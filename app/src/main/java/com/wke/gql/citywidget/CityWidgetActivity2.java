@@ -172,6 +172,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
 
     private void scrollToIndex(String index) {
         int a = 0;
+        //下面是对字母的处理
         for (int i = 0; i < cityAdapter.getCityData().size(); i++) {
 
             if (index.equalsIgnoreCase(cityAdapter.getCityData().get(i).index)) {
@@ -179,6 +180,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                 break;
             }
         }
+        //针对这2个特殊处理
         if (index.equalsIgnoreCase("GPS/历史")) {
             a = 0;
         }
@@ -189,7 +191,6 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     }
 
     private void smoothMoveToPosition(RecyclerView mRecyclerView, int position) {
-        mRecyclerView.getChildCount();
         // 第一个可见位置
         int firstItem = mRecyclerView.getChildLayoutPosition(mRecyclerView.getChildAt(0));
         // 最后一个可见位置

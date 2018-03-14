@@ -22,7 +22,8 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_city"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/indexview" />
 
         <com.wke.gql.citywidget.CityListIndexView
             android:id="@+id/indexview"

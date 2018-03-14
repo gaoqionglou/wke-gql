@@ -180,7 +180,6 @@ public class CityWidgetActivity extends AppCompatActivity {
     }
 
     private void smoothMoveToPosition(RecyclerView mRecyclerView, int position) {
-        mRecyclerView.getChildCount();
         // 第一个可见位置
         int firstItem = mRecyclerView.getChildLayoutPosition(mRecyclerView.getChildAt(0));
         // 最后一个可见位置
