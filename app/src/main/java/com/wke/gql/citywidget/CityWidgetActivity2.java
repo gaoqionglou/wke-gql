@@ -127,6 +127,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
                     LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
                     int firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
                     String index = cityAdapter.getCityData().get(firstVisibleItemPosition).index;
+                    if ("GPS/历史".equalsIgnoreCase(index)) index = "GPS";
                     cityListIndexView.setIndexHighLight(index);
                     Log.i(TAG, "index: " + index);
                 }
