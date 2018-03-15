@@ -21,7 +21,7 @@ import java.util.List;
  * Created by gql on 2018/3/11.
  */
 
-public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHolder> implements StickyRecyclerHeadersAdapter<CityAdapter2.CityIndexViewHolder> {
+public class CityUpgradedAdapter extends RecyclerView.Adapter<CityUpgradedAdapter.CityViewHolder> implements StickyRecyclerHeadersAdapter<CityUpgradedAdapter.CityIndexViewHolder> {
     private int GPS_HISTORY_HOT = 1, LETTER = 2;
     private List<CityData> cityData;
     private OnItemClickListener onItemClickListener;
@@ -29,7 +29,7 @@ public class CityAdapter2 extends RecyclerView.Adapter<CityAdapter2.CityViewHold
     private List<String> indexData;
     private Context context;
 
-    public CityAdapter2(Context context, List<CityData> cityData) {
+    public CityUpgradedAdapter(Context context, List<CityData> cityData) {
         this.context = context;
         this.cityData = cityData;
     }

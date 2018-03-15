@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 @Route(path = "/wkegql/citywidget2")
-public class CityWidgetActivity2 extends AppCompatActivity {
+public class CityWidgetUpgradedActivity extends AppCompatActivity {
     private static final String TAG = "CityWidgetActivity";
     private CityListIndexView cityListIndexView;
     private TextView middleView;
@@ -36,7 +36,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     private StickyRecyclerHeadersDecoration headersDecor;
     private List<CityItem> items;
     private boolean isChinese = true;
-    private CityAdapter2 cityAdapter;
+    private CityUpgradedAdapter cityAdapter;
 
 
     @Override
@@ -90,7 +90,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
             }
         });
         getIndexList(items);
-        cityAdapter = new CityAdapter2(this, datas);
+        cityAdapter = new CityUpgradedAdapter(this, datas);
         //装载头部！
         headersDecor = new StickyRecyclerHeadersDecoration(cityAdapter); //绑定之前的adapter
         //刷新数据的时候回刷新头部
@@ -106,7 +106,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
         cityListIndexView.attachToCityList(rv);
         cityAdapter.setIndexView(cityListIndexView);
         //列表的点击事件 包括index
-        cityAdapter.setOnItemClickListener(new CityAdapter2.OnItemClickListener() {
+        cityAdapter.setOnItemClickListener(new CityUpgradedAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(CityItem cityItem) {
                 Log.i(TAG, "onItemClick: " + cityItem.cityCnName);

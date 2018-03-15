@@ -43,7 +43,7 @@
         <activity android:name=".customtab.CustomTabActivity" />
         <activity android:name=".shop.ShopActivity" />
         <activity android:name=".citywidget.CityWidgetActivity"></activity>
-        <activity android:name=".citywidget.CityWidgetActivity2"></activity>
+        <activity android:name=".citywidget.CityWidgetUpgradedActivity"></activity>
     </application>
 
 </manifest>
