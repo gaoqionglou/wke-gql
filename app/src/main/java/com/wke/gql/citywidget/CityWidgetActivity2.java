@@ -35,7 +35,6 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     private RecyclerView rv;
     private StickyRecyclerHeadersDecoration headersDecor;
     private List<CityItem> items;
-    private boolean domestic = true;
     private boolean isChinese = true;
     private CityAdapter2 cityAdapter;
 
