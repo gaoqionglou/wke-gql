@@ -38,6 +38,7 @@ public class CityWidgetActivity2 extends AppCompatActivity {
     private boolean isChinese = true;
     private CityAdapter2 cityAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
