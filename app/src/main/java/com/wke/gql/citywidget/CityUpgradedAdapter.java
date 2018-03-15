@@ -125,15 +125,12 @@ public class CityUpgradedAdapter extends RecyclerView.Adapter<CityUpgradedAdapte
     @Override
     public void onBindHeaderViewHolder(CityIndexViewHolder holder, int position) {
         holder.textView.setText(cityData.get(position).index);
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemIndexClick(holder.textView.getText().toString());
-                }
-                if (indexView != null)
-                    indexView.setIndexHighLight(holder.textView.getText().toString());
+        holder.textView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemIndexClick(holder.textView.getText().toString());
             }
+            if (indexView != null)
+                indexView.setIndexHighLight(holder.textView.getText().toString());
         });
     }
 
@@ -155,9 +152,9 @@ public class CityUpgradedAdapter extends RecyclerView.Adapter<CityUpgradedAdapte
 
         public CityViewHolder(View itemView) {
             super(itemView);
-            textView = (AppCompatTextView) itemView.findViewById(R.id.item_city_name);
-            linearlayout = (LinearLayout) itemView.findViewById(R.id.linearlayout);
-            gridLayout = (GridLayout) itemView.findViewById(R.id.gridLayout);
+            textView = itemView.findViewById(R.id.item_city_name);
+            linearlayout = itemView.findViewById(R.id.linearlayout);
+            gridLayout = itemView.findViewById(R.id.gridLayout);
         }
     }
 
@@ -166,7 +163,7 @@ public class CityUpgradedAdapter extends RecyclerView.Adapter<CityUpgradedAdapte
 
         public CityIndexViewHolder(View itemView) {
             super(itemView);
-            textView = (AppCompatTextView) itemView.findViewById(R.id.item_city_index);
+            textView = itemView.findViewById(R.id.item_city_index);
         }
     }
 }

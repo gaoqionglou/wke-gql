@@ -59,15 +59,12 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
         } else {
             holder.textView.setText(item.cityCnName + "(" + item.getCityCode() + "/" + item.getCountryCnName() + ")");
         }
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(cityItems.get(position));
-                }
-                if (indexView != null)
-                    indexView.setIndexHighLight(item.airportPinyinShort.substring(0, 1));
+        holder.textView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(cityItems.get(position));
             }
+            if (indexView != null)
+                indexView.setIndexHighLight(item.airportPinyinShort.substring(0, 1));
         });
 
     }
@@ -86,15 +83,12 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
     @Override
     public void onBindHeaderViewHolder(CityIndexViewHolder holder, int position) {
         holder.textView.setText(cityItems.get(position).airportPinyinShort.substring(0, 1));
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onItemClickListener != null) {
-                    onItemClickListener.onItemIndexClick(holder.textView.getText().toString());
-                }
-                if (indexView != null)
-                    indexView.setIndexHighLight(holder.textView.getText().toString());
+        holder.textView.setOnClickListener(v -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemIndexClick(holder.textView.getText().toString());
             }
+            if (indexView != null)
+                indexView.setIndexHighLight(holder.textView.getText().toString());
         });
     }
 
@@ -114,7 +108,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
 
         public CityViewHolder(View itemView) {
             super(itemView);
-            textView = (AppCompatTextView) itemView.findViewById(R.id.item_city_name);
+            textView = itemView.findViewById(R.id.item_city_name);
         }
     }
 
@@ -123,7 +117,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
 
         public CityIndexViewHolder(View itemView) {
             super(itemView);
-            textView = (AppCompatTextView) itemView.findViewById(R.id.item_city_index);
+            textView = itemView.findViewById(R.id.item_city_index);
         }
     }
 }

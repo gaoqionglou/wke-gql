@@ -20,7 +20,6 @@ import com.wke.gql.utils.UtilTool;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,7 +33,6 @@ public class CityWidgetActivity extends AppCompatActivity {
     private RecyclerView rv;
     private StickyRecyclerHeadersDecoration headersDecor;
     private List<CityItem> items;
-    private boolean domestic = true;
     private boolean isChinese = true;
     private CityAdapter cityAdapter;
 
@@ -42,10 +40,10 @@ public class CityWidgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_widget);
-        cityListIndexView = (CityListIndexView) this.findViewById(R.id.indexview);
-        middleView = (TextView) this.findViewById(R.id.middleText);
-        tabLayout = (TabLayout) this.findViewById(R.id.tablayout);
-        rv = (RecyclerView) this.findViewById(R.id.rv_city);
+        cityListIndexView = this.findViewById(R.id.indexview);
+        middleView = this.findViewById(R.id.middleText);
+        tabLayout = this.findViewById(R.id.tablayout);
+        rv = this.findViewById(R.id.rv_city);
         cityListIndexView.setPopUpView(middleView);
 
         tabLayout.addTab(tabLayout.newTab().setText("国内"), true);
@@ -81,12 +79,7 @@ public class CityWidgetActivity extends AppCompatActivity {
 
     private void getData() {
         items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
-        Collections.sort(items, new Comparator<CityItem>() {
-            @Override
-            public int compare(CityItem o1, CityItem o2) {
-                return o1.airportPinyinShort.substring(0, 1).compareTo(o2.airportPinyinShort.substring(0, 1));
-            }
-        });
+        Collections.sort(items, (o1, o2) -> o1.airportPinyinShort.substring(0, 1).compareTo(o2.airportPinyinShort.substring(0, 1)));
         getIndexList(items);
         cityAdapter = new CityAdapter(items);
         //装载头部！
@@ -156,15 +149,13 @@ public class CityWidgetActivity extends AppCompatActivity {
             }
         });
         //index的滑动事件
-        cityListIndexView.setOnScrollListener(new CityListIndexView.OnScrollListener() {
-            @Override
-            public void onScroll(View v, String index, int position) {
-                LinearLayoutManager layoutManager = (LinearLayoutManager) rv.getLayoutManager();
-                int p = layoutManager.findFirstVisibleItemPosition();
-                Log.i(TAG, "onScroll: " + index + "," + p);
-                if (items.get(p).airportPinyinShort.substring(0, 1).equalsIgnoreCase(index)) return;
-                scrollToIndex(index);
-            }
+        cityListIndexView.setOnScrollListener((v, index, position) -> {
+
+            LinearLayoutManager layoutManager = (LinearLayoutManager) rv.getLayoutManager();
+            int p = layoutManager.findFirstVisibleItemPosition();
+            Log.i(TAG, "onScroll: " + index + "," + p);
+            if (items.get(p).airportPinyinShort.substring(0, 1).equalsIgnoreCase(index)) return;
+            scrollToIndex(index);
         });
     }
 
@@ -200,18 +191,14 @@ public class CityWidgetActivity extends AppCompatActivity {
             mRecyclerView.scrollToPosition(position);
         }
     }
+
     private void getIndexList(List<CityItem> items) {
         Set<String> indexs = new HashSet<>();
         for (CityItem item : items) {
             indexs.add(isChinese ? item.airportPinyinShort.substring(0, 1) : item.airportEnNameSimple.substring(0, 1));
         }
         List<String> indexList = new ArrayList<>(indexs);
-        Collections.sort(indexList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        Collections.sort(indexList, (o1, o2) -> o1.compareTo(o2));
         cityListIndexView.setIndexContents(indexList);
         Log.i(TAG, "getIndexList: " + indexList.toString());
     }

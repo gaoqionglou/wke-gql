@@ -38,15 +38,16 @@ public class CityWidgetUpgradedActivity extends AppCompatActivity {
     private boolean isChinese = true;
     private CityUpgradedAdapter cityAdapter;
 
+    private int a = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_widget);
-        cityListIndexView = (CityListIndexView) this.findViewById(R.id.indexview);
-        middleView = (TextView) this.findViewById(R.id.middleText);
-        tabLayout = (TabLayout) this.findViewById(R.id.tablayout);
-        rv = (RecyclerView) this.findViewById(R.id.rv_city);
+        cityListIndexView = this.findViewById(R.id.indexview);
+        middleView = this.findViewById(R.id.middleText);
+        tabLayout = this.findViewById(R.id.tablayout);
+        rv = this.findViewById(R.id.rv_city);
         cityListIndexView.setPopUpView(middleView);
 
         tabLayout.addTab(tabLayout.newTab().setText("国内"), true);
@@ -83,12 +84,6 @@ public class CityWidgetUpgradedActivity extends AppCompatActivity {
     private void getData() {
         items = CityItem.queryBuilder(CityItem.class).where(CityItemDao.Properties.IsDomestic.eq("1")).list();
         List<CityData> datas = getData2(items, "1");
-        Collections.sort(items, new Comparator<CityItem>() {
-            @Override
-            public int compare(CityItem o1, CityItem o2) {
-                return o1.airportPinyinShort.substring(0, 1).compareTo(o2.airportPinyinShort.substring(0, 1));
-            }
-        });
         getIndexList(items);
         cityAdapter = new CityUpgradedAdapter(this, datas);
         //装载头部！
@@ -172,11 +167,11 @@ public class CityWidgetUpgradedActivity extends AppCompatActivity {
     }
 
     private void scrollToIndex(String index) {
-        int a = 0;
         //下面是对字母的处理
-        for (int i = 0; i < cityAdapter.getCityData().size(); i++) {
+        List<CityData> cityDatas = cityAdapter.getCityData();
+        for (int i = 0; i < cityDatas.size(); i++) {
 
-            if (index.equalsIgnoreCase(cityAdapter.getCityData().get(i).index)) {
+            if (index.equalsIgnoreCase(cityDatas.get(i).index)) {
                 a = i;
                 break;
             }
@@ -236,6 +231,13 @@ public class CityWidgetUpgradedActivity extends AppCompatActivity {
     private List<CityData> getData2(List<CityItem> cityItems, String isDomestic) {
         List<CityData> data = new ArrayList<>();
         try {
+
+            Collections.sort(items, new Comparator<CityItem>() {
+                @Override
+                public int compare(CityItem o1, CityItem o2) {
+                    return o1.airportPinyinShort.substring(0, 1).compareTo(o2.airportPinyinShort.substring(0, 1));
+                }
+            });
             List<HistoryCityItem> historys = HistoryCityItem.findAll(HistoryCityItem.class);
             List<CityItem> historyCityItemList = new ArrayList<>();
             for (HistoryCityItem history : historys) {
@@ -260,7 +262,7 @@ public class CityWidgetUpgradedActivity extends AppCompatActivity {
             for (CityItem item : cityItems) {
                 CityData d = new CityData();
                 d.index = item.airportPinyinShort.substring(0, 1).toUpperCase();
-                d.itemList = new ArrayList<CityItem>();
+                d.itemList = new ArrayList<>();
                 d.itemList.add(item);
                 data.add(d);
             }

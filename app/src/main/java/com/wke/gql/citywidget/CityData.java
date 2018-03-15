@@ -12,4 +12,20 @@ import java.util.List;
 public class CityData {
     public String index;
     public List<CityItem> itemList;
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
+
+    public List<CityItem> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<CityItem> itemList) {
+        this.itemList = itemList;
+    }
 }
